@@ -16,4 +16,5 @@ protocol MainScreenModelStateProtocol {
 
 protocol MainScreenModelActionProtocol {
     
+    func changeModeTo(next: Bool)
 }

@@ -10,7 +10,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        MainScreen()
+        ZStack {
+            
+            MainScreen.build()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(ViewConst.palette1)
         
     }
 }
