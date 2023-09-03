@@ -135,7 +135,7 @@
 		D0AFF71F2AA432D400F800AE /* game2048Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D0AFF7512AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift */,
+				D0AFF75C2AA445B100F800AE /* Main */,
 				D0AFF7202AA432D400F800AE /* game2048Tests.swift */,
 			);
 			path = game2048Tests;
@@ -245,6 +245,14 @@
 				D0AFF75A2AA442CD00F800AE /* ViewConst.swift */,
 			);
 			path = Const;
+			sourceTree = "<group>";
+		};
+		D0AFF75C2AA445B100F800AE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF7512AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
