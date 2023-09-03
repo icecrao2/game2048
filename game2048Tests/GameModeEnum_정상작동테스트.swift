@@ -38,4 +38,24 @@ final class GameModeEnum_테스트: XCTestCase {
         
         XCTAssertEqual(result, expectedResult)
     }
+    
+    func test_GameModeEnum_previouse메서드_테스트() throws {
+     
+        let gameModeEnum: GameModeEnum = .FourOnFour
+        
+        let expectedResult: GameModeEnum = .ThreeOnThree
+        let result = gameModeEnum.previous()
+        
+        XCTAssertEqual(result, expectedResult)
+    }
+    
+    func test_GameModeEnum_previouse메서드_끝부분에서_마지막으로_돌아가는지_테스트() throws {
+     
+        let gameModeEnum: GameModeEnum = .ThreeOnThree
+        
+        let expectedResult: GameModeEnum = .EightOnEight
+        let result = gameModeEnum.previous()
+        
+        XCTAssertEqual(result, expectedResult)
+    }
 }
