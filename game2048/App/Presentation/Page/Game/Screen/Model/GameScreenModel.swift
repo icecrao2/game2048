@@ -56,9 +56,7 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     
     
     
-    func moveToRight() {
-        
-        
+    func mergeToRight() {
         for outIndex in 0..<puzzleBoxArray.count {
             
             outLoop: for index in (1..<puzzleBoxArray[outIndex].count).reversed() {
@@ -88,9 +86,31 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                 }
             }
         }
-        
-        
     }
+    
+    
+    func moveToRight() {
+        for outIndex in 0..<puzzleBoxArray.count {
+            
+            for index in (0..<puzzleBoxArray[outIndex].count).reversed() {
+                
+                if puzzleBoxArray[outIndex][index] != nil { continue }
+                
+                for j in (0..<index).reversed() {
+                       
+                    guard let approacher = puzzleBoxArray[outIndex][j] else {
+                        continue
+                    }
+                    puzzleBoxArray[outIndex][index] = approacher
+                    puzzleBoxArray[outIndex][j] = nil
+                    
+                    break
+                }
+            }
+        }
+    }
+    
+    
     
     func moveToLeft() {
         
