@@ -144,7 +144,24 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     }
     
     func moveToLeft() {
-        
+        for outIndex in 0..<puzzleBoxArray.count {
+            
+            for index in (0..<puzzleBoxArray[outIndex].count) {
+                
+                if puzzleBoxArray[outIndex][index] != nil { continue }
+                
+                for j in index..<puzzleBoxArray[outIndex].count {
+                       
+                    guard let approacher = puzzleBoxArray[outIndex][j] else {
+                        continue
+                    }
+                    puzzleBoxArray[outIndex][index] = approacher
+                    puzzleBoxArray[outIndex][j] = nil
+                    
+                    break
+                }
+            }
+        }
     }
     
     func moveToUp() {
