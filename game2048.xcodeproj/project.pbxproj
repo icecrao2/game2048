@@ -25,6 +25,14 @@
 		D0AFF7572AA4422800F800AE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7562AA4422800F800AE /* ColorExtension.swift */; };
 		D0AFF75B2AA442CD00F800AE /* ViewConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF75A2AA442CD00F800AE /* ViewConst.swift */; };
 		D0AFF7652AA4578E00F800AE /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7642AA4578E00F800AE /* NavigationManager.swift */; };
+		D0AFF76E2AA4590B00F800AE /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF76D2AA4590B00F800AE /* GameScreen.swift */; };
+		D0AFF7712AA45FAA00F800AE /* GameScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7702AA45FAA00F800AE /* GameScreenModel.swift */; };
+		D0AFF7732AA45FB800F800AE /* GameScreenIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7722AA45FB800F800AE /* GameScreenIntent.swift */; };
+		D0AFF7752AA45FEE00F800AE /* GameScreenIntentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7742AA45FEE00F800AE /* GameScreenIntentProtocol.swift */; };
+		D0AFF7772AA45FFE00F800AE /* GameScreenModelStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7762AA45FFE00F800AE /* GameScreenModelStateProtocol.swift */; };
+		D0AFF77D2AA464B200F800AE /* PuzzleBoxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF77C2AA464B200F800AE /* PuzzleBoxModel.swift */; };
+		D0AFF77F2AA4652300F800AE /* PuzzleBoxModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF77E2AA4652300F800AE /* PuzzleBoxModelProtocols.swift */; };
+		D0AFF7822AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7812AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +75,14 @@
 		D0AFF7562AA4422800F800AE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		D0AFF75A2AA442CD00F800AE /* ViewConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConst.swift; sourceTree = "<group>"; };
 		D0AFF7642AA4578E00F800AE /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		D0AFF76D2AA4590B00F800AE /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
+		D0AFF7702AA45FAA00F800AE /* GameScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenModel.swift; sourceTree = "<group>"; };
+		D0AFF7722AA45FB800F800AE /* GameScreenIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenIntent.swift; sourceTree = "<group>"; };
+		D0AFF7742AA45FEE00F800AE /* GameScreenIntentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenIntentProtocol.swift; sourceTree = "<group>"; };
+		D0AFF7762AA45FFE00F800AE /* GameScreenModelStateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenModelStateProtocol.swift; sourceTree = "<group>"; };
+		D0AFF77C2AA464B200F800AE /* PuzzleBoxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxModel.swift; sourceTree = "<group>"; };
+		D0AFF77E2AA4652300F800AE /* PuzzleBoxModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxModelProtocols.swift; sourceTree = "<group>"; };
+		D0AFF7812AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PuzzleBoxModel_정상작동테스트.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +153,7 @@
 		D0AFF71F2AA432D400F800AE /* game2048Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D0AFF7802AA4699700F800AE /* Game */,
 				D0AFF75C2AA445B100F800AE /* Main */,
 				D0AFF7202AA432D400F800AE /* game2048Tests.swift */,
 			);
@@ -270,9 +287,7 @@
 		D0AFF7662AA458CD00F800AE /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				D0AFF7692AA458D500F800AE /* Model */,
-				D0AFF7682AA458D100F800AE /* Intent */,
-				D0AFF7672AA458CF00F800AE /* View */,
+				D0AFF76F2AA45F6E00F800AE /* Screen */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -280,6 +295,7 @@
 		D0AFF7672AA458CF00F800AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D0AFF76D2AA4590B00F800AE /* GameScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,6 +303,8 @@
 		D0AFF7682AA458D100F800AE /* Intent */ = {
 			isa = PBXGroup;
 			children = (
+				D0AFF7722AA45FB800F800AE /* GameScreenIntent.swift */,
+				D0AFF7742AA45FEE00F800AE /* GameScreenIntentProtocol.swift */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -294,8 +312,62 @@
 		D0AFF7692AA458D500F800AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D0AFF7702AA45FAA00F800AE /* GameScreenModel.swift */,
+				D0AFF7762AA45FFE00F800AE /* GameScreenModelStateProtocol.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D0AFF76F2AA45F6E00F800AE /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF7782AA4633000F800AE /* Box */,
+				D0AFF7692AA458D500F800AE /* Model */,
+				D0AFF7682AA458D100F800AE /* Intent */,
+				D0AFF7672AA458CF00F800AE /* View */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		D0AFF7782AA4633000F800AE /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF77B2AA4633600F800AE /* Model */,
+				D0AFF77A2AA4633400F800AE /* Intent */,
+				D0AFF7792AA4633300F800AE /* View */,
+			);
+			path = Box;
+			sourceTree = "<group>";
+		};
+		D0AFF7792AA4633300F800AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0AFF77A2AA4633400F800AE /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Intent;
+			sourceTree = "<group>";
+		};
+		D0AFF77B2AA4633600F800AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF77C2AA464B200F800AE /* PuzzleBoxModel.swift */,
+				D0AFF77E2AA4652300F800AE /* PuzzleBoxModelProtocols.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0AFF7802AA4699700F800AE /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF7812AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,17 +500,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AFF77F2AA4652300F800AE /* PuzzleBoxModelProtocols.swift in Sources */,
+				D0AFF7732AA45FB800F800AE /* GameScreenIntent.swift in Sources */,
 				D0AFF7442AA4374800F800AE /* MVIContainer.swift in Sources */,
 				D0AFF74A2AA4382D00F800AE /* MainScreenIntentProtocol.swift in Sources */,
 				D0AFF7462AA437A700F800AE /* MainScreenIntent.swift in Sources */,
+				D0AFF7712AA45FAA00F800AE /* GameScreenModel.swift in Sources */,
+				D0AFF7772AA45FFE00F800AE /* GameScreenModelStateProtocol.swift in Sources */,
 				D0AFF74F2AA4389E00F800AE /* GameModeEnum.swift in Sources */,
 				D0AFF7482AA437BD00F800AE /* MainScreenModel.swift in Sources */,
+				D0AFF7752AA45FEE00F800AE /* GameScreenIntentProtocol.swift in Sources */,
+				D0AFF77D2AA464B200F800AE /* PuzzleBoxModel.swift in Sources */,
 				D0AFF7652AA4578E00F800AE /* NavigationManager.swift in Sources */,
 				D0AFF74D2AA4385A00F800AE /* MainScreenModelProtocols.swift in Sources */,
 				D0AFF7112AA432D300F800AE /* ContentView.swift in Sources */,
 				D0AFF75B2AA442CD00F800AE /* ViewConst.swift in Sources */,
 				D0AFF7412AA433EA00F800AE /* MainScreen.swift in Sources */,
 				D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */,
+				D0AFF76E2AA4590B00F800AE /* GameScreen.swift in Sources */,
 				D0AFF7572AA4422800F800AE /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AFF7822AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift in Sources */,
 				D0AFF7212AA432D400F800AE /* game2048Tests.swift in Sources */,
 				D0AFF7522AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift in Sources */,
 			);

@@ -21,7 +21,7 @@ struct ContentView: View {
                     case NavigationManager.ViewCode.MainView.rawValue:
                         MainScreen.build()
                     case NavigationManager.ViewCode.GameView.rawValue:
-                        EmptyView()
+                        GameScreen.build()
                     default:
                         EmptyView()
                     }

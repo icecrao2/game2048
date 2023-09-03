@@ -110,8 +110,6 @@ struct MainScreen: View {
             }
             Spacer()
         }
-        .frame(maxWidth: .infinity)
-        .background(ViewConst.palette1)
     }
 }
 
