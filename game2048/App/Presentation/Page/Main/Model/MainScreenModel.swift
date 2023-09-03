@@ -14,15 +14,9 @@ class MainScreenModel: ObservableObject, MainScreenModelStateProtocol {
 }
 
 
-
-
 extension MainScreenModel: MainScreenModelActionProtocol {
     
-    
     func changeModeTo(next: Bool) {
-        
-        
-        
+        currentMode = next ? currentMode.next() : currentMode.previous()
     }
-    
 }

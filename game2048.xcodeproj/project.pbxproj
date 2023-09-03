@@ -22,6 +22,8 @@
 		D0AFF74D2AA4385A00F800AE /* MainScreenModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF74C2AA4385A00F800AE /* MainScreenModelProtocols.swift */; };
 		D0AFF74F2AA4389E00F800AE /* GameModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */; };
 		D0AFF7522AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7512AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift */; };
+		D0AFF7572AA4422800F800AE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7562AA4422800F800AE /* ColorExtension.swift */; };
+		D0AFF75B2AA442CD00F800AE /* ViewConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF75A2AA442CD00F800AE /* ViewConst.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		D0AFF74C2AA4385A00F800AE /* MainScreenModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModelProtocols.swift; sourceTree = "<group>"; };
 		D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeEnum.swift; sourceTree = "<group>"; };
 		D0AFF7512AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameModeEnum_정상작동테스트.swift"; sourceTree = "<group>"; };
+		D0AFF7562AA4422800F800AE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		D0AFF75A2AA442CD00F800AE /* ViewConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConst.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +115,8 @@
 		D0AFF70D2AA432D300F800AE /* game2048 */ = {
 			isa = PBXGroup;
 			children = (
-				D0AFF73A2AA433D300F800AE /* UseCase */,
-				D0AFF7392AA433CE00F800AE /* Presentation */,
-				D0AFF70E2AA432D300F800AE /* game2048App.swift */,
-				D0AFF7102AA432D300F800AE /* ContentView.swift */,
+				D0AFF7542AA4420F00F800AE /* Resources */,
+				D0AFF7532AA4420800F800AE /* App */,
 				D0AFF7122AA432D400F800AE /* Assets.xcassets */,
 				D0AFF7142AA432D400F800AE /* game2048.entitlements */,
 				D0AFF7152AA432D400F800AE /* Preview Content */,
@@ -151,6 +153,7 @@
 		D0AFF7392AA433CE00F800AE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D0AFF7582AA442C400F800AE /* Const */,
 				D0AFF7422AA4373F00F800AE /* Utils */,
 				D0AFF73B2AA433D900F800AE /* Page */,
 			);
@@ -213,8 +216,35 @@
 			isa = PBXGroup;
 			children = (
 				D0AFF7432AA4374800F800AE /* MVIContainer.swift */,
+				D0AFF7562AA4422800F800AE /* ColorExtension.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		D0AFF7532AA4420800F800AE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF73A2AA433D300F800AE /* UseCase */,
+				D0AFF7392AA433CE00F800AE /* Presentation */,
+				D0AFF70E2AA432D300F800AE /* game2048App.swift */,
+				D0AFF7102AA432D300F800AE /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D0AFF7542AA4420F00F800AE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D0AFF7582AA442C400F800AE /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF75A2AA442CD00F800AE /* ViewConst.swift */,
+			);
+			path = Const;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,8 +384,10 @@
 				D0AFF7482AA437BD00F800AE /* MainScreenModel.swift in Sources */,
 				D0AFF74D2AA4385A00F800AE /* MainScreenModelProtocols.swift in Sources */,
 				D0AFF7112AA432D300F800AE /* ContentView.swift in Sources */,
+				D0AFF75B2AA442CD00F800AE /* ViewConst.swift in Sources */,
 				D0AFF7412AA433EA00F800AE /* MainScreen.swift in Sources */,
 				D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */,
+				D0AFF7572AA4422800F800AE /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
