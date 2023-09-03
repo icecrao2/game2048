@@ -27,11 +27,10 @@ extension GameModeEnum: CaseIterable, Equatable {
         return all[next == all.endIndex ? all.startIndex : next]
     }
     
-    func previouse() -> Self {
-        
-        let all = Self.allCases
-        let idx = all.firstIndex(of: self)!
-        let previouse = all.index(before: idx)
-        return all[previouse == all.startIndex ? all.endIndex : previouse]
-    }
+    func previous() -> Self {
+       let all = Self.allCases
+       let idx = all.firstIndex(of: self)!
+       let previous = all.index(before: idx)
+       return all[previous < all.startIndex ? all.index(before: all.endIndex) : previous]
+   }
 }
