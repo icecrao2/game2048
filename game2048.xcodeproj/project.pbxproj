@@ -14,6 +14,14 @@
 		D0AFF7212AA432D400F800AE /* game2048Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7202AA432D400F800AE /* game2048Tests.swift */; };
 		D0AFF72B2AA432D400F800AE /* game2048UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF72A2AA432D400F800AE /* game2048UITests.swift */; };
 		D0AFF72D2AA432D400F800AE /* game2048UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF72C2AA432D400F800AE /* game2048UITestsLaunchTests.swift */; };
+		D0AFF7412AA433EA00F800AE /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7402AA433EA00F800AE /* MainScreen.swift */; };
+		D0AFF7442AA4374800F800AE /* MVIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7432AA4374800F800AE /* MVIContainer.swift */; };
+		D0AFF7462AA437A700F800AE /* MainScreenIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7452AA437A700F800AE /* MainScreenIntent.swift */; };
+		D0AFF7482AA437BD00F800AE /* MainScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7472AA437BD00F800AE /* MainScreenModel.swift */; };
+		D0AFF74A2AA4382D00F800AE /* MainScreenIntentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7492AA4382D00F800AE /* MainScreenIntentProtocol.swift */; };
+		D0AFF74D2AA4385A00F800AE /* MainScreenModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF74C2AA4385A00F800AE /* MainScreenModelProtocols.swift */; };
+		D0AFF74F2AA4389E00F800AE /* GameModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */; };
+		D0AFF7522AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7512AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +53,14 @@
 		D0AFF7262AA432D400F800AE /* game2048UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = game2048UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AFF72A2AA432D400F800AE /* game2048UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game2048UITests.swift; sourceTree = "<group>"; };
 		D0AFF72C2AA432D400F800AE /* game2048UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game2048UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D0AFF7402AA433EA00F800AE /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		D0AFF7432AA4374800F800AE /* MVIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVIContainer.swift; sourceTree = "<group>"; };
+		D0AFF7452AA437A700F800AE /* MainScreenIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenIntent.swift; sourceTree = "<group>"; };
+		D0AFF7472AA437BD00F800AE /* MainScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModel.swift; sourceTree = "<group>"; };
+		D0AFF7492AA4382D00F800AE /* MainScreenIntentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenIntentProtocol.swift; sourceTree = "<group>"; };
+		D0AFF74C2AA4385A00F800AE /* MainScreenModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModelProtocols.swift; sourceTree = "<group>"; };
+		D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeEnum.swift; sourceTree = "<group>"; };
+		D0AFF7512AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameModeEnum_정상작동테스트.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +111,8 @@
 		D0AFF70D2AA432D300F800AE /* game2048 */ = {
 			isa = PBXGroup;
 			children = (
+				D0AFF73A2AA433D300F800AE /* UseCase */,
+				D0AFF7392AA433CE00F800AE /* Presentation */,
 				D0AFF70E2AA432D300F800AE /* game2048App.swift */,
 				D0AFF7102AA432D300F800AE /* ContentView.swift */,
 				D0AFF7122AA432D400F800AE /* Assets.xcassets */,
@@ -115,6 +133,7 @@
 		D0AFF71F2AA432D400F800AE /* game2048Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D0AFF7512AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift */,
 				D0AFF7202AA432D400F800AE /* game2048Tests.swift */,
 			);
 			path = game2048Tests;
@@ -127,6 +146,75 @@
 				D0AFF72C2AA432D400F800AE /* game2048UITestsLaunchTests.swift */,
 			);
 			path = game2048UITests;
+			sourceTree = "<group>";
+		};
+		D0AFF7392AA433CE00F800AE /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF7422AA4373F00F800AE /* Utils */,
+				D0AFF73B2AA433D900F800AE /* Page */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D0AFF73A2AA433D300F800AE /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		D0AFF73B2AA433D900F800AE /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF73C2AA433DB00F800AE /* Main */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		D0AFF73C2AA433DB00F800AE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF73F2AA433E400F800AE /* Model */,
+				D0AFF73E2AA433E200F800AE /* Intent */,
+				D0AFF73D2AA433DE00F800AE /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D0AFF73D2AA433DE00F800AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF7402AA433EA00F800AE /* MainScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0AFF73E2AA433E200F800AE /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF7452AA437A700F800AE /* MainScreenIntent.swift */,
+				D0AFF7492AA4382D00F800AE /* MainScreenIntentProtocol.swift */,
+			);
+			path = Intent;
+			sourceTree = "<group>";
+		};
+		D0AFF73F2AA433E400F800AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF7472AA437BD00F800AE /* MainScreenModel.swift */,
+				D0AFF74C2AA4385A00F800AE /* MainScreenModelProtocols.swift */,
+				D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0AFF7422AA4373F00F800AE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF7432AA4374800F800AE /* MVIContainer.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +347,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AFF7442AA4374800F800AE /* MVIContainer.swift in Sources */,
+				D0AFF74A2AA4382D00F800AE /* MainScreenIntentProtocol.swift in Sources */,
+				D0AFF7462AA437A700F800AE /* MainScreenIntent.swift in Sources */,
+				D0AFF74F2AA4389E00F800AE /* GameModeEnum.swift in Sources */,
+				D0AFF7482AA437BD00F800AE /* MainScreenModel.swift in Sources */,
+				D0AFF74D2AA4385A00F800AE /* MainScreenModelProtocols.swift in Sources */,
 				D0AFF7112AA432D300F800AE /* ContentView.swift in Sources */,
+				D0AFF7412AA433EA00F800AE /* MainScreen.swift in Sources */,
 				D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0AFF7212AA432D400F800AE /* game2048Tests.swift in Sources */,
+				D0AFF7522AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +511,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"game2048/Preview Content\"";
-				DEVELOPMENT_TEAM = 4L2X9SGL9H;
+				DEVELOPMENT_TEAM = LTM3A2DW9P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -453,7 +549,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"game2048/Preview Content\"";
-				DEVELOPMENT_TEAM = 4L2X9SGL9H;
+				DEVELOPMENT_TEAM = LTM3A2DW9P;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -489,7 +585,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4L2X9SGL9H;
+				DEVELOPMENT_TEAM = LTM3A2DW9P;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -512,7 +608,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4L2X9SGL9H;
+				DEVELOPMENT_TEAM = LTM3A2DW9P;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -534,7 +630,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4L2X9SGL9H;
+				DEVELOPMENT_TEAM = LTM3A2DW9P;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -556,7 +652,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4L2X9SGL9H;
+				DEVELOPMENT_TEAM = LTM3A2DW9P;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
