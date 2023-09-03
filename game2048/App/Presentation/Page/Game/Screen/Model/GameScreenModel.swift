@@ -112,7 +112,35 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     
     
     func mergeToLeft() {
-        
+        for outIndex in 0..<puzzleBoxArray.count {
+            
+            outLoop: for index in (1..<puzzleBoxArray[outIndex].count) {
+                
+                guard let base = puzzleBoxArray[outIndex][index] else {
+                    continue
+                }
+                
+                for j in index..<puzzleBoxArray[outIndex].count {
+                    
+                    guard let approacher = puzzleBoxArray[outIndex][j] else {
+                        continue
+                    }
+                    
+                    if approacher.getScore() == base.getScore() {
+                        
+                        puzzleBoxArray[outIndex][j]?.move(to: base.getLocation())
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            self.puzzleBoxArray[outIndex][index] = self.puzzleBoxArray[outIndex][j]
+                            self.puzzleBoxArray[outIndex][j] = nil
+                            self.puzzleBoxArray[outIndex][index]?.increase()
+                            
+                        }
+                        break outLoop
+                    }
+                }
+            }
+        }
     }
     
     func moveToLeft() {
