@@ -37,4 +37,24 @@ struct ViewConst {
         65536: Color(hex: "FACD8A"),
         131072: Color(hex: "FAC965")
     ]
+    
+    static let textColors: [Int: Color] = [
+        2: .white,
+        4: .white,
+        8: .white,
+        16: .white,
+        32: .white,
+        64: .white,
+        128: .white,
+        256: .black,
+        512: .black,
+        1024: .black,
+        2048: .black,
+        4096: .black,
+        8192: .black,
+        16384: .black,
+        32768: .black,
+        65536: .black,
+        131072: .black
+    ]
 }

@@ -18,4 +18,12 @@ protocol PuzzleBoxModelStateProtocol {
 
 protocol PuzzleBoxModelActionProtocol {
     
+    func increase()
+    func move(to location: CGRect)
+    
+    func getID() -> Int
+    func getLocation() -> CGRect
+    func getColor() -> Color
+    func getScore() -> Int
 }
+
