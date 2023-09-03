@@ -41,65 +41,23 @@ final class GameScreenModel_정상작동테스트: XCTestCase {
         XCTAssertEqual(expectedResult[0][2]?.getScore(), sut.puzzleBoxArray[0][2]?.getScore())
     }
     
-    func test_moveToRight_정상작동테스트1() throws {
+    func test_moveToRight_정상작동테스트() throws {
         
         let sut = GameScreenModel(currentScore: 0, topScore: 0, puzzleBoxArray: [
-            [nil, nil, nil],
+            [PuzzleBoxModel(id: 3, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1)), nil, nil],
             [PuzzleBoxModel(id: 1, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1)), PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,2)), nil],
-            [nil, nil, nil],
+            [PuzzleBoxModel(id: 4, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1)), nil, PuzzleBoxModel(id: 5, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1))],
         ])
         
         sut.moveToRight()
         
         let expectedResult = [
-            [nil, nil, nil],
+            [nil, nil, PuzzleBoxModel(id: 3, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1))],
             [nil, PuzzleBoxModel(id: 1, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1)), PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,2))],
-            [nil, nil, nil],
+            [nil, PuzzleBoxModel(id: 4, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1)), PuzzleBoxModel(id: 5, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1))],
         ]
         
         XCTAssertEqual(expectedResult, sut.puzzleBoxArray)
         
     }
-    
-    func test_moveToRight_정상작동테스트2() throws {
-        
-        let sut = GameScreenModel(currentScore: 0, topScore: 0, puzzleBoxArray: [
-            [nil, nil, nil],
-            [PuzzleBoxModel(id: 1, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1)),
-             nil, PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,2))],
-            [nil, nil, nil],
-        ])
-        
-        sut.moveToRight()
-        
-        let expectedResult = [
-            [nil, nil, nil],
-            [nil, PuzzleBoxModel(id: 1, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1)), PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,2))],
-            [nil, nil, nil],
-        ]
-        
-        XCTAssertEqual(expectedResult, sut.puzzleBoxArray)
-        
     }
-    
-    func test_moveToRight_정상작동테스트3() throws {
-        
-        let sut = GameScreenModel(currentScore: 0, topScore: 0, puzzleBoxArray: [
-            [nil, nil, nil],
-            [PuzzleBoxModel(id: 1, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1)),
-             nil, nil],
-            [nil, nil, nil],
-        ])
-        
-        sut.moveToRight()
-        
-        let expectedResult = [
-            [nil, nil, nil],
-            [nil, nil, PuzzleBoxModel(id: 1, location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1))],
-            [nil, nil, nil],
-        ]
-        
-        XCTAssertEqual(expectedResult, sut.puzzleBoxArray)
-        
-    }
-}

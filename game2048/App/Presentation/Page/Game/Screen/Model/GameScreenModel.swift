@@ -111,6 +111,9 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     }
     
     
+    func mergeToLeft() {
+        
+    }
     
     func moveToLeft() {
         
