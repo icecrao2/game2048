@@ -13,7 +13,7 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
     @Published private(set) var currentScore: Int = 0
     @Published private(set) var topScore: Int = 0
     
-    @Published private(set) var puzzleBoxArray: [[PuzzleBoxModel?]] = [[]]
+    @Published private(set) var puzzleBoxArray: [[PuzzleBoxModel?]]
 
     private var scoreArray: [[Int]] {
         puzzleBoxArray.map { row in
@@ -22,6 +22,24 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
             }
         }
     }
+    
+    init() {
+        self.currentScore = 0
+        self.topScore = 0
+        self.puzzleBoxArray = [
+            [nil, nil, nil, nil],
+            [nil, nil, nil, nil],
+            [nil, nil, nil, nil],
+            [nil, nil, nil, nil],
+        ]
+    }
+    
+    init(currentScore: Int, topScore: Int, puzzleBoxArray: [[PuzzleBoxModel?]]) {
+        self.currentScore = currentScore
+        self.topScore = topScore
+        self.puzzleBoxArray = puzzleBoxArray
+    }
+    
     
 /* x = [1][0]
    0 1 2 3
@@ -35,6 +53,7 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
 }
 
 extension GameScreenModel: GameScreenModelActionProtocol {
+    
     
     
     func moveToRight() {
@@ -94,7 +113,6 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     }
     
     func makeNewPuzzleBox() {
-        
     }
     
     func refreshPuzzleBoxArray() {

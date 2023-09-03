@@ -34,6 +34,7 @@
 		D0AFF77F2AA4652300F800AE /* PuzzleBoxModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF77E2AA4652300F800AE /* PuzzleBoxModelProtocols.swift */; };
 		D0AFF7822AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7812AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift */; };
 		D0AFF7842AA46D8100F800AE /* PuzzleBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */; };
+		D0AFF7862AA4799300F800AE /* GameScreenModel_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		D0AFF77E2AA4652300F800AE /* PuzzleBoxModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxModelProtocols.swift; sourceTree = "<group>"; };
 		D0AFF7812AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PuzzleBoxModel_정상작동테스트.swift"; sourceTree = "<group>"; };
 		D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxView.swift; sourceTree = "<group>"; };
+		D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScreenModel_정상작동테스트.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				D0AFF7812AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift */,
+				D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 			files = (
 				D0AFF7822AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift in Sources */,
 				D0AFF7212AA432D400F800AE /* game2048Tests.swift in Sources */,
+				D0AFF7862AA4799300F800AE /* GameScreenModel_정상작동테스트.swift in Sources */,
 				D0AFF7522AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,8 +23,8 @@ final class PuzzleBoxModel_정상작동테스트: XCTestCase {
     
     func test_equatable_작동테스트() throws {
         
-        let sut = PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: 2)
-        let tester = PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: 2)
+        let sut = PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: 2, textColor: .white, position: (0,0))
+        let tester = PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: 2, textColor: .white, position: (0,0))
         
         
         XCTAssertEqual(sut, tester)
@@ -32,10 +32,10 @@ final class PuzzleBoxModel_정상작동테스트: XCTestCase {
     
     func test_increase_메서드_작동테스트() throws {
         
-        let sut = PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: 2)
+        let sut = PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: 2, textColor: .white, position: (0,0))
         
         sut.increase()
-        let expectedResult = PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[4]!, score: 4)
+        let expectedResult = PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[4]!, score: 4, textColor: .white, position: (0,0))
         
         
         XCTAssertEqual(expectedResult.color, sut.color)
@@ -45,10 +45,10 @@ final class PuzzleBoxModel_정상작동테스트: XCTestCase {
     
     func test_move_메서드_작동테스트() throws {
         
-        let sut = PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: 2)
+        let sut = PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: 2, textColor: .white, position: (0,0))
         
         sut.move(to: CGRect(x: 10, y: 10, width: 10, height: 10))
-        let expectedResult = PuzzleBoxModel(id: 0, location: CGRect(x: 10, y: 10, width: 10, height: 10), color: ViewConst.boxColors[4]!, score: 4)
+        let expectedResult = PuzzleBoxModel(id: 0, location: CGRect(x: 10, y: 10, width: 10, height: 10), color: ViewConst.boxColors[4]!, score: 4, textColor: .white, position: (0,0))
         
         
         XCTAssertEqual(expectedResult.location, sut.location)
