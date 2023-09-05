@@ -25,5 +25,6 @@ protocol PuzzleBoxModelActionProtocol {
     func getLocation() -> CGRect
     func getColor() -> Color
     func getScore() -> Int
+    func setPosition(position: (Int, Int))
 }
 

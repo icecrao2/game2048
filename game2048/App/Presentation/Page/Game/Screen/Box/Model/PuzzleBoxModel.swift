@@ -57,6 +57,12 @@ extension PuzzleBoxModel: PuzzleBoxModelActionProtocol {
         
         self.location = location
     }
+    
+    func setPosition(position: (Int, Int)) {
+        
+        self.position = position
+        
+    }
 }
 
 
@@ -72,4 +78,5 @@ extension PuzzleBoxModel {
     
     static var newId: Int = 0
     
+    static var map: (Int, Int) = (4, 4)
 }

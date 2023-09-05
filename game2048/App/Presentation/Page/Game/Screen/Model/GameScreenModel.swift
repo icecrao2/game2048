@@ -296,5 +296,13 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     
     func refreshPuzzleBoxArray() {
         
+        var copy: [[PuzzleBoxModel?]] = puzzleBoxArray
+        
+        for a in 0..<copy.count {
+            for b in 0..<copy[a].count {
+                
+                puzzleBoxArray[a][b]?.setPosition(position: (a, b))
+            }
+        }
     }
 }
