@@ -194,4 +194,13 @@ final class GameScreenModel_정상작동테스트: XCTestCase {
         
         XCTAssertEqual(sut.currentScore, 10)
     }
+    
+    func test_setTopScore_정상작동테스트() throws {
+        
+        let sut = GameScreenModel(currentScore: 0, topScore: 2, puzzleBoxArray: [[nil]])
+        
+        sut.setTopScore(score: 5)
+        
+        XCTAssertEqual(sut.topScore, 5)
+    }
 }
