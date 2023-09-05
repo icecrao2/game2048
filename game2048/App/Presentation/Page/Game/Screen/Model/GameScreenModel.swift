@@ -276,6 +276,22 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     
     func makeNewPuzzleBox() {
         
+        var emptySpace: [(Int, Int)] = []
+        
+        for a in 0..<puzzleBoxArray.count {
+            for b in 0..<puzzleBoxArray[a].count {
+                if puzzleBoxArray[a][b] == nil {
+                    emptySpace.append((a, b))
+                }
+            }
+        }
+        let randomInt = Int.random(in: 0..<emptySpace.count)
+        
+        let result = emptySpace[randomInt]
+        
+        puzzleBoxArray[result.0][result.1] = PuzzleBoxModel(id: PuzzleBoxModel.newId, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: 2, textColor: ViewConst.textColors[2]!, position: (result.0, result.1))
+        
+        PuzzleBoxModel.newId += 1
     }
     
     func refreshPuzzleBoxArray() {

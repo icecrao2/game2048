@@ -203,4 +203,20 @@ final class GameScreenModel_정상작동테스트: XCTestCase {
         
         XCTAssertEqual(sut.topScore, 5)
     }
+    
+    func test_makeNewPuzzleBox_정상작동테스트() throws {
+        
+        let sut = GameScreenModel(currentScore: 0, topScore: 0, puzzleBoxArray: [
+                [PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0)),PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0)),PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0))],
+                [PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0)), nil, PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0))],
+                [PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0)),PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0)),PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0))],
+            ]
+        )
+        
+        sut.makeNewPuzzleBox()
+        
+        XCTAssertEqual(sut.puzzleBoxArray[1][1], PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0)))
+        XCTAssertEqual(PuzzleBoxModel.newId, 1)
+        
+    }
 }

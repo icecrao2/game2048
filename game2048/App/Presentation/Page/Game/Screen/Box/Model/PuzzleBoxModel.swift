@@ -66,3 +66,10 @@ extension PuzzleBoxModel: Equatable {
         lhs.id == rhs.id
     }
 }
+
+
+extension PuzzleBoxModel {
+    
+    static var newId: Int = 0
+    
+}
