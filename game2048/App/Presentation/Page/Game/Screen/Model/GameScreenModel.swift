@@ -75,12 +75,10 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                         
                         puzzleBoxArray[outIndex][j]?.move(to: base.getLocation())
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            self.puzzleBoxArray[outIndex][index] = self.puzzleBoxArray[outIndex][j]
-                            self.puzzleBoxArray[outIndex][j] = nil
-                            self.puzzleBoxArray[outIndex][index]?.increase()
-                            
-                        }
+                        self.puzzleBoxArray[outIndex][index] = self.puzzleBoxArray[outIndex][j]
+                        self.puzzleBoxArray[outIndex][j] = nil
+                        self.puzzleBoxArray[outIndex][index]?.increase()
+
                         break outLoop
                     }
                 }
@@ -114,13 +112,13 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     func mergeToLeft() {
         for outIndex in 0..<puzzleBoxArray.count {
             
-            outLoop: for index in (1..<puzzleBoxArray[outIndex].count) {
+            outLoop: for index in 0..<(puzzleBoxArray[outIndex].count - 1) {
                 
                 guard let base = puzzleBoxArray[outIndex][index] else {
                     continue
                 }
                 
-                for j in index..<puzzleBoxArray[outIndex].count {
+                for j in (index + 1)...puzzleBoxArray[outIndex].count {
                     
                     guard let approacher = puzzleBoxArray[outIndex][j] else {
                         continue
@@ -130,12 +128,11 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                         
                         puzzleBoxArray[outIndex][j]?.move(to: base.getLocation())
                         
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            self.puzzleBoxArray[outIndex][index] = self.puzzleBoxArray[outIndex][j]
-                            self.puzzleBoxArray[outIndex][j] = nil
-                            self.puzzleBoxArray[outIndex][index]?.increase()
+                        self.puzzleBoxArray[outIndex][index] = self.puzzleBoxArray[outIndex][j]
+                        self.puzzleBoxArray[outIndex][j] = nil
+                        self.puzzleBoxArray[outIndex][index]?.increase()
                             
-                        }
+                        
                         break outLoop
                     }
                 }
@@ -164,12 +161,110 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         }
     }
     
-    func moveToUp() {
-        
+    func mergetToDown() {
+        for outIndex in 0..<puzzleBoxArray[0].count {
+            
+            outLoop: for index in (1..<puzzleBoxArray.count).reversed() {
+                
+                guard let base = puzzleBoxArray[index][outIndex] else {
+                    continue
+                }
+                
+                for j in (0..<index).reversed() {
+                    
+                    guard let approacher = puzzleBoxArray[j][outIndex] else {
+                        continue
+                    }
+                    
+                    if approacher.getScore() == base.getScore() {
+                        
+                        puzzleBoxArray[j][outIndex]?.move(to: base.getLocation())
+                        
+                        self.puzzleBoxArray[index][outIndex] = self.puzzleBoxArray[j][outIndex]
+                        self.puzzleBoxArray[j][outIndex] = nil
+                        self.puzzleBoxArray[index][outIndex]?.increase()
+                        
+                        
+                        break outLoop
+                    }
+                }
+            }
+        }
     }
     
+    
     func moveToDown() {
-        
+        for outIndex in 0..<puzzleBoxArray[0].count {
+            
+            for index in (0..<puzzleBoxArray.count).reversed() {
+                
+                if puzzleBoxArray[index][outIndex] != nil { continue }
+                
+                for j in (0..<index).reversed() {
+                       
+                    guard let approacher = puzzleBoxArray[j][outIndex] else {
+                        continue
+                    }
+                    puzzleBoxArray[index][outIndex] = approacher
+                    puzzleBoxArray[j][outIndex] = nil
+                    
+                    break
+                }
+            }
+        }
+    }
+    
+    func mergetToUp() {
+        for outIndex in 0..<puzzleBoxArray[0].count {
+            
+            outLoop: for index in 0..<(puzzleBoxArray.count - 1) {
+                
+                guard let base = puzzleBoxArray[index][outIndex] else {
+                    continue
+                }
+                
+                for j in (index + 1)...puzzleBoxArray.count {
+                    
+                    guard let approacher = puzzleBoxArray[j][outIndex] else {
+                        continue
+                    }
+                    
+                    if approacher.getScore() == base.getScore() {
+                        
+                        puzzleBoxArray[j][outIndex]?.move(to: base.getLocation())
+                        
+                        self.puzzleBoxArray[index][outIndex] = self.puzzleBoxArray[j][outIndex]
+                        self.puzzleBoxArray[j][outIndex] = nil
+                        self.puzzleBoxArray[index][outIndex]?.increase()
+                            
+                        
+                        break outLoop
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    func moveToUp() {
+        for outIndex in 0..<puzzleBoxArray[0].count {
+            
+            for index in (0..<puzzleBoxArray.count) {
+                
+                if puzzleBoxArray[index][outIndex] != nil { continue }
+                
+                for j in index..<puzzleBoxArray.count {
+                       
+                    guard let approacher = puzzleBoxArray[j][outIndex] else {
+                        continue
+                    }
+                    puzzleBoxArray[index][outIndex] = approacher
+                    puzzleBoxArray[j][outIndex] = nil
+                    
+                    break
+                }
+            }
+        }
     }
     
     func increaseCurrentScore(plus score: Int) {
