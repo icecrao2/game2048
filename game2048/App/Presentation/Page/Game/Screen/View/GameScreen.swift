@@ -127,10 +127,25 @@ struct GameScreen: View {
                     }
                 }
             }
-            
-            ZStack {
-                
-                
+            GeometryReader { geo in
+                ZStack {
+                    let box1 = model.puzzleBoxArray[0][0]
+                    let box2 = model.puzzleBoxArray[0][1]
+                    
+                    Rectangle()
+                        .fill(box1!.color)
+                        .frame(width: box1?.location.width, height: box1?.location.height)
+                        .position(x: box1!.location.midX, y: box1!.location.midY)
+                    
+                    Rectangle()
+                        .fill(box2!.color)
+                        .frame(width: box2?.location.width, height: box2?.location.height)
+                        .position(x: box2!.location.midX, y: box2!.location.midY)
+                }
+                .onAppear {
+                    GameScreenModel.gameScreenRect = geo.frame(in: .local)
+                    
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(

@@ -53,4 +53,20 @@ final class PuzzleBoxModel_정상작동테스트: XCTestCase {
         
         XCTAssertEqual(expectedResult.location, sut.location)
     }
+    
+    func test_setPosition_메서드_작동테스트() throws {
+        
+        let sut = PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: 2, textColor: .white, position: (0,0))
+        GameScreenModel.gameScreenRect = CGRect(x: 0, y: 0, width: 30, height: 30)
+        PuzzleBoxModel.map = (3, 3)
+        
+        
+        sut.setPosition(position: (1, 1))
+        
+        
+        XCTAssertEqual(sut.position.0, 1)
+        XCTAssertEqual(sut.position.1, 1)
+        XCTAssertEqual(sut.location, CGRect(x: 15, y: 15, width: 10, height: 10))
+        
+    }
 }

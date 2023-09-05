@@ -27,7 +27,7 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
         self.currentScore = 0
         self.topScore = 0
         self.puzzleBoxArray = [
-            [nil, nil, nil, nil],
+            [PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 20, height: 20), color: .black, score: 0, textColor: .red, position: (0,0)), PuzzleBoxModel(id: 0, location: CGRect(x: 20, y: 0, width: 20, height: 20), color: .red, score: 0, textColor: .red, position: (0,0)), nil, nil],
             [nil, nil, nil, nil],
             [nil, nil, nil, nil],
             [nil, nil, nil, nil],
@@ -296,13 +296,16 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     
     func refreshPuzzleBoxArray() {
         
-        var copy: [[PuzzleBoxModel?]] = puzzleBoxArray
-        
-        for a in 0..<copy.count {
-            for b in 0..<copy[a].count {
-                
+        for a in 0..<puzzleBoxArray.count {
+            for b in 0..<puzzleBoxArray[a].count {        
                 puzzleBoxArray[a][b]?.setPosition(position: (a, b))
             }
         }
     }
+}
+
+
+extension GameScreenModel {
+    
+    static var gameScreenRect: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
 }

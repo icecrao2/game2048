@@ -62,6 +62,18 @@ extension PuzzleBoxModel: PuzzleBoxModelActionProtocol {
         
         self.position = position
         
+        let width = GameScreenModel.gameScreenRect.width / Double(PuzzleBoxModel.map.0)
+        let height = GameScreenModel.gameScreenRect.height / Double(PuzzleBoxModel.map.1)
+        
+        let minX = 0 + (width * Double(position.0))
+        let maxX = minX + width
+        let x = (maxX + minX) / 2
+        
+        let minY = 0 + (height * Double(position.1))
+        let maxY = minY + height
+        let y = (maxY + minY) / 2
+        
+        self.location = CGRect(x: x, y: y, width: width, height: height)
     }
 }
 
