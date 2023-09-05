@@ -245,7 +245,6 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         }
     }
     
-    
     func moveToUp() {
         for outIndex in 0..<puzzleBoxArray[0].count {
             
@@ -268,14 +267,15 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     }
     
     func increaseCurrentScore(plus score: Int) {
-        
+        self.currentScore += score
     }
     
     func setTopScore(score: Int) {
-        
+        self.topScore = score
     }
     
     func makeNewPuzzleBox() {
+        
     }
     
     func refreshPuzzleBoxArray() {

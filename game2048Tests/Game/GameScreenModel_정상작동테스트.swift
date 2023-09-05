@@ -185,4 +185,13 @@ final class GameScreenModel_정상작동테스트: XCTestCase {
         XCTAssertEqual(expectedResult, sut.puzzleBoxArray)
         
     }
+    
+    func test_increaseCurrentScore_정상작동테스트() throws {
+        
+        let sut = GameScreenModel(currentScore: 0, topScore: 0, puzzleBoxArray: [[nil]])
+        
+        sut.increaseCurrentScore(plus: 10)
+        
+        XCTAssertEqual(sut.currentScore, 10)
+    }
 }
