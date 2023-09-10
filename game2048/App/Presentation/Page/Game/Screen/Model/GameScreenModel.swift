@@ -104,7 +104,6 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         
         if let encoded = try? encoder.encode(gameSaver) {
             let plist = UserDefaults.standard
-//            plist.setValue(gameSaver, forKey: "game_save_\(mapSize)")
             plist.setValue(encoded, forKey: "game_save_\(mapSize)")
             plist.synchronize()
             

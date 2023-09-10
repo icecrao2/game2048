@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiable, Codable {
+class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiable {
     
     @Published private(set) var id: Int
     @Published private(set) var location: CGRect
@@ -25,15 +25,6 @@ class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiabl
         self.score = score
         self.textColor = textColor
         self.position = position
-    }
-    private enum CodingKeys: String, CodingKey {
-        case id
-        case location
-        case color
-        case textColor
-        case score
-        case position1
-        case position2
     }
     
     required init(from decoder: Decoder) throws {
@@ -52,17 +43,6 @@ class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiabl
         let position2 = try container.decode(Int.self, forKey: .position2)
         self.position = (position1, position2)
     }
-     
-     func encode(to encoder: Encoder) throws {
-         var container = encoder.container(keyedBy: CodingKeys.self)
-         
-         try container.encode(id, forKey: .id)
-         try container.encode(location, forKey: .location)
-         try container.encode(score, forKey: .score)
-         
-         try container.encode(position.0, forKey: .position1)
-         try container.encode(position.1, forKey: .position2)
-     }
 }
 
 extension PuzzleBoxModel: PuzzleBoxModelActionProtocol {
@@ -122,4 +102,30 @@ extension PuzzleBoxModel {
     static var newId: Int = 0
     
     static var map: (Int, Int) = (4, 4)
+}
+
+
+
+extension PuzzleBoxModel: Codable {
+    
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case location
+        case color
+        case textColor
+        case score
+        case position1
+        case position2
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+         
+        try container.encode(id, forKey: .id)
+        try container.encode(location, forKey: .location)
+        try container.encode(score, forKey: .score)
+         
+        try container.encode(position.0, forKey: .position1)
+        try container.encode(position.1, forKey: .position2)
+    }
 }
