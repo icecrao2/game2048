@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D05564E72AAD8327006A6F72 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05564E62AAD8327006A6F72 /* Direction.swift */; };
+		D05564EA2AAD9B65006A6F72 /* GameSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05564E92AAD9B65006A6F72 /* GameSaver.swift */; };
 		D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF70E2AA432D300F800AE /* game2048App.swift */; };
 		D0AFF7112AA432D300F800AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7102AA432D300F800AE /* ContentView.swift */; };
 		D0AFF7132AA432D400F800AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AFF7122AA432D400F800AE /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		D05564E62AAD8327006A6F72 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		D05564E92AAD9B65006A6F72 /* GameSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSaver.swift; sourceTree = "<group>"; };
 		D0AFF70B2AA432D300F800AE /* game2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AFF70E2AA432D300F800AE /* game2048App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game2048App.swift; sourceTree = "<group>"; };
 		D0AFF7102AA432D300F800AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 				D05564E62AAD8327006A6F72 /* Direction.swift */,
 			);
 			path = cases;
+			sourceTree = "<group>";
+		};
+		D05564E82AAD9B5D006A6F72 /* Saver */ = {
+			isa = PBXGroup;
+			children = (
+				D05564E92AAD9B65006A6F72 /* GameSaver.swift */,
+			);
+			path = Saver;
 			sourceTree = "<group>";
 		};
 		D0AFF7022AA432D300F800AE = {
@@ -301,6 +311,7 @@
 		D0AFF7662AA458CD00F800AE /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				D05564E82AAD9B5D006A6F72 /* Saver */,
 				D0AFF7782AA4633000F800AE /* Box */,
 				D0AFF76F2AA45F6E00F800AE /* Screen */,
 			);
@@ -528,6 +539,7 @@
 				D0AFF75B2AA442CD00F800AE /* ViewConst.swift in Sources */,
 				D0AFF7412AA433EA00F800AE /* MainScreen.swift in Sources */,
 				D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */,
+				D05564EA2AAD9B65006A6F72 /* GameSaver.swift in Sources */,
 				D0AFF76E2AA4590B00F800AE /* GameScreen.swift in Sources */,
 				D0AFF7572AA4422800F800AE /* ColorExtension.swift in Sources */,
 			);

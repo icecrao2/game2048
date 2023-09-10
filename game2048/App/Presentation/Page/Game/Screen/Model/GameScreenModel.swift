@@ -72,6 +72,46 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
 extension GameScreenModel: GameScreenModelActionProtocol {
     
     
+    func loadGame() {
+        let mapSize = PuzzleBoxModel.map.0
+        
+        let plist = UserDefaults.standard
+        guard let data = plist.object(forKey: "game_save_\(mapSize)") as? Data else {
+            return
+        }
+        
+        let decoder = JSONDecoder()
+               
+        guard let decodedGameSaver = try? decoder.decode(GameSaver.self, from: data) else {
+            return
+        }
+        
+        PuzzleBoxModel.newId = decodedGameSaver.newId
+        self.currentScore = decodedGameSaver.currentScore
+        self.topScore = decodedGameSaver.topScore
+        self.puzzleBoxArray = decodedGameSaver.puzzleBoxArray
+        
+        refreshPuzzleBoxArray()
+    }
+    
+    func saveGame() {
+        
+        let encoder = JSONEncoder()
+        
+        let mapSize = PuzzleBoxModel.map.0
+        
+        let gameSaver = GameSaver(newId: PuzzleBoxModel.newId, topScore: topScore, currentScore: currentScore, puzzleBoxArray: puzzleBoxArray)
+        
+        if let encoded = try? encoder.encode(gameSaver) {
+            let plist = UserDefaults.standard
+//            plist.setValue(gameSaver, forKey: "game_save_\(mapSize)")
+            plist.setValue(encoded, forKey: "game_save_\(mapSize)")
+            plist.synchronize()
+            
+        }
+    }
+    
+    
     
     func mergeToRight() {
         for outIndex in 0..<puzzleBoxArray.count {

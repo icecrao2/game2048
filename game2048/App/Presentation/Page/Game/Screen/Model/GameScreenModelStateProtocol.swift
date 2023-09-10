@@ -20,6 +20,8 @@ protocol GameScreenModelStateProtocol {
 
 protocol GameScreenModelActionProtocol {
     
+    func loadGame()
+    func saveGame()
     
     func mergeToRight()
     

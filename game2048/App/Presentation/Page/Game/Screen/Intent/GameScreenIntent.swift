@@ -35,7 +35,7 @@ extension GameScreenIntent: GameScreenIntentProtocol {
     
     
     func viewOnAppear() {
-        
+        model.loadGame()
     }
     
     func gameViewOnAppear() {
@@ -96,10 +96,10 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         startDragPosition = .zero
         dragDirection = .none
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.readyToNextStage()
             self.canSwipe = true
+            self.model.saveGame()
         }
     }
-    
 }
