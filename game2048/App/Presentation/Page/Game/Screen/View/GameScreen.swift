@@ -39,6 +39,10 @@ extension GameScreen {
 
 struct GameScreen: View {
     
+    @State private var currentPosition: CGPoint = .zero
+    @State private var startDragPosition: CGPoint = .zero
+    @State private var dragDirection: Direction = .none
+    
     @StateObject var container: MVIContainer<GameScreenIntentProtocol, GameScreenModelStateProtocol>
     
     private var intent: GameScreenIntentProtocol { container.intent }
@@ -151,6 +155,17 @@ struct GameScreen: View {
             .background(
                 RoundedRectangle(cornerRadius: 5)
                     .stroke(ViewConst.palette4, lineWidth: 10)
+                    .background(.white)
+                    .gesture(
+                        DragGesture()
+                            .onChanged { gesture in
+                                intent.didDragChange(gesture)
+                            }
+                            .onEnded { gesture in
+                                intent.didDragEnd()
+                            }
+                    )
+                
             )
             
             Spacer()

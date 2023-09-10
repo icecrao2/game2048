@@ -6,13 +6,14 @@
 //
 
 import Foundation
-
+import SwiftUI
 
 protocol GameScreenIntentProtocol {
     
     func viewOnAppear()
     func gameViewOnAppear()
-    func test()
     
+    func didDragChange(_ value: DragGesture.Value)
+    func didDragEnd()
 }
 

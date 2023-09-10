@@ -44,9 +44,10 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
         self.currentScore = 0
         self.topScore = 0
         self.puzzleBoxArray = [
-            [nil, nil, nil],
-            [nil, nil, nil],
-            [nil, nil, nil]
+            [nil, nil, nil, nil],
+            [nil, nil, nil, nil],
+            [nil, nil, nil, nil],
+            [nil, nil, nil, nil]
         ]
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D05564E72AAD8327006A6F72 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05564E62AAD8327006A6F72 /* Direction.swift */; };
 		D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF70E2AA432D300F800AE /* game2048App.swift */; };
 		D0AFF7112AA432D300F800AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7102AA432D300F800AE /* ContentView.swift */; };
 		D0AFF7132AA432D400F800AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AFF7122AA432D400F800AE /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D05564E62AAD8327006A6F72 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		D0AFF70B2AA432D300F800AE /* game2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AFF70E2AA432D300F800AE /* game2048App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game2048App.swift; sourceTree = "<group>"; };
 		D0AFF7102AA432D300F800AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D05564E52AAD8315006A6F72 /* cases */ = {
+			isa = PBXGroup;
+			children = (
+				D05564E62AAD8327006A6F72 /* Direction.swift */,
+			);
+			path = cases;
+			sourceTree = "<group>";
+		};
 		D0AFF7022AA432D300F800AE = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +301,7 @@
 		D0AFF7662AA458CD00F800AE /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				D0AFF7782AA4633000F800AE /* Box */,
 				D0AFF76F2AA45F6E00F800AE /* Screen */,
 			);
 			path = Game;
@@ -325,7 +336,7 @@
 		D0AFF76F2AA45F6E00F800AE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				D0AFF7782AA4633000F800AE /* Box */,
+				D05564E52AAD8315006A6F72 /* cases */,
 				D0AFF7692AA458D500F800AE /* Model */,
 				D0AFF7682AA458D100F800AE /* Intent */,
 				D0AFF7672AA458CF00F800AE /* View */,
@@ -512,6 +523,7 @@
 				D0AFF77D2AA464B200F800AE /* PuzzleBoxModel.swift in Sources */,
 				D0AFF7652AA4578E00F800AE /* NavigationManager.swift in Sources */,
 				D0AFF74D2AA4385A00F800AE /* MainScreenModelProtocols.swift in Sources */,
+				D05564E72AAD8327006A6F72 /* Direction.swift in Sources */,
 				D0AFF7112AA432D300F800AE /* ContentView.swift in Sources */,
 				D0AFF75B2AA442CD00F800AE /* ViewConst.swift in Sources */,
 				D0AFF7412AA433EA00F800AE /* MainScreen.swift in Sources */,
