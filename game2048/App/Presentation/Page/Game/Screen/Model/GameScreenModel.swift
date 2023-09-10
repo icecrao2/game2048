@@ -86,7 +86,6 @@ extension GameScreenModel: GameScreenModelActionProtocol {
             return
         }
         
-        PuzzleBoxModel.newId = decodedGameSaver.newId
         self.currentScore = decodedGameSaver.currentScore
         self.topScore = decodedGameSaver.topScore
         self.puzzleBoxArray = decodedGameSaver.puzzleBoxArray
@@ -100,7 +99,7 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         
         let mapSize = PuzzleBoxModel.map.0
         
-        let gameSaver = GameSaver(newId: PuzzleBoxModel.newId, topScore: topScore, currentScore: currentScore, puzzleBoxArray: puzzleBoxArray)
+        let gameSaver = GameSaver(topScore: topScore, currentScore: currentScore, puzzleBoxArray: puzzleBoxArray)
         
         if let encoded = try? encoder.encode(gameSaver) {
             let plist = UserDefaults.standard
@@ -348,9 +347,7 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         
         let result = emptySpace[randomInt]
         
-        puzzleBoxArray[result.0][result.1] = PuzzleBoxModel(id: PuzzleBoxModel.newId, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: 2, textColor: ViewConst.textColors[2]!, position: (result.0, result.1))
-        
-        PuzzleBoxModel.newId += 1
+        puzzleBoxArray[result.0][result.1] = PuzzleBoxModel(location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: 2, textColor: ViewConst.textColors[2]!, position: (result.0, result.1))
     }
     
     func refreshPuzzleBoxArray() {

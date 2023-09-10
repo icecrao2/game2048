@@ -10,7 +10,7 @@ import SwiftUI
 
 protocol PuzzleBoxModelStateProtocol {
  
-    var id: Int { get }
+    var id: UUID { get }
     var location: CGRect { get }
     var color: Color { get }
     var score: Int { get }
@@ -21,7 +21,7 @@ protocol PuzzleBoxModelActionProtocol {
     func increase()
     func move(to location: CGRect)
     
-    func getID() -> Int
+    func getID() -> UUID
     func getLocation() -> CGRect
     func getColor() -> Color
     func getScore() -> Int

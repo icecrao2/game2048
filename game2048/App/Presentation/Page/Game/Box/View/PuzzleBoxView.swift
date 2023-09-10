@@ -32,7 +32,6 @@ struct PuzzleBoxView_Previews: PreviewProvider {
     static var previews: some View {
         PuzzleBoxView(
             model: PuzzleBoxModel(
-                id: 0,
                 location: CGRect(x: 0, y: 0, width: 50, height: 50),
                 color: .red,
                 score: 2,

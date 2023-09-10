@@ -10,7 +10,6 @@ import Foundation
 
 struct GameSaver: Codable {
     
-    let newId: Int
     let topScore: Int
     let currentScore: Int
     let puzzleBoxArray: [[PuzzleBoxModel?]]

@@ -11,14 +11,14 @@ import SwiftUI
 
 class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiable {
     
-    @Published private(set) var id: Int
+    private(set) var id = UUID()
     @Published private(set) var location: CGRect
     @Published private(set) var color: Color
     @Published private(set) var textColor: Color
     @Published private(set) var score: Int
     @Published private(set) var position: (Int, Int)
     
-    init(id: Int, location: CGRect, color: Color, score: Int, textColor: Color, position: (Int, Int)) {
+    init(id: UUID, location: CGRect, color: Color, score: Int, textColor: Color, position: (Int, Int)) {
         self.id = id
         self.location = location
         self.color = color
@@ -27,10 +27,19 @@ class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiabl
         self.position = position
     }
     
+    init(location: CGRect, color: Color, score: Int, textColor: Color, position: (Int, Int)) {
+        self.location = location
+        self.color = color
+        self.score = score
+        self.textColor = textColor
+        self.position = position
+    }
+    
+    
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.id = try container.decode(Int.self, forKey: .id)
+        self.id = try container.decode(UUID.self, forKey: .id)
         self.location = try container.decode(CGRect.self, forKey: .location)
         
         let score = try container.decode(Int.self, forKey: .score)
@@ -47,7 +56,7 @@ class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiabl
 
 extension PuzzleBoxModel: PuzzleBoxModelActionProtocol {
     
-    func getID() -> Int {
+    func getID() -> UUID {
         return id
     }
     
