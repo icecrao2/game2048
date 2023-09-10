@@ -15,5 +15,8 @@ protocol GameScreenIntentProtocol {
     
     func didDragChange(_ value: DragGesture.Value)
     func didDragEnd()
+    
+    func didTapUndoButton()
+    func didTapResetButton()
 }
 

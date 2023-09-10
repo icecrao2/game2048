@@ -78,15 +78,19 @@ extension GameScreenIntent: GameScreenIntentProtocol {
             canSwipe = true
             return
         case .up:
+            model.rememberCurrentPuzzleBoxArray()
             model.mergetToUp()
             model.moveToUp()
         case .down:
+            model.rememberCurrentPuzzleBoxArray()
             model.mergetToDown()
             model.moveToDown()
         case .left:
+            model.rememberCurrentPuzzleBoxArray()
             model.mergeToLeft()
             model.moveToLeft()
         case .right:
+            model.rememberCurrentPuzzleBoxArray()
             model.mergeToRight()
             model.moveToRight()
         }
@@ -101,5 +105,20 @@ extension GameScreenIntent: GameScreenIntentProtocol {
             self.canSwipe = true
             self.model.saveGame()
         }
+    }
+    
+    func didTapUndoButton() {
+        model.undoLastChange()
+        model.refreshPuzzleBoxArray()
+        
+        model.saveGame()
+    }
+    
+    func didTapResetButton() {
+        model.reset()
+        model.makeNewPuzzleBox()
+        model.refreshPuzzleBoxArray()
+        
+        model.saveGame()
     }
 }

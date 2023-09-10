@@ -62,7 +62,7 @@ struct GameScreen: View {
                 Spacer()
                 
                 HStack(spacing: 10) {
-                    Text("점수\nxxxxx")
+                    Text("점수\n\(model.currentScore)")
                         .foregroundColor(Color(hex: "F8F0E5"))
                         .multilineTextAlignment(.center)
                         .frame(width: 60, height: 60)
@@ -71,7 +71,7 @@ struct GameScreen: View {
                                 .fill(ViewConst.palette3)
                         )
                     
-                    Text("최고점수\nxxxxx")
+                    Text("최고점수\n\(model.topScore)")
                         .foregroundColor(Color(hex: "F8F0E5"))
                         .multilineTextAlignment(.center)
                         .frame(width: 80, height: 60)
@@ -104,7 +104,7 @@ struct GameScreen: View {
                 
                 HStack {
                     Button {
-                        
+                        intent.didTapUndoButton()
                     } label: {
                         Image(systemName: "arrow.uturn.left")
                             .resizable()
@@ -119,7 +119,7 @@ struct GameScreen: View {
                     }
                     
                     Button {
-                        
+                        intent.didTapResetButton()
                     } label: {
                         Image(systemName: "arrow.triangle.2.circlepath")
                             .resizable()

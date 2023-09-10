@@ -15,6 +15,8 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
     
     @Published private(set) var puzzleBoxArray: [[PuzzleBoxModel?]]
     
+    private var coppiedPuzzleBoxArray: [[PuzzleBoxModel?]]
+    
     var puzzleBoxes: [PuzzleBoxModel] {
         
         var result: [PuzzleBoxModel] = []
@@ -49,12 +51,19 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
             [nil, nil, nil, nil],
             [nil, nil, nil, nil]
         ]
+        self.coppiedPuzzleBoxArray = [
+            [nil, nil, nil, nil],
+            [nil, nil, nil, nil],
+            [nil, nil, nil, nil],
+            [nil, nil, nil, nil]
+        ]
     }
     
     init(currentScore: Int, topScore: Int, puzzleBoxArray: [[PuzzleBoxModel?]]) {
         self.currentScore = currentScore
         self.topScore = topScore
         self.puzzleBoxArray = puzzleBoxArray
+        self.coppiedPuzzleBoxArray = puzzleBoxArray
     }
     
     
@@ -109,6 +118,21 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         }
     }
     
+    
+    
+    func undoLastChange() {
+        self.puzzleBoxArray = self.coppiedPuzzleBoxArray
+    }
+    
+    func reset() {
+        
+        for i in 0..<puzzleBoxArray.count {
+            
+            for j in 0..<puzzleBoxArray[i].count {
+                puzzleBoxArray[i][j] = nil
+            }
+        }
+    }
     
     
     func mergeToRight() {
@@ -357,6 +381,10 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                 puzzleBoxArray[a][b]?.setPosition(position: (a, b))
             }
         }
+    }
+    
+    func rememberCurrentPuzzleBoxArray() {
+        coppiedPuzzleBoxArray = puzzleBoxArray
     }
 }
 

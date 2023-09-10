@@ -23,6 +23,9 @@ protocol GameScreenModelActionProtocol {
     func loadGame()
     func saveGame()
     
+    func undoLastChange()
+    func reset()
+    
     func mergeToRight()
     
     func moveToRight()
@@ -47,4 +50,6 @@ protocol GameScreenModelActionProtocol {
     func makeNewPuzzleBox()
     
     func refreshPuzzleBoxArray()
+    
+    func rememberCurrentPuzzleBoxArray()
 }
