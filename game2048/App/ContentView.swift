@@ -37,7 +37,8 @@ extension ContentView {
     var build: some View {
         
         ZStack {
-            MainScreen.build()
+//            MainScreen.build()
+            GameScreen.build()
         }
         .environmentObject(navigationManager)
         .frame(maxWidth: .infinity, maxHeight: .infinity)

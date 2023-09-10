@@ -21,4 +21,20 @@ class GameScreenIntent {
 extension GameScreenIntent: GameScreenIntentProtocol {
     
     
+    func viewOnAppear() {
+        
+    }
+    
+    func gameViewOnAppear() {
+        
+        model.makeNewPuzzleBox()
+        model.refreshPuzzleBoxArray()
+    }
+    
+    func test() {
+        
+        model.moveToRight()
+        model.refreshPuzzleBoxArray()
+    }
+    
 }

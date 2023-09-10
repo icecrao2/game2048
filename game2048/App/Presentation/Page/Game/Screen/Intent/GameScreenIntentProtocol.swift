@@ -10,5 +10,9 @@ import Foundation
 
 protocol GameScreenIntentProtocol {
     
+    func viewOnAppear()
+    func gameViewOnAppear()
+    func test()
+    
 }
 

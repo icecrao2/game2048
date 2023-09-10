@@ -31,6 +31,9 @@ extension GameScreen {
 extension GameScreen {
     var body: some View {
         build
+            .onAppear {
+                intent.viewOnAppear()
+            }
     }
 }
 
@@ -127,27 +130,24 @@ struct GameScreen: View {
                     }
                 }
             }
+            
             GeometryReader { geo in
                 ZStack {
-                    let box1 = model.puzzleBoxArray[0][0]
-                    let box2 = model.puzzleBoxArray[0][1]
-                    
-                    Rectangle()
-                        .fill(box1!.color)
-                        .frame(width: box1?.location.width, height: box1?.location.height)
-                        .position(x: box1!.location.midX, y: box1!.location.midY)
-                    
-                    Rectangle()
-                        .fill(box2!.color)
-                        .frame(width: box2?.location.width, height: box2?.location.height)
-                        .position(x: box2!.location.midX, y: box2!.location.midY)
+                    ForEach(model.puzzleBoxes) { box in
+                        Rectangle()
+                            .fill(box.color)
+                            .frame(width: box.location.width, height: box.location.height)
+                            .position(x: box.location.midX, y: box.location.midY)
+                            .id(box.id)
+                            .animation(.default, value: box.location)
+                    }
                 }
                 .onAppear {
                     GameScreenModel.gameScreenRect = geo.frame(in: .local)
-                    
+                    intent.gameViewOnAppear()
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .frame(width: 300, height: 300)
             .background(
                 RoundedRectangle(cornerRadius: 5)
                     .stroke(ViewConst.palette4, lineWidth: 10)

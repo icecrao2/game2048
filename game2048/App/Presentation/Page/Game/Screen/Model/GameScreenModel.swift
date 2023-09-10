@@ -9,12 +9,29 @@ import Foundation
 import SwiftUI
 
 class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
- 
+    
     @Published private(set) var currentScore: Int = 0
     @Published private(set) var topScore: Int = 0
     
     @Published private(set) var puzzleBoxArray: [[PuzzleBoxModel?]]
-
+    
+    var puzzleBoxes: [PuzzleBoxModel] {
+        
+        var result: [PuzzleBoxModel] = []
+        
+        for i in 0..<puzzleBoxArray.count {
+            for j in 0..<puzzleBoxArray[i].count {
+                
+                guard let box = puzzleBoxArray[i][j] else {
+                    continue
+                }
+                result.append(box)
+            }
+        }
+        
+        return result
+    }
+    
     private var scoreArray: [[Int]] {
         puzzleBoxArray.map { row in
             return row.map { box in
@@ -27,10 +44,9 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
         self.currentScore = 0
         self.topScore = 0
         self.puzzleBoxArray = [
-            [PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 20, height: 20), color: .black, score: 0, textColor: .red, position: (0,0)), PuzzleBoxModel(id: 0, location: CGRect(x: 20, y: 0, width: 20, height: 20), color: .red, score: 0, textColor: .red, position: (0,0)), nil, nil],
-            [nil, nil, nil, nil],
-            [nil, nil, nil, nil],
-            [nil, nil, nil, nil],
+            [nil, nil, nil],
+            [nil, nil, nil],
+            [nil, nil, nil]
         ]
     }
     
@@ -99,6 +115,7 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                     guard let approacher = puzzleBoxArray[outIndex][j] else {
                         continue
                     }
+                    
                     puzzleBoxArray[outIndex][index] = approacher
                     puzzleBoxArray[outIndex][j] = nil
                     
@@ -285,6 +302,7 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                 }
             }
         }
+        
         let randomInt = Int.random(in: 0..<emptySpace.count)
         
         let result = emptySpace[randomInt]

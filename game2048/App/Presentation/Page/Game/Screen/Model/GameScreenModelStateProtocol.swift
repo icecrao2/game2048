@@ -13,8 +13,9 @@ protocol GameScreenModelStateProtocol {
     var currentScore: Int { get }
     var topScore: Int { get }
     
-    var puzzleBoxArray: [[PuzzleBoxModel?]] { get }
+//    var puzzleBoxArray: [[PuzzleBoxModel?]] { get }
     
+    var puzzleBoxes: [PuzzleBoxModel] { get }
 }
 
 protocol GameScreenModelActionProtocol {
