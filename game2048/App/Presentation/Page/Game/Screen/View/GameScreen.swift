@@ -138,18 +138,39 @@ struct GameScreen: View {
             GeometryReader { geo in
                 ZStack {
                     ForEach(model.puzzleBoxes) { box in
-                        Rectangle()
-                            .fill(box.color)
-                            .frame(width: box.location.width, height: box.location.height)
-                            .position(x: box.location.midX, y: box.location.midY)
-                            .id(box.id)
-                            .animation(.default, value: box.location)
+                        
+                        ZStack {
+                            Text("\(box.score)")
+                                .foregroundColor(box.textColor)
+                                .font(Font.system(size: 26))
+                                .fontWeight(.bold)
+                        }
+                        .position(x: box.location.midX, y: box.location.midY)
+                        .frame(width: box.location.width, height: box.location.height)
+                        .animation(.default, value: box.location)
+                        .background(
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(box.color)
+                                .id(box.id)
+                                .position(x: box.location.midX, y: box.location.midY)
+                                .frame(width: box.location.width, height: box.location.height)
+                                .animation(.default, value: box.location)
+                        )
                     }
                 }
                 .onAppear {
                     GameScreenModel.gameScreenRect = geo.frame(in: .local)
                     intent.gameViewOnAppear()
                 }
+                .gesture(
+                    DragGesture()
+                        .onChanged { gesture in
+                            intent.didDragChange(gesture)
+                        }
+                        .onEnded { gesture in
+                            intent.didDragEnd()
+                        }
+                )
             }
             .frame(width: 300, height: 300)
             .background(

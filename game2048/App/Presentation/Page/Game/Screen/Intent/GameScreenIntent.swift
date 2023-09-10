@@ -16,8 +16,15 @@ class GameScreenIntent {
     private var startDragPosition: CGPoint = .zero
     private var dragDirection: Direction = .none
     
+    private var canSwipe: Bool = true
+    
     init(model: GameScreenModelActionProtocol) {
         self.model = model
+    }
+    
+    private func readyToNextStage() {
+        model.makeNewPuzzleBox()
+        model.refreshPuzzleBoxArray()
     }
 }
 
@@ -62,16 +69,25 @@ extension GameScreenIntent: GameScreenIntentProtocol {
     
     func didDragEnd() {
         
+        if !canSwipe { return }
+        
+        canSwipe = false
+        
         switch dragDirection {
         case .none:
-            break
+            canSwipe = true
+            return
         case .up:
+            model.mergetToUp()
             model.moveToUp()
         case .down:
+            model.mergetToDown()
             model.moveToDown()
         case .left:
+            model.mergeToLeft()
             model.moveToLeft()
         case .right:
+            model.mergeToRight()
             model.moveToRight()
         }
         model.refreshPuzzleBoxArray()
@@ -79,5 +95,11 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         
         startDragPosition = .zero
         dragDirection = .none
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            self.readyToNextStage()
+            self.canSwipe = true
+        }
     }
+    
 }

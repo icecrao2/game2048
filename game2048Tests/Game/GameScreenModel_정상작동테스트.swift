@@ -206,6 +206,8 @@ final class GameScreenModel_정상작동테스트: XCTestCase {
     
     func test_makeNewPuzzleBox_정상작동테스트() throws {
         
+        PuzzleBoxModel.newId = 0
+        
         let sut = GameScreenModel(currentScore: 0, topScore: 0, puzzleBoxArray: [
                 [PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0)),PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0)),PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0))],
                 [PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0)), nil, PuzzleBoxModel(id: 0, location: CGRect(x: 0, y: 0, width: 0, height: 0), color: .red, score: 0, textColor: .red, position: (0, 0))],

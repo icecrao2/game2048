@@ -95,9 +95,9 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                         self.puzzleBoxArray[outIndex][index] = self.puzzleBoxArray[outIndex][j]
                         self.puzzleBoxArray[outIndex][j] = nil
                         self.puzzleBoxArray[outIndex][index]?.increase()
-
-                        break outLoop
+                        
                     }
+                    continue outLoop
                 }
             }
         }
@@ -136,7 +136,7 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                     continue
                 }
                 
-                for j in (index + 1)...puzzleBoxArray[outIndex].count {
+                for j in (index + 1)..<puzzleBoxArray[outIndex].count {
                     
                     guard let approacher = puzzleBoxArray[outIndex][j] else {
                         continue
@@ -149,10 +149,10 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                         self.puzzleBoxArray[outIndex][index] = self.puzzleBoxArray[outIndex][j]
                         self.puzzleBoxArray[outIndex][j] = nil
                         self.puzzleBoxArray[outIndex][index]?.increase()
-                            
                         
-                        break outLoop
                     }
+                    
+                    continue outLoop
                 }
             }
         }
@@ -203,8 +203,9 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                         self.puzzleBoxArray[index][outIndex]?.increase()
                         
                         
-                        break outLoop
                     }
+                    
+                    continue outLoop
                 }
             }
         }
@@ -241,7 +242,7 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                     continue
                 }
                 
-                for j in (index + 1)...puzzleBoxArray.count {
+                for j in (index + 1)..<puzzleBoxArray.count {
                     
                     guard let approacher = puzzleBoxArray[j][outIndex] else {
                         continue
@@ -254,10 +255,9 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                         self.puzzleBoxArray[index][outIndex] = self.puzzleBoxArray[j][outIndex]
                         self.puzzleBoxArray[j][outIndex] = nil
                         self.puzzleBoxArray[index][outIndex]?.increase()
-                            
                         
-                        break outLoop
                     }
+                    continue outLoop
                 }
             }
         }
@@ -277,6 +277,7 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                     }
                     puzzleBoxArray[index][outIndex] = approacher
                     puzzleBoxArray[j][outIndex] = nil
+                    
                     
                     break
                 }
