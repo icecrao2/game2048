@@ -226,6 +226,7 @@
 		D0AFF73C2AA433DB00F800AE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D0B3849A2AB6E87200CC1DA0 /* cases */,
 				D0AFF73F2AA433E400F800AE /* Model */,
 				D0AFF73E2AA433E200F800AE /* Intent */,
 				D0AFF73D2AA433DE00F800AE /* View */,
@@ -255,7 +256,6 @@
 			children = (
 				D0AFF7472AA437BD00F800AE /* MainScreenModel.swift */,
 				D0AFF74C2AA4385A00F800AE /* MainScreenModelProtocols.swift */,
-				D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,6 +391,14 @@
 				D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		D0B3849A2AB6E87200CC1DA0 /* cases */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */,
+			);
+			path = cases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

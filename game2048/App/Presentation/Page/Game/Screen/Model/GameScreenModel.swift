@@ -239,6 +239,12 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     func loadGame() {
         let mapSize = PuzzleBoxModel.map.0
         
+        puzzleBoxArray = []
+        
+        for _ in 0..<mapSize {
+            self.puzzleBoxArray.append([PuzzleBoxModel?](repeating: nil, count: mapSize))
+        }
+        
         let plist = UserDefaults.standard
         guard let data = plist.object(forKey: "game_save_\(mapSize)") as? Data else {
             return

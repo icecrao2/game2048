@@ -19,4 +19,22 @@ extension MainScreenModel: MainScreenModelActionProtocol {
     func changeModeTo(next: Bool) {
         currentMode = next ? currentMode.next() : currentMode.previous()
     }
+    
+    func applyCurrentMode() {
+        
+        switch currentMode {
+        case .ThreeOnThree:
+            PuzzleBoxModel.map = (3, 3)
+        case .FourOnFour:
+            PuzzleBoxModel.map = (4, 4)
+        case .FiveOnFive:
+            PuzzleBoxModel.map = (5, 5)
+        case .SixOnSix:
+            PuzzleBoxModel.map = (6, 6)
+        case .EightOnEight:
+            PuzzleBoxModel.map = (8, 8)
+        }
+        
+        
+    }
 }
