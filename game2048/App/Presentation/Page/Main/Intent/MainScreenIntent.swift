@@ -10,6 +10,8 @@ import Foundation
 
 class MainScreenIntent {
     
+    private weak var navigationManager: NavigationManager?
+    
     private var model: MainScreenModelActionProtocol
     
     
@@ -25,8 +27,12 @@ extension MainScreenIntent: MainScreenIntentProtocol {
         
     }
     
+    func settingNavigationManager(_ settings: NavigationManager) {
+        self.navigationManager = settings
+    }
+    
     func viewOnDisappear() {
-        
+        self.navigationManager = nil
     }
     
     func didTapLeftModeChangeButton() {
@@ -38,7 +44,7 @@ extension MainScreenIntent: MainScreenIntentProtocol {
     }
     
     func didTapGameStartButton() {
-        
+        navigationManager?.go(.GameView)
     }
     
     func didTapSettingButton() {
