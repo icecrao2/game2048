@@ -13,9 +13,13 @@ protocol GameScreenIntentProtocol {
     func viewOnAppear()
     func gameViewOnAppear()
     
+    func settingNavigationManager(_ settings: NavigationManager?)
+    func viewOnDisappear()
+    
     func didDragChange(_ value: DragGesture.Value)
     func didDragEnd()
     
+    func didTapHomeButton()
     func didTapUndoButton()
     func didTapResetButton()
 }

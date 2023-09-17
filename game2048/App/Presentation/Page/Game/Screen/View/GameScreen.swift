@@ -30,18 +30,30 @@ extension GameScreen {
 
 extension GameScreen {
     var body: some View {
-        build
-            .onAppear {
-                intent.viewOnAppear()
+        
+        ZStack {
+            
+            build
+                .onAppear {
+                    intent.settingNavigationManager(navigationManager)
+                    intent.viewOnAppear()
+                }
+                .onDisappear {
+                    intent.viewOnDisappear()
+                }
+            if model.gameStatus == .gameOver {
+                gameOverPopup
             }
+        }
     }
 }
 
+
+
+
 struct GameScreen: View {
     
-    @State private var currentPosition: CGPoint = .zero
-    @State private var startDragPosition: CGPoint = .zero
-    @State private var dragDirection: Direction = .none
+    @EnvironmentObject var navigationManager: NavigationManager
     
     @StateObject var container: MVIContainer<GameScreenIntentProtocol, GameScreenModelStateProtocol>
     
@@ -86,7 +98,7 @@ struct GameScreen: View {
             HStack {
                 
                 Button {
-                    
+                    intent.didTapHomeButton()
                 } label: {
                     Image(systemName: "house.fill")
                         .resizable()
@@ -197,8 +209,104 @@ struct GameScreen: View {
     }
 }
 
+
+extension GameScreen {
+    
+    var gameOverPopup: some View {
+        VStack {
+            Text("Game Over")
+                .font(Font.system(size: 36))
+                .bold()
+                .foregroundColor(.white)
+            
+            VStack(spacing: 15) {
+                
+                Button {
+                    intent.didTapHomeButton()
+                } label: {
+                    HStack {
+                        Image(systemName: "house.fill")
+                            .resizable()
+                            .foregroundColor(Color(hex: "F8F0E5"))
+                            .multilineTextAlignment(.center)
+                            .padding(10)
+                            .frame(width: 50, height: 50)
+                        
+                        Text("돌아가기")
+                            .foregroundColor(.white)
+                            .bold()
+                        
+                    }
+                    .frame(width: 200, height: 60)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(ViewConst.highlightButtonColor)
+                    )
+                }
+                
+                Button {
+                    intent.didTapUndoButton()
+                } label: {
+                    HStack {
+                        Image(systemName: "arrow.uturn.left")
+                            .resizable()
+                            .foregroundColor(Color(hex: "F8F0E5"))
+                            .multilineTextAlignment(.center)
+                            .padding(10)
+                            .frame(width: 55, height: 50)
+                        
+                        Text("되돌리기")
+                            .foregroundColor(.white)
+                            .bold()
+                    }
+                    .frame(width: 200, height: 60)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(ViewConst.highlightButtonColor)
+                    )
+                }
+                
+                Button {
+                    intent.didTapResetButton()
+                } label: {
+                    HStack{
+                        Image(systemName: "arrow.triangle.2.circlepath")
+                            .resizable()
+                            .foregroundColor(Color(hex: "F8F0E5"))
+                            .multilineTextAlignment(.center)
+                            .padding(10)
+                            .frame(width: 55, height: 50)
+                        
+                        
+                        Text("다시하기")
+                            .foregroundColor(.white)
+                            .bold()
+                    }
+                    .frame(width: 200, height: 60)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(ViewConst.highlightButtonColor)
+                    )
+                        
+                }
+            }
+            
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(
+            Rectangle()
+                .fill(.gray.opacity(0.8))
+                .ignoresSafeArea()
+        )
+    }
+}
+
 struct GameScreen_Previews: PreviewProvider {
+    
+    static var navigationManager = NavigationManager()
+    
     static var previews: some View {
         GameScreen.build()
+            .environmentObject(navigationManager)
     }
 }

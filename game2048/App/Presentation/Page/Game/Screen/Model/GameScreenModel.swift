@@ -18,6 +18,9 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
     @Published private(set) var gameStatus: GameStatus = .playing
     
     private var coppiedPuzzleBoxArray: [[PuzzleBoxModel?]]
+    private var coppiedCurrentScore: Int = 0
+    private var coppiedTopScore: Int = 0
+    
     
     var puzzleBoxes: [PuzzleBoxModel] {
         
@@ -271,7 +274,11 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     }
     
     func undoLastChange() {
+        if currentScore == 0 { return }
+        
         self.puzzleBoxArray = self.coppiedPuzzleBoxArray
+        self.currentScore = self.coppiedCurrentScore
+        self.topScore = self.coppiedTopScore
     }
     
     func reset() {
@@ -282,6 +289,9 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                 puzzleBoxArray[i][j] = nil
             }
         }
+        currentScore = 0
+        coppiedCurrentScore = 0
+        coppiedTopScore = 0
     }
     
     func canSwipe(to direction: Direction) -> Bool {
@@ -318,12 +328,20 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                     
                     if approacher.getScore() == base.getScore() {
                         
-                        puzzleBoxArray[outIndex][j]?.move(to: base.getLocation())
+//                        puzzleBoxArray[outIndex][j]?.move(to: base.getLocation())
                         
                         self.puzzleBoxArray[outIndex][index] = self.puzzleBoxArray[outIndex][j]
                         self.puzzleBoxArray[outIndex][j] = nil
                         self.puzzleBoxArray[outIndex][index]?.increase()
                         
+                        coppiedCurrentScore = currentScore
+                        coppiedTopScore = topScore
+                        
+                        increaseCurrentScore(plus: self.puzzleBoxArray[outIndex][index]!.getScore())
+                        
+                        if currentScore >= topScore {
+                            setTopScore(score: currentScore)
+                        }
                     }
                     continue outLoop
                 }
@@ -372,12 +390,20 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                     
                     if approacher.getScore() == base.getScore() {
                         
-                        puzzleBoxArray[outIndex][j]?.move(to: base.getLocation())
+//                        puzzleBoxArray[outIndex][j]?.move(to: base.getLocation())
                         
                         self.puzzleBoxArray[outIndex][index] = self.puzzleBoxArray[outIndex][j]
                         self.puzzleBoxArray[outIndex][j] = nil
                         self.puzzleBoxArray[outIndex][index]?.increase()
                         
+                        coppiedCurrentScore = currentScore
+                        coppiedTopScore = topScore
+                        
+                        increaseCurrentScore(plus: self.puzzleBoxArray[outIndex][index]!.getScore())
+                        
+                        if currentScore >= topScore {
+                            setTopScore(score: currentScore)
+                        }
                     }
                     
                     continue outLoop
@@ -424,13 +450,20 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                     
                     if approacher.getScore() == base.getScore() {
                         
-                        puzzleBoxArray[j][outIndex]?.move(to: base.getLocation())
+//                        puzzleBoxArray[j][outIndex]?.move(to: base.getLocation())
                         
                         self.puzzleBoxArray[index][outIndex] = self.puzzleBoxArray[j][outIndex]
                         self.puzzleBoxArray[j][outIndex] = nil
                         self.puzzleBoxArray[index][outIndex]?.increase()
                         
+                        coppiedCurrentScore = currentScore
+                        coppiedTopScore = topScore
                         
+                        increaseCurrentScore(plus: self.puzzleBoxArray[index][outIndex]!.getScore())
+                     
+                        if currentScore >= topScore {
+                            setTopScore(score: currentScore)
+                        }
                     }
                     
                     continue outLoop
@@ -478,12 +511,20 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                     
                     if approacher.getScore() == base.getScore() {
                         
-                        puzzleBoxArray[j][outIndex]?.move(to: base.getLocation())
+//                        puzzleBoxArray[j][outIndex]?.move(to: base.getLocation())
                         
                         self.puzzleBoxArray[index][outIndex] = self.puzzleBoxArray[j][outIndex]
                         self.puzzleBoxArray[j][outIndex] = nil
                         self.puzzleBoxArray[index][outIndex]?.increase()
                         
+                        coppiedCurrentScore = currentScore
+                        coppiedTopScore = topScore
+                        
+                        increaseCurrentScore(plus: self.puzzleBoxArray[index][outIndex]!.getScore())
+                        
+                        if currentScore >= topScore {
+                            setTopScore(score: currentScore)
+                        }
                     }
                     continue outLoop
                 }
@@ -552,6 +593,24 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     
     func rememberCurrentPuzzleBoxArray() {
         coppiedPuzzleBoxArray = puzzleBoxArray
+        
+        for i in 0..<puzzleBoxArray.count {
+            
+            for j in 0..<puzzleBoxArray[i].count {
+                
+                guard let box = puzzleBoxArray[i][j] else {
+                    coppiedPuzzleBoxArray[i][j] = nil
+                    continue
+                }
+                coppiedPuzzleBoxArray[i][j] = PuzzleBoxModel(
+                    location: box.location,
+                    color: box.color,
+                    score: box.score,
+                    textColor: box.textColor,
+                    position: box.position
+                )
+            }
+        }
     }
 }
 

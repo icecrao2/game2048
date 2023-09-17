@@ -10,6 +10,8 @@ import SwiftUI
 
 class GameScreenIntent {
     
+    private weak var navigationManager: NavigationManager?
+    
     private var model: GameScreenModelActionProtocol
     
     private var currentPosition: CGPoint = .zero
@@ -44,6 +46,14 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         
         model.makeNewPuzzleBox()
         model.refreshPuzzleBoxArray()
+    }
+    
+    func settingNavigationManager(_ settings: NavigationManager?) {
+        self.navigationManager = settings
+    }
+    
+    func viewOnDisappear() {
+        navigationManager = nil
     }
     
     
@@ -102,9 +112,9 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         }
         model.refreshPuzzleBoxArray()
         
-        
         startDragPosition = .zero
         dragDirection = .none
+        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.readyToNextStage()
@@ -115,8 +125,14 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         }
     }
     
+    func didTapHomeButton() {
+        navigationManager?.backToRoot()
+    }
+    
     func didTapUndoButton() {
+        
         model.undoLastChange()
+        
         model.refreshPuzzleBoxArray()
         
         model.saveGame()
