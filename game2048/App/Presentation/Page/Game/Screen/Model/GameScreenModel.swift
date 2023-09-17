@@ -347,6 +347,7 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         }
     }
     
+   
     func increaseCurrentScore(plus score: Int) {
         self.currentScore += score
     }
@@ -387,6 +388,153 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         coppiedPuzzleBoxArray = puzzleBoxArray
     }
 }
+
+
+
+extension GameScreenModel {
+    
+    
+    func canSwipeToRight() -> Bool{
+        
+        for outIndex in 0..<puzzleBoxArray.count {
+            
+            outLoop: for index in (0..<puzzleBoxArray[outIndex].count).reversed() {
+                
+                if let base = puzzleBoxArray[outIndex][index] {
+                    
+                    for j in (0..<index).reversed() {
+                        
+                        guard let approacher = puzzleBoxArray[outIndex][j] else {
+                            continue
+                        }
+                        
+                        if approacher.getScore() == base.getScore() {
+                            
+                            return true
+                        }
+                        continue outLoop
+                    }
+                } else {
+                    for j in (0..<index).reversed() {
+                           
+                        guard let approacher = puzzleBoxArray[outIndex][j] else {
+                            continue
+                        }
+                        
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+    
+    func canSwipeToLeft() -> Bool{
+        
+        for outIndex in 0..<puzzleBoxArray.count {
+            
+            outLoop: for index in 0..<(puzzleBoxArray[outIndex].count - 1) {
+                
+                if let base = puzzleBoxArray[outIndex][index] {
+                    
+                    
+                    for j in (index + 1)..<puzzleBoxArray[outIndex].count {
+                        
+                        guard let approacher = puzzleBoxArray[outIndex][j] else {
+                            continue
+                        }
+                        
+                        if approacher.getScore() == base.getScore() {
+                            return true
+                        }
+                        continue outLoop
+                    }
+                } else {
+                    for j in index..<puzzleBoxArray[outIndex].count {
+                           
+                        guard let approacher = puzzleBoxArray[outIndex][j] else {
+                            continue
+                        }
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+
+    
+    func canSwipeToDown() -> Bool{
+        
+        for outIndex in 0..<puzzleBoxArray[0].count {
+            
+            outLoop: for index in (1..<puzzleBoxArray.count).reversed() {
+                
+                if let base = puzzleBoxArray[index][outIndex]{
+                    
+                    for j in (0..<index).reversed() {
+                        
+                        guard let approacher = puzzleBoxArray[j][outIndex] else {
+                            continue
+                        }
+                        
+                        if approacher.getScore() == base.getScore() {
+                            return true
+                        }
+                        
+                        continue outLoop
+                    }
+                } else {
+                    for j in (0..<index).reversed() {
+                           
+                        guard let approacher = puzzleBoxArray[j][outIndex] else {
+                            continue
+                        }
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+    
+    func canSwipeToUp() -> Bool{
+        
+        for outIndex in 0..<puzzleBoxArray[0].count {
+            
+            outLoop: for index in 0..<(puzzleBoxArray.count - 1) {
+                
+                if let base = puzzleBoxArray[index][outIndex] {
+                    
+                    for j in (index + 1)..<puzzleBoxArray.count {
+                        
+                        guard let approacher = puzzleBoxArray[j][outIndex] else {
+                            continue
+                        }
+                        
+                        if approacher.getScore() == base.getScore() {
+                            
+                            return true
+                        }
+                        continue outLoop
+                    }
+                } else {
+                    for j in index..<puzzleBoxArray.count {
+                           
+                        guard let approacher = puzzleBoxArray[j][outIndex] else {
+                            continue
+                        }
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+}
+
+
+
 
 
 extension GameScreenModel {

@@ -108,8 +108,6 @@ extension PuzzleBoxModel: Equatable {
 
 extension PuzzleBoxModel {
     
-    static var newId: Int = 0
-    
     static var map: (Int, Int) = (4, 4)
 }
 
