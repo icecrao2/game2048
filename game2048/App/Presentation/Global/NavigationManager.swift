@@ -47,6 +47,7 @@ class NavigationManager: ObservableObject {
         backSemaphore.wait()
         
         if path.isEmpty {
+            
         } else {
             path.removeLast()
         }

@@ -29,13 +29,18 @@ extension MainScreen {
     var body: some View {
        
         build
-            .onAppear { intent.viewOnAppear() }
+            .onAppear {
+                intent.settingNavigationManager(navigationManager)
+                intent.viewOnAppear()
+            }
             .onDisappear { intent.viewOnDisappear() }
         
     }
 }
 
 struct MainScreen: View {
+    
+    @EnvironmentObject var navigationManager: NavigationManager
     
     @StateObject private var container: MVIContainer<MainScreenIntentProtocol, MainScreenModelStateProtocol>
     
@@ -80,7 +85,7 @@ struct MainScreen: View {
             VStack(spacing: 19) {
                 
                 Button {
-                    //
+                    intent.didTapGameStartButton()
                 } label: {
                     Text("게임 시작")
                         .font(Font.system(size: 20))
@@ -114,7 +119,11 @@ struct MainScreen: View {
 }
 
 struct MainScreen_Previews: PreviewProvider {
+    
+    private static var navigationManager = NavigationManager()
+    
     static var previews: some View {
         MainScreen.build()
+            .environmentObject(navigationManager)
     }
 }

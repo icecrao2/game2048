@@ -27,6 +27,7 @@ struct ContentView: View {
                     }
                 }
         }
+        .environmentObject(navigationManager)
     }
     
 }
@@ -37,10 +38,8 @@ extension ContentView {
     var build: some View {
         
         ZStack {
-//            MainScreen.build()
-            GameScreen.build()
+            MainScreen.build()
         }
-        .environmentObject(navigationManager)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(ViewConst.palette1)
         
