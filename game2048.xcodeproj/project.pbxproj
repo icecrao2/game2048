@@ -37,6 +37,7 @@
 		D0AFF7822AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7812AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift */; };
 		D0AFF7842AA46D8100F800AE /* PuzzleBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */; };
 		D0AFF7862AA4799300F800AE /* GameScreenModel_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */; };
+		D0B384992AB6D81A00CC1DA0 /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B384982AB6D81A00CC1DA0 /* GameStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		D0AFF7812AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PuzzleBoxModel_정상작동테스트.swift"; sourceTree = "<group>"; };
 		D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxView.swift; sourceTree = "<group>"; };
 		D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScreenModel_정상작동테스트.swift"; sourceTree = "<group>"; };
+		D0B384982AB6D81A00CC1DA0 /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				D05564E62AAD8327006A6F72 /* Direction.swift */,
+				D0B384982AB6D81A00CC1DA0 /* GameStatus.swift */,
 			);
 			path = cases;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				D0AFF77F2AA4652300F800AE /* PuzzleBoxModelProtocols.swift in Sources */,
 				D0AFF7732AA45FB800F800AE /* GameScreenIntent.swift in Sources */,
 				D0AFF7442AA4374800F800AE /* MVIContainer.swift in Sources */,
+				D0B384992AB6D81A00CC1DA0 /* GameStatus.swift in Sources */,
 				D0AFF74A2AA4382D00F800AE /* MainScreenIntentProtocol.swift in Sources */,
 				D0AFF7462AA437A700F800AE /* MainScreenIntent.swift in Sources */,
 				D0AFF7712AA45FAA00F800AE /* GameScreenModel.swift in Sources */,

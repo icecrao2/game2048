@@ -292,8 +292,8 @@ final class GameScreenModel_정상작동테스트: XCTestCase {
         ])
         
         
-        let resut1 = sut1.canSwipeToRight()
-        let resut2 = sut2.canSwipeToRight()
+        let resut1 = sut1.canSwipe(to: .right)
+        let resut2 = sut2.canSwipe(to: .right)
         
         
         XCTAssertEqual(resut1, true)
@@ -317,8 +317,8 @@ final class GameScreenModel_정상작동테스트: XCTestCase {
         ])
         
         
-        let resut1 = sut1.canSwipeToLeft()
-        let resut2 = sut2.canSwipeToLeft()
+        let resut1 = sut1.canSwipe(to: .left)
+        let resut2 = sut2.canSwipe(to: .left)
         
         
         XCTAssertEqual(resut1, true)
@@ -339,8 +339,8 @@ final class GameScreenModel_정상작동테스트: XCTestCase {
             [nil, PuzzleBoxModel( location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1)), PuzzleBoxModel(location: CGRect(x: 0, y: 0, width: 10, height: 10), color: .white, score: 2, textColor: .red, position: (1,1))],
         ])
         
-        let result1 = sut1.canSwipeToDown()
-        let result2 = sut2.canSwipeToDown()
+        let result1 = sut1.canSwipe(to: .down)
+        let result2 = sut2.canSwipe(to: .down)
      
         
         XCTAssertEqual(result1, true)
@@ -362,8 +362,8 @@ final class GameScreenModel_정상작동테스트: XCTestCase {
             [nil, nil, nil]
         ])
         
-        let result1 = sut1.canSwipeToUp()
-        let result2 = sut2.canSwipeToUp()
+        let result1 = sut1.canSwipe(to: .up)
+        let result2 = sut2.canSwipe(to: .up)
      
         
         XCTAssertEqual(result1, true)

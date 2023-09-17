@@ -36,6 +36,8 @@ extension GameScreenIntent: GameScreenIntentProtocol {
     
     func viewOnAppear() {
         model.loadGame()
+        
+        model.updateGameState()
     }
     
     func gameViewOnAppear() {
@@ -43,6 +45,8 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         model.makeNewPuzzleBox()
         model.refreshPuzzleBoxArray()
     }
+    
+    
     
     func didDragChange(_ gesture: DragGesture.Value) {
         
@@ -68,6 +72,8 @@ extension GameScreenIntent: GameScreenIntentProtocol {
     }
     
     func didDragEnd() {
+        
+        if !model.canSwipe(to: dragDirection) { return }
         
         if !canSwipe { return }
         
@@ -104,6 +110,8 @@ extension GameScreenIntent: GameScreenIntentProtocol {
             self.readyToNextStage()
             self.canSwipe = true
             self.model.saveGame()
+            
+            self.model.updateGameState()
         }
     }
     
@@ -112,6 +120,8 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         model.refreshPuzzleBoxArray()
         
         model.saveGame()
+        
+        model.updateGameState()
     }
     
     func didTapResetButton() {
@@ -120,5 +130,7 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         model.refreshPuzzleBoxArray()
         
         model.saveGame()
+        
+        model.updateGameState()
     }
 }

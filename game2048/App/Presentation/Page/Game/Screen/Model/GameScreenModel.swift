@@ -15,6 +15,8 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
     
     @Published private(set) var puzzleBoxArray: [[PuzzleBoxModel?]]
     
+    @Published private(set) var gameStatus: GameStatus = .playing
+    
     private var coppiedPuzzleBoxArray: [[PuzzleBoxModel?]]
     
     var puzzleBoxes: [PuzzleBoxModel] {
@@ -74,11 +76,161 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
  2
  3
 */
+    func checkGameCompletion() -> Bool {
+        !canSwipe(to: .left) && !canSwipe(to: .right) && !canSwipe(to: .up) && !canSwipe(to: .down)
+    }
     
+    
+    private func canSwipeToRight() -> Bool{
+        
+        for outIndex in 0..<puzzleBoxArray.count {
+            
+            outLoop: for index in (0..<puzzleBoxArray[outIndex].count).reversed() {
+                
+                if let base = puzzleBoxArray[outIndex][index] {
+                    
+                    for j in (0..<index).reversed() {
+                        
+                        guard let approacher = puzzleBoxArray[outIndex][j] else {
+                            continue
+                        }
+                        
+                        if approacher.getScore() == base.getScore() {
+                            
+                            return true
+                        }
+                        continue outLoop
+                    }
+                } else {
+                    for j in (0..<index).reversed() {
+                           
+                        guard let _ = puzzleBoxArray[outIndex][j] else {
+                            continue
+                        }
+                        
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+    
+    private func canSwipeToLeft() -> Bool{
+        
+        for outIndex in 0..<puzzleBoxArray.count {
+            
+            outLoop: for index in 0..<(puzzleBoxArray[outIndex].count - 1) {
+                
+                if let base = puzzleBoxArray[outIndex][index] {
+                    
+                    
+                    for j in (index + 1)..<puzzleBoxArray[outIndex].count {
+                        
+                        guard let approacher = puzzleBoxArray[outIndex][j] else {
+                            continue
+                        }
+                        
+                        if approacher.getScore() == base.getScore() {
+                            return true
+                        }
+                        continue outLoop
+                    }
+                } else {
+                    for j in index..<puzzleBoxArray[outIndex].count {
+                           
+                        guard let _ = puzzleBoxArray[outIndex][j] else {
+                            continue
+                        }
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+
+    
+    private func canSwipeToDown() -> Bool{
+        
+        for outIndex in 0..<puzzleBoxArray[0].count {
+            
+            outLoop: for index in (1..<puzzleBoxArray.count).reversed() {
+                
+                if let base = puzzleBoxArray[index][outIndex]{
+                    
+                    for j in (0..<index).reversed() {
+                        
+                        guard let approacher = puzzleBoxArray[j][outIndex] else {
+                            continue
+                        }
+                        
+                        if approacher.getScore() == base.getScore() {
+                            return true
+                        }
+                        
+                        continue outLoop
+                    }
+                } else {
+                    for j in (0..<index).reversed() {
+                           
+                        guard let _ = puzzleBoxArray[j][outIndex] else {
+                            continue
+                        }
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+    
+    private func canSwipeToUp() -> Bool{
+        
+        for outIndex in 0..<puzzleBoxArray[0].count {
+            
+            outLoop: for index in 0..<(puzzleBoxArray.count - 1) {
+                
+                if let base = puzzleBoxArray[index][outIndex] {
+                    
+                    for j in (index + 1)..<puzzleBoxArray.count {
+                        
+                        guard let approacher = puzzleBoxArray[j][outIndex] else {
+                            continue
+                        }
+                        
+                        if approacher.getScore() == base.getScore() {
+                            
+                            return true
+                        }
+                        continue outLoop
+                    }
+                } else {
+                    for j in index..<puzzleBoxArray.count {
+                           
+                        guard let _ = puzzleBoxArray[j][outIndex] else {
+                            continue
+                        }
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
     
 }
 
 extension GameScreenModel: GameScreenModelActionProtocol {
+    
+    
+    func updateGameState() {
+        if self.checkGameCompletion() {
+            self.gameStatus = .gameOver
+        } else {
+            self.gameStatus = .playing
+        }
+    }
     
     
     func loadGame() {
@@ -118,8 +270,6 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         }
     }
     
-    
-    
     func undoLastChange() {
         self.puzzleBoxArray = self.coppiedPuzzleBoxArray
     }
@@ -131,6 +281,22 @@ extension GameScreenModel: GameScreenModelActionProtocol {
             for j in 0..<puzzleBoxArray[i].count {
                 puzzleBoxArray[i][j] = nil
             }
+        }
+    }
+    
+    func canSwipe(to direction: Direction) -> Bool {
+        
+        switch direction {
+        case .none:
+            return false
+        case .up:
+            return canSwipeToUp()
+        case .down:
+            return canSwipeToDown()
+        case .left:
+            return canSwipeToLeft()
+        case .right:
+            return canSwipeToRight()
         }
     }
     
@@ -386,150 +552,6 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     
     func rememberCurrentPuzzleBoxArray() {
         coppiedPuzzleBoxArray = puzzleBoxArray
-    }
-}
-
-
-
-extension GameScreenModel {
-    
-    
-    func canSwipeToRight() -> Bool{
-        
-        for outIndex in 0..<puzzleBoxArray.count {
-            
-            outLoop: for index in (0..<puzzleBoxArray[outIndex].count).reversed() {
-                
-                if let base = puzzleBoxArray[outIndex][index] {
-                    
-                    for j in (0..<index).reversed() {
-                        
-                        guard let approacher = puzzleBoxArray[outIndex][j] else {
-                            continue
-                        }
-                        
-                        if approacher.getScore() == base.getScore() {
-                            
-                            return true
-                        }
-                        continue outLoop
-                    }
-                } else {
-                    for j in (0..<index).reversed() {
-                           
-                        guard let approacher = puzzleBoxArray[outIndex][j] else {
-                            continue
-                        }
-                        
-                        return true
-                    }
-                }
-            }
-        }
-        return false
-    }
-    
-    func canSwipeToLeft() -> Bool{
-        
-        for outIndex in 0..<puzzleBoxArray.count {
-            
-            outLoop: for index in 0..<(puzzleBoxArray[outIndex].count - 1) {
-                
-                if let base = puzzleBoxArray[outIndex][index] {
-                    
-                    
-                    for j in (index + 1)..<puzzleBoxArray[outIndex].count {
-                        
-                        guard let approacher = puzzleBoxArray[outIndex][j] else {
-                            continue
-                        }
-                        
-                        if approacher.getScore() == base.getScore() {
-                            return true
-                        }
-                        continue outLoop
-                    }
-                } else {
-                    for j in index..<puzzleBoxArray[outIndex].count {
-                           
-                        guard let approacher = puzzleBoxArray[outIndex][j] else {
-                            continue
-                        }
-                        return true
-                    }
-                }
-            }
-        }
-        return false
-    }
-
-    
-    func canSwipeToDown() -> Bool{
-        
-        for outIndex in 0..<puzzleBoxArray[0].count {
-            
-            outLoop: for index in (1..<puzzleBoxArray.count).reversed() {
-                
-                if let base = puzzleBoxArray[index][outIndex]{
-                    
-                    for j in (0..<index).reversed() {
-                        
-                        guard let approacher = puzzleBoxArray[j][outIndex] else {
-                            continue
-                        }
-                        
-                        if approacher.getScore() == base.getScore() {
-                            return true
-                        }
-                        
-                        continue outLoop
-                    }
-                } else {
-                    for j in (0..<index).reversed() {
-                           
-                        guard let approacher = puzzleBoxArray[j][outIndex] else {
-                            continue
-                        }
-                        return true
-                    }
-                }
-            }
-        }
-        return false
-    }
-    
-    func canSwipeToUp() -> Bool{
-        
-        for outIndex in 0..<puzzleBoxArray[0].count {
-            
-            outLoop: for index in 0..<(puzzleBoxArray.count - 1) {
-                
-                if let base = puzzleBoxArray[index][outIndex] {
-                    
-                    for j in (index + 1)..<puzzleBoxArray.count {
-                        
-                        guard let approacher = puzzleBoxArray[j][outIndex] else {
-                            continue
-                        }
-                        
-                        if approacher.getScore() == base.getScore() {
-                            
-                            return true
-                        }
-                        continue outLoop
-                    }
-                } else {
-                    for j in index..<puzzleBoxArray.count {
-                           
-                        guard let approacher = puzzleBoxArray[j][outIndex] else {
-                            continue
-                        }
-                        return true
-                    }
-                }
-            }
-        }
-        return false
     }
 }
 
