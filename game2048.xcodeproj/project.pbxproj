@@ -38,6 +38,7 @@
 		D0AFF7842AA46D8100F800AE /* PuzzleBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */; };
 		D0AFF7862AA4799300F800AE /* GameScreenModel_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */; };
 		D0B384992AB6D81A00CC1DA0 /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B384982AB6D81A00CC1DA0 /* GameStatus.swift */; };
+		D0F3ADEB2ABEBB4900CA76B2 /* ScreenInfoConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3ADEA2ABEBB4900CA76B2 /* ScreenInfoConst.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxView.swift; sourceTree = "<group>"; };
 		D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScreenModel_정상작동테스트.swift"; sourceTree = "<group>"; };
 		D0B384982AB6D81A00CC1DA0 /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
+		D0F3ADEA2ABEBB4900CA76B2 /* ScreenInfoConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenInfoConst.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				D0AFF75A2AA442CD00F800AE /* ViewConst.swift */,
+				D0F3ADEA2ABEBB4900CA76B2 /* ScreenInfoConst.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				D0AFF7112AA432D300F800AE /* ContentView.swift in Sources */,
 				D0AFF75B2AA442CD00F800AE /* ViewConst.swift in Sources */,
 				D0AFF7412AA433EA00F800AE /* MainScreen.swift in Sources */,
+				D0F3ADEB2ABEBB4900CA76B2 /* ScreenInfoConst.swift in Sources */,
 				D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */,
 				D05564EA2AAD9B65006A6F72 /* GameSaver.swift in Sources */,
 				D0AFF76E2AA4590B00F800AE /* GameScreen.swift in Sources */,
@@ -723,8 +727,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -761,8 +765,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";

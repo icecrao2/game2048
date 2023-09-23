@@ -80,7 +80,10 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
  3
 */
     func checkGameCompletion() -> Bool {
-        !canSwipe(to: .left) && !canSwipe(to: .right) && !canSwipe(to: .up) && !canSwipe(to: .down)
+        
+        if puzzleBoxes.count == 0 {return true }
+        
+        return !canSwipe(to: .left) && !canSwipe(to: .right) && !canSwipe(to: .up) && !canSwipe(to: .down)
     }
     
     
@@ -228,7 +231,8 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     
     
     func updateGameState() {
-        if self.checkGameCompletion() {
+        
+        if self.checkGameCompletion () {
             self.gameStatus = .gameOver
         } else {
             self.gameStatus = .playing
@@ -247,12 +251,20 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         
         let plist = UserDefaults.standard
         guard let data = plist.object(forKey: "game_save_\(mapSize)") as? Data else {
+            
+            reset()
+            makeNewPuzzleBox()
+            refreshPuzzleBoxArray()
             return
         }
         
         let decoder = JSONDecoder()
                
         guard let decodedGameSaver = try? decoder.decode(GameSaver.self, from: data) else {
+            
+            reset()
+            makeNewPuzzleBox()
+            refreshPuzzleBoxArray()
             return
         }
         
