@@ -44,6 +44,7 @@ extension MainScreenIntent: MainScreenIntentProtocol {
     }
     
     func didTapGameStartButton() {
+        model.applyCurrentMode()
         navigationManager?.go(.GameView)
     }
     

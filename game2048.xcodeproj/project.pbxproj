@@ -38,6 +38,14 @@
 		D0AFF7842AA46D8100F800AE /* PuzzleBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */; };
 		D0AFF7862AA4799300F800AE /* GameScreenModel_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */; };
 		D0B384992AB6D81A00CC1DA0 /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B384982AB6D81A00CC1DA0 /* GameStatus.swift */; };
+		D0F3ADFC2ABED09E00CA76B2 /* 4X4.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F3ADF72ABED09E00CA76B2 /* 4X4.png */; };
+		D0F3ADFD2ABED09E00CA76B2 /* 5X5.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F3ADF82ABED09E00CA76B2 /* 5X5.png */; };
+		D0F3ADFE2ABED09E00CA76B2 /* 6X6.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F3ADF92ABED09E00CA76B2 /* 6X6.png */; };
+		D0F3ADFF2ABED09E00CA76B2 /* 3X3.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F3ADFA2ABED09E00CA76B2 /* 3X3.png */; };
+		D0F3AE002ABED09E00CA76B2 /* 8X8.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F3ADFB2ABED09E00CA76B2 /* 8X8.png */; };
+		D0F3AE032ABED24B00CA76B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0F3AE052ABED24B00CA76B2 /* Localizable.strings */; };
+		D0F3AE0B2ABED37200CA76B2 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3AE0A2ABED37200CA76B2 /* StringExtensions.swift */; };
+		D0F3AE0F2ABEE1B400CA76B2 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = D0F3AE0E2ABEE1B400CA76B2 /* GoogleMobileAds */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +101,17 @@
 		D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxView.swift; sourceTree = "<group>"; };
 		D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScreenModel_정상작동테스트.swift"; sourceTree = "<group>"; };
 		D0B384982AB6D81A00CC1DA0 /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
+		D0F3ADF72ABED09E00CA76B2 /* 4X4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4X4.png; sourceTree = "<group>"; };
+		D0F3ADF82ABED09E00CA76B2 /* 5X5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5X5.png; sourceTree = "<group>"; };
+		D0F3ADF92ABED09E00CA76B2 /* 6X6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6X6.png; sourceTree = "<group>"; };
+		D0F3ADFA2ABED09E00CA76B2 /* 3X3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3X3.png; sourceTree = "<group>"; };
+		D0F3ADFB2ABED09E00CA76B2 /* 8X8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8X8.png; sourceTree = "<group>"; };
+		D0F3AE042ABED24B00CA76B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D0F3AE062ABED27C00CA76B2 /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D0F3AE072ABED2A200CA76B2 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D0F3AE082ABED2AB00CA76B2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D0F3AE0A2ABED37200CA76B2 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		D0F3AE0C2ABEDCA200CA76B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F3AE0F2ABEE1B400CA76B2 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +164,7 @@
 				D0AFF71F2AA432D400F800AE /* game2048Tests */,
 				D0AFF7292AA432D400F800AE /* game2048UITests */,
 				D0AFF70C2AA432D300F800AE /* Products */,
+				D0F3AE102ABEE44000CA76B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +181,7 @@
 		D0AFF70D2AA432D300F800AE /* game2048 */ = {
 			isa = PBXGroup;
 			children = (
+				D0F3AE0C2ABEDCA200CA76B2 /* Info.plist */,
 				D0AFF7542AA4420F00F800AE /* Resources */,
 				D0AFF7532AA4420800F800AE /* App */,
 				D0AFF7122AA432D400F800AE /* Assets.xcassets */,
@@ -226,6 +248,7 @@
 		D0AFF73C2AA433DB00F800AE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D0B3849A2AB6E87200CC1DA0 /* cases */,
 				D0AFF73F2AA433E400F800AE /* Model */,
 				D0AFF73E2AA433E200F800AE /* Intent */,
 				D0AFF73D2AA433DE00F800AE /* View */,
@@ -255,7 +278,6 @@
 			children = (
 				D0AFF7472AA437BD00F800AE /* MainScreenModel.swift */,
 				D0AFF74C2AA4385A00F800AE /* MainScreenModelProtocols.swift */,
-				D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -272,6 +294,7 @@
 		D0AFF7532AA4420800F800AE /* App */ = {
 			isa = PBXGroup;
 			children = (
+				D0F3AE092ABED36900CA76B2 /* Utils */,
 				D0AFF73A2AA433D300F800AE /* UseCase */,
 				D0AFF7392AA433CE00F800AE /* Presentation */,
 				D0AFF70E2AA432D300F800AE /* game2048App.swift */,
@@ -283,6 +306,8 @@
 		D0AFF7542AA4420F00F800AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D0F3ADEC2ABECFCF00CA76B2 /* Images */,
+				D0F3AE052ABED24B00CA76B2 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -393,6 +418,41 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
+		D0B3849A2AB6E87200CC1DA0 /* cases */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */,
+			);
+			path = cases;
+			sourceTree = "<group>";
+		};
+		D0F3ADEC2ABECFCF00CA76B2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D0F3ADFA2ABED09E00CA76B2 /* 3X3.png */,
+				D0F3ADF72ABED09E00CA76B2 /* 4X4.png */,
+				D0F3ADF82ABED09E00CA76B2 /* 5X5.png */,
+				D0F3ADF92ABED09E00CA76B2 /* 6X6.png */,
+				D0F3ADFB2ABED09E00CA76B2 /* 8X8.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		D0F3AE092ABED36900CA76B2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D0F3AE0A2ABED37200CA76B2 /* StringExtensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D0F3AE102ABEE44000CA76B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -409,6 +469,9 @@
 			dependencies = (
 			);
 			name = game2048;
+			packageProductDependencies = (
+				D0F3AE0E2ABEE1B400CA76B2 /* GoogleMobileAds */,
+			);
 			productName = game2048;
 			productReference = D0AFF70B2AA432D300F800AE /* game2048.app */;
 			productType = "com.apple.product-type.application";
@@ -479,8 +542,14 @@
 			knownRegions = (
 				en,
 				Base,
+				zh,
+				ko,
+				ja,
 			);
 			mainGroup = D0AFF7022AA432D300F800AE;
+			packageReferences = (
+				D0F3AE0D2ABEE1B400CA76B2 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = D0AFF70C2AA432D300F800AE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -497,6 +566,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F3ADFF2ABED09E00CA76B2 /* 3X3.png in Resources */,
+				D0F3ADFD2ABED09E00CA76B2 /* 5X5.png in Resources */,
+				D0F3AE002ABED09E00CA76B2 /* 8X8.png in Resources */,
+				D0F3ADFE2ABED09E00CA76B2 /* 6X6.png in Resources */,
+				D0F3ADFC2ABED09E00CA76B2 /* 4X4.png in Resources */,
+				D0F3AE032ABED24B00CA76B2 /* Localizable.strings in Resources */,
 				D0AFF7172AA432D400F800AE /* Preview Assets.xcassets in Resources */,
 				D0AFF7132AA432D400F800AE /* Assets.xcassets in Resources */,
 			);
@@ -523,6 +598,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F3AE0B2ABED37200CA76B2 /* StringExtensions.swift in Sources */,
 				D0AFF77F2AA4652300F800AE /* PuzzleBoxModelProtocols.swift in Sources */,
 				D0AFF7732AA45FB800F800AE /* GameScreenIntent.swift in Sources */,
 				D0AFF7442AA4374800F800AE /* MVIContainer.swift in Sources */,
@@ -584,11 +660,26 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		D0F3AE052ABED24B00CA76B2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0F3AE042ABED24B00CA76B2 /* en */,
+				D0F3AE062ABED27C00CA76B2 /* zh */,
+				D0F3AE072ABED2A200CA76B2 /* ko */,
+				D0F3AE082ABED2AB00CA76B2 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		D0AFF72E2AA432D400F800AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -635,9 +726,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -647,6 +741,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -687,8 +782,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -707,25 +805,36 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = game2048/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "2048 - Number Puzzle";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.family-games";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We collect advertising activity information to deliver personalized ads tailored to you";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.jaewoong.game2048;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -745,25 +854,36 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = game2048/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "2048 - Number Puzzle";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.family-games";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We collect advertising activity information to deliver personalized ads tailored to you";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.jaewoong.game2048;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -900,6 +1020,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D0F3AE0D2ABEE1B400CA76B2 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D0F3AE0E2ABEE1B400CA76B2 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0F3AE0D2ABEE1B400CA76B2 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D0AFF7032AA432D300F800AE /* Project object */;
 }

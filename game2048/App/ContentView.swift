@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @StateObject var navigationManager: NavigationManager = NavigationManager()
     
+    
     var body: some View {
         
         NavigationStack(path: $navigationManager.path) {
@@ -26,6 +27,10 @@ struct ContentView: View {
                         EmptyView()
                     }
                 }
+                .onAppear {
+                    
+                }
+            
         }
         .environmentObject(navigationManager)
     }
@@ -37,11 +42,14 @@ extension ContentView {
     
     var build: some View {
         
-        ZStack {
-            MainScreen.build()
+        GeometryReader { proxy in
+            
+            ZStack {
+                MainScreen.build()
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(ViewConst.palette1)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(ViewConst.palette1)
         
     }
 }

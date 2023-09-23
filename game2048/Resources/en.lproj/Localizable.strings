@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  game2048
+
+  Created by sw on 2023/09/23.
+  
+*/
+
+
+"게임 시작" = "Game Start";
+"게임 설정" = "Setting";
+"점수" = "Score";
+"최고점수" = "High Score";
+"돌아가기" = "Back";
+"되돌리기" = "Undo";
+"다시하기" = "Reset";

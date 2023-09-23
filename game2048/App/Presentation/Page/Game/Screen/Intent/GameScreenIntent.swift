@@ -18,7 +18,7 @@ class GameScreenIntent {
     private var startDragPosition: CGPoint = .zero
     private var dragDirection: Direction = .none
     
-    private var canSwipe: Bool = true
+    private var canHandleEvent: Bool = true
     
     init(model: GameScreenModelActionProtocol) {
         self.model = model
@@ -85,13 +85,13 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         
         if !model.canSwipe(to: dragDirection) { return }
         
-        if !canSwipe { return }
+        if !canHandleEvent { return }
         
-        canSwipe = false
+        canHandleEvent = false
         
         switch dragDirection {
         case .none:
-            canSwipe = true
+            canHandleEvent = true
             return
         case .up:
             model.rememberCurrentPuzzleBoxArray()
@@ -118,7 +118,7 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.readyToNextStage()
-            self.canSwipe = true
+            self.canHandleEvent = true
             self.model.saveGame()
             
             self.model.updateGameState()
@@ -126,10 +126,13 @@ extension GameScreenIntent: GameScreenIntentProtocol {
     }
     
     func didTapHomeButton() {
+        if !canHandleEvent { return }
+        
         navigationManager?.backToRoot()
     }
     
     func didTapUndoButton() {
+        if !canHandleEvent { return }
         
         model.undoLastChange()
         
@@ -141,6 +144,8 @@ extension GameScreenIntent: GameScreenIntentProtocol {
     }
     
     func didTapResetButton() {
+        if !canHandleEvent { return }
+        
         model.reset()
         model.makeNewPuzzleBox()
         model.refreshPuzzleBoxArray()

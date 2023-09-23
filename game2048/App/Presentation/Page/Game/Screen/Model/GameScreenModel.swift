@@ -80,7 +80,10 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
  3
 */
     func checkGameCompletion() -> Bool {
-        !canSwipe(to: .left) && !canSwipe(to: .right) && !canSwipe(to: .up) && !canSwipe(to: .down)
+        
+        if puzzleBoxes.count == 0 { return true }
+        
+        return !canSwipe(to: .left) && !canSwipe(to: .right) && !canSwipe(to: .up) && !canSwipe(to: .down)
     }
     
     
@@ -228,7 +231,8 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     
     
     func updateGameState() {
-        if self.checkGameCompletion() {
+        
+        if self.checkGameCompletion () {
             self.gameStatus = .gameOver
         } else {
             self.gameStatus = .playing
@@ -239,22 +243,44 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     func loadGame() {
         let mapSize = PuzzleBoxModel.map.0
         
+        puzzleBoxArray = []
+        
+        for _ in 0..<mapSize {
+            self.puzzleBoxArray.append([PuzzleBoxModel?](repeating: nil, count: mapSize))
+        }
+        
         let plist = UserDefaults.standard
         guard let data = plist.object(forKey: "game_save_\(mapSize)") as? Data else {
+            
+            reset()
+            makeNewPuzzleBox()
+            refreshPuzzleBoxArray()
             return
         }
         
         let decoder = JSONDecoder()
                
         guard let decodedGameSaver = try? decoder.decode(GameSaver.self, from: data) else {
+            
+            reset()
+            makeNewPuzzleBox()
+            refreshPuzzleBoxArray()
             return
         }
+        
+        print(decodedGameSaver.puzzleBoxArray)
         
         self.currentScore = decodedGameSaver.currentScore
         self.topScore = decodedGameSaver.topScore
         self.puzzleBoxArray = decodedGameSaver.puzzleBoxArray
         
         refreshPuzzleBoxArray()
+        
+        
+        
+//        print(mapSize)
+//        print(puzzleBoxArray)
+        
     }
     
     func saveGame() {
@@ -282,6 +308,16 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     }
     
     func reset() {
+        
+        puzzleBoxArray = []
+        
+        for i in 0..<PuzzleBoxModel.map.0 {
+            puzzleBoxArray.append([])
+            for _ in 0..<PuzzleBoxModel.map.1 {
+                puzzleBoxArray[i].append(nil)
+            }
+        }
+        
         
         for i in 0..<puzzleBoxArray.count {
             
