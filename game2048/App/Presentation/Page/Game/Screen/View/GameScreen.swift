@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
+import AppTrackingTransparency
 
 
 extension GameScreen {
@@ -234,8 +236,11 @@ struct GameScreen: View {
                 )
                 
                 Spacer()
+                
+                GoogleAdView()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.width).size.height)
             }
-            .padding(.horizontal, 21)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(ViewConst.palette1)
         }
