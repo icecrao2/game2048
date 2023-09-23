@@ -50,7 +50,6 @@ struct MainScreen {
 
 extension MainScreen: View {
     
-    
     var build: some View {
         
         GeometryReader { geo in
@@ -110,13 +109,13 @@ extension MainScreen: View {
                     Button {
                         intent.didTapGameStartButton()
                     } label: {
-                        Text("게임 시작")
+                        Text("게임 시작".localize)
                             .font(Font.system(size: 30))
                             .minimumScaleFactor(0.1)
                             .fontWeight(.medium)
                             .foregroundColor(.white)
                             .frame(
-                                width: verticalSizeClass == .compact ? geo.size.width * 0.45 : geo.size.height * 0.45, height: verticalSizeClass == .compact ? geo.size.width * 0.06 : geo.size.height * 0.06)
+                                width: verticalSizeClass == .compact ? geo.size.width * 0.45 : geo.size.height * 0.45, height: verticalSizeClass == .compact ? geo.size.width * 0.08 : geo.size.height * 0.08)
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
                                     .fill(ViewConst.highlightButtonColor)
@@ -124,21 +123,21 @@ extension MainScreen: View {
                     }
                     
                     
-                    Button {
-                        //
-                    } label: {
-                        Text("게임 설정")
-                            .font(Font.system(size: 30))
-                            .minimumScaleFactor(0.1)
-                            .fontWeight(.medium)
-                            .foregroundColor(.white)
-                            .frame(
-                                width: verticalSizeClass == .compact ? geo.size.width * 0.45 : geo.size.height * 0.45, height: verticalSizeClass == .compact ? geo.size.width * 0.06 : geo.size.height * 0.06)
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(ViewConst.palette4)
-                            )
-                    }
+//                    Button {
+//                        //
+//                    } label: {
+//                        Text("게임 설정".localize)
+//                            .font(Font.system(size: 30))
+//                            .minimumScaleFactor(0.1)
+//                            .fontWeight(.medium)
+//                            .foregroundColor(.white)
+//                            .frame(
+//                                width: verticalSizeClass == .compact ? geo.size.width * 0.45 : geo.size.height * 0.45, height: verticalSizeClass == .compact ? geo.size.width * 0.06 : geo.size.height * 0.06)
+//                            .background(
+//                                RoundedRectangle(cornerRadius: 10)
+//                                    .fill(ViewConst.palette4)
+//                            )
+//                    }
                 }
                 Spacer()
             }

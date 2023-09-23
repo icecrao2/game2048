@@ -80,7 +80,7 @@ struct GameScreen: View {
                     Spacer()
                     
                     HStack(spacing: geo.size.width * 0.03) {
-                        Text("점수\n\(model.currentScore)")
+                        Text("\("점수".localize)\n\(model.currentScore)")
                             .foregroundColor(Color(hex: "F8F0E5"))
                             .multilineTextAlignment(.center)
                             .font(Font.system(size: 50))
@@ -94,7 +94,7 @@ struct GameScreen: View {
                                     .fill(ViewConst.palette3)
                             )
                         
-                        Text("최고점수\n\(model.topScore)")
+                        Text("\("최고점수".localize)\n\(model.topScore)")
                             .foregroundColor(Color(hex: "F8F0E5"))
                             .multilineTextAlignment(.center)
                             .font(Font.system(size: 50))
@@ -187,14 +187,15 @@ struct GameScreen: View {
                             }
                             .position(x: box.location.midX, y: box.location.midY)
                             .frame(width: box.location.width, height: box.location.height)
-                            .animation(.default, value: box.location)
+                            .animation(Animation.linear(duration: 0.1), value: box.location)
                             .background(
                                 RoundedRectangle(cornerRadius: 5)
                                     .fill(box.color)
                                     .id(box.id)
                                     .position(x: box.location.midX, y: box.location.midY)
                                     .frame(width: box.location.width, height: box.location.height)
-                                    .animation(.default, value: box.location)
+                                    .animation(Animation.linear(duration: 0.1), value: box.location)
+//                                    .animation(.default, value: box.location)
                             )
                         }
                     }
@@ -272,7 +273,7 @@ extension GameScreen {
                                     height: verticalSizeClass == .compact ? geo.size.width * 0.08 : geo.size.width * 0.11
                                 )
                             
-                            Text("돌아가기")
+                            Text("돌아가기".localize)
                                 .font(Font.system(size: 50))
                                 .minimumScaleFactor(0.1)
                                 .foregroundColor(.white)
@@ -301,7 +302,7 @@ extension GameScreen {
                                     height: verticalSizeClass == .compact ? geo.size.width * 0.08 : geo.size.width * 0.11
                                 )
                             
-                            Text("되돌리기")
+                            Text("되돌리기".localize)
                                 .font(Font.system(size: 50))
                                 .minimumScaleFactor(0.1)
                                 .foregroundColor(.white)
@@ -330,7 +331,7 @@ extension GameScreen {
                                 )
                             
                             
-                            Text("다시하기")
+                            Text("다시하기".localize)
                                 .font(Font.system(size: 50))
                                 .minimumScaleFactor(0.1)
                                 .foregroundColor(.white)
