@@ -28,7 +28,6 @@ extension MainScreen {
 struct MainScreen {
     
     @Environment(\.verticalSizeClass) var verticalSizeClass
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     @EnvironmentObject var navigationManager: NavigationManager
     
