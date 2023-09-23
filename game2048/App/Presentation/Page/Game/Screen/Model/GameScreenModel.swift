@@ -81,7 +81,7 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
 */
     func checkGameCompletion() -> Bool {
         
-        if puzzleBoxes.count == 0 {return true }
+        if puzzleBoxes.count == 0 { return true }
         
         return !canSwipe(to: .left) && !canSwipe(to: .right) && !canSwipe(to: .up) && !canSwipe(to: .down)
     }
@@ -268,11 +268,19 @@ extension GameScreenModel: GameScreenModelActionProtocol {
             return
         }
         
+        print(decodedGameSaver.puzzleBoxArray)
+        
         self.currentScore = decodedGameSaver.currentScore
         self.topScore = decodedGameSaver.topScore
         self.puzzleBoxArray = decodedGameSaver.puzzleBoxArray
         
         refreshPuzzleBoxArray()
+        
+        
+        
+//        print(mapSize)
+//        print(puzzleBoxArray)
+        
     }
     
     func saveGame() {
@@ -300,6 +308,16 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     }
     
     func reset() {
+        
+        puzzleBoxArray = []
+        
+        for i in 0..<PuzzleBoxModel.map.0 {
+            puzzleBoxArray.append([])
+            for _ in 0..<PuzzleBoxModel.map.1 {
+                puzzleBoxArray[i].append(nil)
+            }
+        }
+        
         
         for i in 0..<puzzleBoxArray.count {
             
