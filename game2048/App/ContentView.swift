@@ -27,6 +27,10 @@ struct ContentView: View {
                         EmptyView()
                     }
                 }
+                .onAppear {
+                    
+                }
+            
         }
         .environmentObject(navigationManager)
     }
