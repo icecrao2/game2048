@@ -57,10 +57,16 @@ extension MainScreen: View {
             
             VStack(spacing: geo.size.height * 0.06) {
                 // 가상
-                Image(systemName: "square")
+                Image(model.currentMode.rawValue)
                     .resizable()
                     .frame(
                         width: verticalSizeClass == .compact ? geo.size.width * 0.45 : geo.size.height * 0.45, height: verticalSizeClass == .compact ? geo.size.width * 0.45 : geo.size.height * 0.45)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(lineWidth: 5)
+                            .foregroundColor(.gray)
+                            
+                    )
                     .padding(.top, 50)
                 
                 
