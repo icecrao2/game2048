@@ -43,6 +43,7 @@
 		D0F3ADFE2ABED09E00CA76B2 /* 6X6.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F3ADF92ABED09E00CA76B2 /* 6X6.png */; };
 		D0F3ADFF2ABED09E00CA76B2 /* 3X3.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F3ADFA2ABED09E00CA76B2 /* 3X3.png */; };
 		D0F3AE002ABED09E00CA76B2 /* 8X8.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F3ADFB2ABED09E00CA76B2 /* 8X8.png */; };
+		D0F3AE032ABED24B00CA76B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0F3AE052ABED24B00CA76B2 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,10 @@
 		D0F3ADF92ABED09E00CA76B2 /* 6X6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6X6.png; sourceTree = "<group>"; };
 		D0F3ADFA2ABED09E00CA76B2 /* 3X3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3X3.png; sourceTree = "<group>"; };
 		D0F3ADFB2ABED09E00CA76B2 /* 8X8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8X8.png; sourceTree = "<group>"; };
+		D0F3AE042ABED24B00CA76B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D0F3AE062ABED27C00CA76B2 /* zh */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh; path = zh.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D0F3AE072ABED2A200CA76B2 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D0F3AE082ABED2AB00CA76B2 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F3ADEC2ABECFCF00CA76B2 /* Images */,
+				D0F3AE052ABED24B00CA76B2 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -510,6 +516,9 @@
 			knownRegions = (
 				en,
 				Base,
+				zh,
+				ko,
+				ja,
 			);
 			mainGroup = D0AFF7022AA432D300F800AE;
 			productRefGroup = D0AFF70C2AA432D300F800AE /* Products */;
@@ -533,6 +542,7 @@
 				D0F3AE002ABED09E00CA76B2 /* 8X8.png in Resources */,
 				D0F3ADFE2ABED09E00CA76B2 /* 6X6.png in Resources */,
 				D0F3ADFC2ABED09E00CA76B2 /* 4X4.png in Resources */,
+				D0F3AE032ABED24B00CA76B2 /* Localizable.strings in Resources */,
 				D0AFF7172AA432D400F800AE /* Preview Assets.xcassets in Resources */,
 				D0AFF7132AA432D400F800AE /* Assets.xcassets in Resources */,
 			);
@@ -620,11 +630,26 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		D0F3AE052ABED24B00CA76B2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0F3AE042ABED24B00CA76B2 /* en */,
+				D0F3AE062ABED27C00CA76B2 /* zh */,
+				D0F3AE072ABED2A200CA76B2 /* ko */,
+				D0F3AE082ABED2AB00CA76B2 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		D0AFF72E2AA432D400F800AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -671,6 +696,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -683,6 +710,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -723,6 +751,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
