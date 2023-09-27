@@ -12,6 +12,8 @@ protocol MainScreenIntentProtocol{
     
     func viewOnAppear()
     
+    func settingNavigationManager(_ settings: NavigationManager)
+    
     func viewOnDisappear()
     
     func didTapLeftModeChangeButton()

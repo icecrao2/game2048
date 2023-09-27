@@ -8,14 +8,48 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var navigationManager: NavigationManager = NavigationManager()
+    
+    
     var body: some View {
         
-        ZStack {
+        NavigationStack(path: $navigationManager.path) {
             
-            MainScreen.build()
+            build
+                .navigationDestination(for: Int.self) { numb in
+                    switch numb {
+                    case NavigationManager.ViewCode.MainView.rawValue:
+                        MainScreen.build()
+                    case NavigationManager.ViewCode.GameView.rawValue:
+                        GameScreen.build()
+                    default:
+                        EmptyView()
+                    }
+                }
+                .onAppear {
+                    
+                }
+            
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(ViewConst.palette1)
+        .environmentObject(navigationManager)
+    }
+    
+}
+
+extension ContentView {
+    
+    
+    var build: some View {
+        
+        GeometryReader { proxy in
+            
+            ZStack {
+                MainScreen.build()
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(ViewConst.palette1)
+        }
         
     }
 }
