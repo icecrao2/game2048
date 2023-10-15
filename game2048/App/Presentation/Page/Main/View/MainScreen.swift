@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
+import AppTrackingTransparency
 
 extension MainScreen {
     
@@ -55,54 +57,121 @@ extension MainScreen: View {
         GeometryReader { geo in
             
             VStack(spacing: geo.size.height * 0.06) {
-                // 가상
-                Image(model.currentMode.rawValue)
-                    .resizable()
-                    .frame(
-                        width: verticalSizeClass == .compact ? geo.size.width * 0.45 : geo.size.height * 0.45, height: verticalSizeClass == .compact ? geo.size.width * 0.45 : geo.size.height * 0.45)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(lineWidth: 5)
-                            .foregroundColor(.gray)
-                            
-                    )
-                    .padding(.top, 50)
                 
+                Text("2048")
+                    .frame(width: geo.size.width * 0.5, height: geo.size.height * 0.1)
+                    .font(Font.system(size: 100))
+                    .minimumScaleFactor(0.1)
+                    .fontWeight(.bold)
+                    .padding(0)
+                    .padding(.top, geo.size.height * 0.05)
+                    .padding(.bottom, geo.size.height * 0.05)
                 
-                HStack(spacing: 20) {
+                ZStack {
                     
-                    Button {
-                        intent.didTapLeftModeChangeButton()
-                    } label: {
-                        Image(systemName: "arrowtriangle.left.square")
+                    HStack(spacing: verticalSizeClass == .compact ? geo.size.width * 0.02 : geo.size.height * 0.025) {
+                        
+                        Button {
+                            intent.didTapLeftModeChangeButton()
+                        } label: {
+                            
+                            ZStack {
+                                
+                                Image(systemName: "arrowtriangle.left.square")
+                                    .resizable()
+                                    .frame(
+                                        width: geo.size.width * 0.16,
+                                        height: geo.size.width * 0.16
+                                    )
+                                    .foregroundColor(ViewConst.highlightButtonColor)
+                            }
+                            .frame(
+                                width: geo.size.width * 0.16,
+                                height: geo.size.width * 0.55
+                            )
+                                
+                        }
+                        
+                        Image(model.currentMode.rawValue)
                             .resizable()
                             .frame(
-                                width: verticalSizeClass == .compact ? geo.size.width * 0.04 : geo.size.height * 0.05,
-                                height: verticalSizeClass == .compact ? geo.size.width * 0.04 : geo.size.height * 0.05
+                                width: geo.size.width * 0.55,
+                                height: geo.size.width * 0.55
                             )
-                            .foregroundColor(ViewConst.highlightButtonColor)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(lineWidth: 5)
+                                    .foregroundColor(.gray)
+                                
+                            )
+                        
+                        Button {
+                            intent.didTapRigthModeChangeButton()
+                        } label: {
+                            
+                            ZStack {
+                                Image(systemName: "arrowtriangle.right.square")
+                                    .resizable()
+                                    .frame(
+                                        width: geo.size.width * 0.16,
+                                        height: geo.size.width * 0.16
+                                    )
+                                    .foregroundColor(ViewConst.highlightButtonColor)
+                            }
+                            .frame(
+                                width: geo.size.width * 0.16,
+                                height: geo.size.width * 0.55
+                            )
+                        }
+                        
                     }
+                    .padding(.bottom, 0)
                     
                     Text(model.currentMode.rawValue)
-                        .font(Font.system(size: 50))
+                        .font(Font.system(size: 100))
                         .minimumScaleFactor(0.1)
                         .frame(
-                            width: geo.size.width * 0.2,
-                            height: 50
+                            width: geo.size.width * 0.4,
+                            height: geo.size.height * 0.15
                         )
                     
-                    Button {
-                        intent.didTapRigthModeChangeButton()
-                    } label: {
-                        Image(systemName: "arrowtriangle.right.square")
-                            .resizable()
-                            .frame(
-                                width: verticalSizeClass == .compact ? geo.size.width * 0.04 : geo.size.height * 0.05,
-                                height: verticalSizeClass == .compact ? geo.size.width * 0.04 : geo.size.height * 0.05
-                            )
-                            .foregroundColor(ViewConst.highlightButtonColor)
-                    }
                 }
+                .padding(.bottom, geo.size.height * 0.04)
+                
+//                HStack(spacing: 20) {
+//
+//                    Button {
+//                        intent.didTapLeftModeChangeButton()
+//                    } label: {
+//                        Image(systemName: "arrowtriangle.left.square")
+//                            .resizable()
+//                            .frame(
+//                                width: verticalSizeClass == .compact ? geo.size.width * 0.04 : geo.size.height * 0.05,
+//                                height: verticalSizeClass == .compact ? geo.size.width * 0.04 : geo.size.height * 0.05
+//                            )
+//                            .foregroundColor(ViewConst.highlightButtonColor)
+//                    }
+//
+//                    Text(model.currentMode.rawValue)
+//                        .font(Font.system(size: 50))
+//                        .minimumScaleFactor(0.1)
+//                        .frame(
+//                            width: geo.size.width * 0.2,
+//                            height: 50
+//                        )
+//
+//                    Button {
+//                        intent.didTapRigthModeChangeButton()
+//                    } label: {
+//                        Image(systemName: "arrowtriangle.right.square")
+//                            .resizable()
+//                            .frame(
+//                                width: verticalSizeClass == .compact ? geo.size.width * 0.04 : geo.size.height * 0.05,
+//                                height: verticalSizeClass == .compact ? geo.size.width * 0.04 : geo.size.height * 0.05
+//                            )
+//                            .foregroundColor(ViewConst.highlightButtonColor)
+//                    }
+//                }
                 
                 VStack(spacing: geo.size.height * 0.03) {
                     
@@ -121,25 +190,15 @@ extension MainScreen: View {
                                     .fill(ViewConst.highlightButtonColor)
                             )
                     }
-                    
-                    
-//                    Button {
-//                        //
-//                    } label: {
-//                        Text("게임 설정".localize)
-//                            .font(Font.system(size: 30))
-//                            .minimumScaleFactor(0.1)
-//                            .fontWeight(.medium)
-//                            .foregroundColor(.white)
-//                            .frame(
-//                                width: verticalSizeClass == .compact ? geo.size.width * 0.45 : geo.size.height * 0.45, height: verticalSizeClass == .compact ? geo.size.width * 0.06 : geo.size.height * 0.06)
-//                            .background(
-//                                RoundedRectangle(cornerRadius: 10)
-//                                    .fill(ViewConst.palette4)
-//                            )
-//                    }
                 }
+                
                 Spacer()
+                
+                GoogleAdView()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.width).size.height)
+                
+                
             }
             .frame(maxWidth: .infinity)
         }
