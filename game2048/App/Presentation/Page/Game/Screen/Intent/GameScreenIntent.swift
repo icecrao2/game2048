@@ -129,6 +129,8 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         if !canHandleEvent { return }
         
         navigationManager?.backToRoot()
+        
+        AppStoreReviewManager.requestReviewIfAppropriate()
     }
     
     func didTapUndoButton() {
