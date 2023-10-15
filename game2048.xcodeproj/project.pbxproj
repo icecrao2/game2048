@@ -38,6 +38,7 @@
 		D0AFF7842AA46D8100F800AE /* PuzzleBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */; };
 		D0AFF7862AA4799300F800AE /* GameScreenModel_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */; };
 		D0B384992AB6D81A00CC1DA0 /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B384982AB6D81A00CC1DA0 /* GameStatus.swift */; };
+		D0B829232AC958E700588EDF /* AppStoreReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B829222AC958E700588EDF /* AppStoreReviewManager.swift */; };
 		D0F3ADFC2ABED09E00CA76B2 /* 4X4.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F3ADF72ABED09E00CA76B2 /* 4X4.png */; };
 		D0F3ADFD2ABED09E00CA76B2 /* 5X5.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F3ADF82ABED09E00CA76B2 /* 5X5.png */; };
 		D0F3ADFE2ABED09E00CA76B2 /* 6X6.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F3ADF92ABED09E00CA76B2 /* 6X6.png */; };
@@ -101,6 +102,7 @@
 		D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxView.swift; sourceTree = "<group>"; };
 		D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScreenModel_정상작동테스트.swift"; sourceTree = "<group>"; };
 		D0B384982AB6D81A00CC1DA0 /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
+		D0B829222AC958E700588EDF /* AppStoreReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReviewManager.swift; sourceTree = "<group>"; };
 		D0F3ADF72ABED09E00CA76B2 /* 4X4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4X4.png; sourceTree = "<group>"; };
 		D0F3ADF82ABED09E00CA76B2 /* 5X5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5X5.png; sourceTree = "<group>"; };
 		D0F3ADF92ABED09E00CA76B2 /* 6X6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6X6.png; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			children = (
 				D0AFF7432AA4374800F800AE /* MVIContainer.swift */,
 				D0AFF7562AA4422800F800AE /* ColorExtension.swift */,
+				D0B829222AC958E700588EDF /* AppStoreReviewManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				D05564EA2AAD9B65006A6F72 /* GameSaver.swift in Sources */,
 				D0AFF76E2AA4590B00F800AE /* GameScreen.swift in Sources */,
 				D0AFF7572AA4422800F800AE /* ColorExtension.swift in Sources */,
+				D0B829232AC958E700588EDF /* AppStoreReviewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,7 +810,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = game2048/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "2048 - Number Puzzle";
+				INFOPLIST_KEY_CFBundleDisplayName = "Brain Numbers Puzzle Game";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.family-games";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We collect advertising activity information to deliver personalized ads tailored to you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -827,7 +831,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.jaewoong.game2048;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -855,7 +859,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = game2048/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "2048 - Number Puzzle";
+				INFOPLIST_KEY_CFBundleDisplayName = "Brain Numbers Puzzle Game";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.family-games";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "We collect advertising activity information to deliver personalized ads tailored to you";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -876,7 +880,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.jaewoong.game2048;
 				PRODUCT_NAME = "$(TARGET_NAME)";

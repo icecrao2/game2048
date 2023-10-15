@@ -70,111 +70,191 @@ struct GameScreen: View {
             
             VStack(spacing: 25) {
                 
-                HStack {
+                HStack(spacing: geo.size.width * 0.03) {
                     
-                    Text("2048")
-                        .frame(width: geo.size.width * 0.3, height: geo.size.height * 0.1)
+                    Text("\(PuzzleBoxModel.map.0)X\(PuzzleBoxModel.map.1)")
+                        .frame(
+                            width: geo.size.width * 0.28,
+                            height: geo.size.height * 0.21
+                        )
                         .font(Font.system(size: 100))
                         .minimumScaleFactor(0.1)
                         .fontWeight(.bold)
+                        .padding(
+                            .horizontal,
+                            geo.size.width * 0.015
+                        )
+                        .background(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(lineWidth: 5)
+                        )
                     
                     
-                    Spacer()
-                    
-                    HStack(spacing: geo.size.width * 0.03) {
-                        Text("\("점수".localize)\n\(model.currentScore)")
-                            .foregroundColor(Color(hex: "F8F0E5"))
-                            .multilineTextAlignment(.center)
-                            .font(Font.system(size: 50))
-                            .minimumScaleFactor(0.1)
-                            .frame(
-                                width: geo.size.width * 0.12,
-                                height: geo.size.width * 0.12
-                            )
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(ViewConst.palette3)
-                            )
+                    VStack {
                         
-                        Text("\("최고점수".localize)\n\(model.topScore)")
-                            .foregroundColor(Color(hex: "F8F0E5"))
-                            .multilineTextAlignment(.center)
-                            .font(Font.system(size: 50))
-                            .minimumScaleFactor(0.1)
-                            .frame(
-                                width: geo.size.width * 0.15,
-                                height: geo.size.width * 0.12
-                            )
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(ViewConst.palette3)
-                            )
+                        HStack(spacing: geo.size.width * 0.03) {
+                            
+                            Text("\("점수".localize)\n\(model.currentScore)")
+                                .foregroundColor(Color(hex: "F8F0E5"))
+                                .multilineTextAlignment(.center)
+                                .font(Font.system(size: 50))
+                                .minimumScaleFactor(0.1)
+                                .frame(
+                                    width: geo.size.width * 0.24,
+                                    height: geo.size.width * 0.15
+                                )
+                                .background(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .fill(ViewConst.palette3)
+                                )
+                            
+                            Text("\("최고점수".localize)\n\(model.topScore)")
+                                .foregroundColor(Color(hex: "F8F0E5"))
+                                .multilineTextAlignment(.center)
+                                .font(Font.system(size: 50))
+                                .minimumScaleFactor(0.1)
+                                .frame(
+                                    width: geo.size.width * 0.24,
+                                    height: geo.size.width * 0.15
+                                )
+                                .background(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .fill(ViewConst.palette3)
+                                )
+                        }
+                        
+                        Spacer()
+                        
+                        HStack {
+                            
+                            Button {
+                                intent.didTapHomeButton()
+                            } label: {
+                                Image(systemName: "house.fill")
+                                    .resizable()
+                                    .foregroundColor(Color(hex: "F8F0E5"))
+                                    .multilineTextAlignment(.center)
+                                    .padding(geo.size.width * 0.025)
+                                    .frame(
+                                        width: geo.size.width * 0.13,
+                                        height: geo.size.width * 0.13
+                                    )
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(ViewConst.highlightButtonColor)
+                                    )
+                            }
+                            
+                            Spacer()
+                            
+                            Button {
+                                intent.didTapUndoButton()
+                            } label: {
+                                Image(systemName: "arrow.uturn.left")
+                                    .resizable()
+                                    .foregroundColor(Color(hex: "F8F0E5"))
+                                    .multilineTextAlignment(.center)
+                                    .padding(geo.size.width * 0.025)
+                                    .frame(
+                                        width: geo.size.width * 0.15,
+                                        height: geo.size.width * 0.13
+                                    )
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(ViewConst.highlightButtonColor)
+                                    )
+                            }
+                            
+                            Button {
+                                intent.didTapResetButton()
+                            } label: {
+                                Image(systemName: "arrow.triangle.2.circlepath")
+                                    .resizable()
+                                    .foregroundColor(Color(hex: "F8F0E5"))
+                                    .multilineTextAlignment(.center)
+                                    .padding(geo.size.width * 0.025)
+                                    .frame(
+                                        width: geo.size.width * 0.15,
+                                        height: geo.size.width * 0.13
+                                    )
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(ViewConst.highlightButtonColor)
+                                    )
+                            }
+                        }
                     }
+                    
                 }
-                .frame(width: geo.size.width * 0.85)
+                .frame(
+                    width: geo.size.width * 0.85,
+                    height: geo.size.height * 0.2
+                )
                 .padding(.top, geo.size.height * 0.02)
                 
-                HStack {
-                    
-                    Button {
-                        intent.didTapHomeButton()
-                    } label: {
-                        Image(systemName: "house.fill")
-                            .resizable()
-                            .foregroundColor(Color(hex: "F8F0E5"))
-                            .multilineTextAlignment(.center)
-                            .padding(geo.size.width * 0.025)
-                            .frame(
-                                width: geo.size.width * 0.13,
-                                height: geo.size.width * 0.13
-                            )
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(ViewConst.highlightButtonColor)
-                            )
-                    }
-                    
-                    Spacer()
-                    
-                    HStack {
-                        Button {
-                            intent.didTapUndoButton()
-                        } label: {
-                            Image(systemName: "arrow.uturn.left")
-                                .resizable()
-                                .foregroundColor(Color(hex: "F8F0E5"))
-                                .multilineTextAlignment(.center)
-                                .padding(geo.size.width * 0.025)
-                                .frame(
-                                    width: geo.size.width * 0.14,
-                                    height: geo.size.width * 0.13
-                                )
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(ViewConst.highlightButtonColor)
-                                )
-                        }
-                        
-                        Button {
-                            intent.didTapResetButton()
-                        } label: {
-                            Image(systemName: "arrow.triangle.2.circlepath")
-                                .resizable()
-                                .foregroundColor(Color(hex: "F8F0E5"))
-                                .multilineTextAlignment(.center)
-                                .padding(geo.size.width * 0.025)
-                                .frame(
-                                    width: geo.size.width * 0.15,
-                                    height: geo.size.width * 0.13
-                                )
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(ViewConst.highlightButtonColor)
-                                )
-                        }
-                    }
-                }
-                .frame(width: geo.size.width * 0.85)
+//                HStack {
+//
+//
+//                    Spacer()
+//
+//
+//                    Button {
+//                        intent.didTapHomeButton()
+//                    } label: {
+//                        Image(systemName: "house.fill")
+//                            .resizable()
+//                            .foregroundColor(Color(hex: "F8F0E5"))
+//                            .multilineTextAlignment(.center)
+//                            .padding(geo.size.width * 0.025)
+//                            .frame(
+//                                width: geo.size.width * 0.13,
+//                                height: geo.size.width * 0.13
+//                            )
+//                            .background(
+//                                RoundedRectangle(cornerRadius: 10)
+//                                    .fill(ViewConst.highlightButtonColor)
+//                            )
+//                    }
+//
+//                    HStack {
+//                        Button {
+//                            intent.didTapUndoButton()
+//                        } label: {
+//                            Image(systemName: "arrow.uturn.left")
+//                                .resizable()
+//                                .foregroundColor(Color(hex: "F8F0E5"))
+//                                .multilineTextAlignment(.center)
+//                                .padding(geo.size.width * 0.025)
+//                                .frame(
+//                                    width: geo.size.width * 0.14,
+//                                    height: geo.size.width * 0.13
+//                                )
+//                                .background(
+//                                    RoundedRectangle(cornerRadius: 10)
+//                                        .fill(ViewConst.highlightButtonColor)
+//                                )
+//                        }
+//
+//                        Button {
+//                            intent.didTapResetButton()
+//                        } label: {
+//                            Image(systemName: "arrow.triangle.2.circlepath")
+//                                .resizable()
+//                                .foregroundColor(Color(hex: "F8F0E5"))
+//                                .multilineTextAlignment(.center)
+//                                .padding(geo.size.width * 0.025)
+//                                .frame(
+//                                    width: geo.size.width * 0.15,
+//                                    height: geo.size.width * 0.13
+//                                )
+//                                .background(
+//                                    RoundedRectangle(cornerRadius: 10)
+//                                        .fill(ViewConst.highlightButtonColor)
+//                                )
+//                        }
+//                    }
+//                }
+//                .frame(width: geo.size.width * 0.85)
                 
                 GeometryReader { geo in
                     ZStack {
