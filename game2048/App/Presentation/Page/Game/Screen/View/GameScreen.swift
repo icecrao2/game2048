@@ -215,7 +215,7 @@ struct GameScreen: View {
                         ForEach(model.puzzleBoxes) { box in
                             
                             ZStack {
-                                Text("\(box.score)")
+                                Text("\(box.score == -2 ? "X" : "\(box.score)")")
                                     .foregroundColor(box.textColor)
                                     .font(Font.system(size: 50))
                                     .minimumScaleFactor(0.1)

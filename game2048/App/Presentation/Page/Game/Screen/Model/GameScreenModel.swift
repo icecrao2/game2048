@@ -630,7 +630,7 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         
         let result = emptySpace[randomInt]
         
-        puzzleBoxArray[result.0][result.1] = ObstacleBoxModel(location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: -2, textColor: ViewConst.textColors[2]!, position: (result.0, result.1))
+        puzzleBoxArray[result.0][result.1] = ObstacleBoxModel(location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[-2]!, score: -2, textColor: ViewConst.textColors[-2]!, position: (result.0, result.1))
     }
     
     
