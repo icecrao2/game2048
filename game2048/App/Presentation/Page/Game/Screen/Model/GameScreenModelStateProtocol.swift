@@ -54,6 +54,8 @@ protocol GameScreenModelActionProtocol {
     
     func makeNewPuzzleBox()
     
+    func makeNewObstacleBox()
+    
     func refreshPuzzleBoxArray()
     
     func rememberCurrentPuzzleBoxArray()

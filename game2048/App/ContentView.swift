@@ -22,7 +22,8 @@ struct ContentView: View {
                     case NavigationManager.ViewCode.MainView.rawValue:
                         MainScreen.build()
                     case NavigationManager.ViewCode.GameView.rawValue:
-                        GameScreen.build()
+//                        GameScreen.build()
+                        GameScreen.obstacleModeBuild()
                     default:
                         EmptyView()
                     }

@@ -10,16 +10,16 @@ import SwiftUI
 
 class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
     
-    @Published private(set) var currentScore: Int = 0
-    @Published private(set) var topScore: Int = 0
+    @Published var currentScore: Int = 0
+    @Published var topScore: Int = 0
     
-    @Published private(set) var puzzleBoxArray: [[PuzzleBoxModel?]]
+    @Published var puzzleBoxArray: [[PuzzleBoxModel?]]
     
-    @Published private(set) var gameStatus: GameStatus = .playing
+    @Published var gameStatus: GameStatus = .playing
     
-    private var coppiedPuzzleBoxArray: [[PuzzleBoxModel?]]
-    private var coppiedCurrentScore: Int = 0
-    private var coppiedTopScore: Int = 0
+    var coppiedPuzzleBoxArray: [[PuzzleBoxModel?]]
+    var coppiedCurrentScore: Int = 0
+    var coppiedTopScore: Int = 0
     
     
     var puzzleBoxes: [PuzzleBoxModel] {
@@ -39,7 +39,7 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
         return result
     }
     
-    private var scoreArray: [[Int]] {
+    var scoreArray: [[Int]] {
         puzzleBoxArray.map { row in
             return row.map { box in
                 box?.score ?? 0
@@ -225,21 +225,6 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
         return false
     }
     
-}
-
-extension GameScreenModel: GameScreenModelActionProtocol {
-    
-    
-    func updateGameState() {
-        
-        if self.checkGameCompletion () {
-            self.gameStatus = .gameOver
-        } else {
-            self.gameStatus = .playing
-        }
-    }
-    
-    
     func loadGame() {
         let mapSize = PuzzleBoxModel.map.0
         
@@ -268,20 +253,13 @@ extension GameScreenModel: GameScreenModelActionProtocol {
             return
         }
         
-        print(decodedGameSaver.puzzleBoxArray)
-        
         self.currentScore = decodedGameSaver.currentScore
         self.topScore = decodedGameSaver.topScore
         self.puzzleBoxArray = decodedGameSaver.puzzleBoxArray
         
         refreshPuzzleBoxArray()
-        
-        
-        
-//        print(mapSize)
-//        print(puzzleBoxArray)
-        
     }
+    
     
     func saveGame() {
         
@@ -298,6 +276,24 @@ extension GameScreenModel: GameScreenModelActionProtocol {
             
         }
     }
+    
+}
+
+extension GameScreenModel: GameScreenModelActionProtocol {
+    
+    
+    func updateGameState() {
+        
+        if self.checkGameCompletion () {
+            self.gameStatus = .gameOver
+        } else {
+            self.gameStatus = .playing
+        }
+    }
+    
+    
+    
+    
     
     func undoLastChange() {
         if currentScore == 0 { return }
@@ -617,6 +613,26 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         
         puzzleBoxArray[result.0][result.1] = PuzzleBoxModel(location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: 2, textColor: ViewConst.textColors[2]!, position: (result.0, result.1))
     }
+    
+    func makeNewObstacleBox() {
+        
+        var emptySpace: [(Int, Int)] = []
+        
+        for a in 0..<puzzleBoxArray.count {
+            for b in 0..<puzzleBoxArray[a].count {
+                if puzzleBoxArray[a][b] == nil {
+                    emptySpace.append((a, b))
+                }
+            }
+        }
+        
+        let randomInt = Int.random(in: 0..<emptySpace.count)
+        
+        let result = emptySpace[randomInt]
+        
+        puzzleBoxArray[result.0][result.1] = ObstacleBoxModel(location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewConst.boxColors[2]!, score: -2, textColor: ViewConst.textColors[2]!, position: (result.0, result.1))
+    }
+    
     
     func refreshPuzzleBoxArray() {
         

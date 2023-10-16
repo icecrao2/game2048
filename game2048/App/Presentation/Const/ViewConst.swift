@@ -19,6 +19,7 @@ struct ViewConst {
     
     
     static let boxColors: [Int: Color] = [
+        -2: Color.purple,
         2: Color(hex: "EEE4DA"),
         4: Color(hex: "ECE0C8"),
         8: Color(hex: "F2B179"),
@@ -39,6 +40,7 @@ struct ViewConst {
     ]
     
     static let textColors: [Int: Color] = [
+        -2: .white,
         2: .white,
         4: .white,
         8: .white,
