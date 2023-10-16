@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0020BEF2ADBC04B004AD98B /* ObstacleBoxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0020BEE2ADBC04B004AD98B /* ObstacleBoxModel.swift */; };
 		D05564E72AAD8327006A6F72 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05564E62AAD8327006A6F72 /* Direction.swift */; };
 		D05564EA2AAD9B65006A6F72 /* GameSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05564E92AAD9B65006A6F72 /* GameSaver.swift */; };
 		D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF70E2AA432D300F800AE /* game2048App.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D0020BEE2ADBC04B004AD98B /* ObstacleBoxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleBoxModel.swift; sourceTree = "<group>"; };
 		D05564E62AAD8327006A6F72 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		D05564E92AAD9B65006A6F72 /* GameSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSaver.swift; sourceTree = "<group>"; };
 		D0AFF70B2AA432D300F800AE /* game2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,13 +233,6 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		D0AFF73A2AA433D300F800AE /* UseCase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UseCase;
-			sourceTree = "<group>";
-		};
 		D0AFF73B2AA433D900F800AE /* Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				D0F3AE092ABED36900CA76B2 /* Utils */,
-				D0AFF73A2AA433D300F800AE /* UseCase */,
 				D0AFF7392AA433CE00F800AE /* Presentation */,
 				D0AFF70E2AA432D300F800AE /* game2048App.swift */,
 				D0AFF7102AA432D300F800AE /* ContentView.swift */,
@@ -408,6 +402,7 @@
 			children = (
 				D0AFF77C2AA464B200F800AE /* PuzzleBoxModel.swift */,
 				D0AFF77E2AA4652300F800AE /* PuzzleBoxModelProtocols.swift */,
+				D0020BEE2ADBC04B004AD98B /* ObstacleBoxModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -605,6 +600,7 @@
 				D0AFF77F2AA4652300F800AE /* PuzzleBoxModelProtocols.swift in Sources */,
 				D0AFF7732AA45FB800F800AE /* GameScreenIntent.swift in Sources */,
 				D0AFF7442AA4374800F800AE /* MVIContainer.swift in Sources */,
+				D0020BEF2ADBC04B004AD98B /* ObstacleBoxModel.swift in Sources */,
 				D0B384992AB6D81A00CC1DA0 /* GameStatus.swift in Sources */,
 				D0AFF74A2AA4382D00F800AE /* MainScreenIntentProtocol.swift in Sources */,
 				D0AFF7462AA437A700F800AE /* MainScreenIntent.swift in Sources */,
@@ -831,7 +827,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.jaewoong.game2048;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -880,7 +876,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.3.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.jaewoong.game2048;
 				PRODUCT_NAME = "$(TARGET_NAME)";
