@@ -12,13 +12,13 @@ class GameScreenIntent {
     
     private weak var navigationManager: NavigationManager?
     
-    private var model: GameScreenModelActionProtocol
+    var model: GameScreenModelActionProtocol
     
     private var currentPosition: CGPoint = .zero
     private var startDragPosition: CGPoint = .zero
     private var dragDirection: Direction = .none
     
-    private var canHandleEvent: Bool = true
+    var canHandleEvent: Bool = true
     
     init(model: GameScreenModelActionProtocol) {
         self.model = model
@@ -27,6 +27,18 @@ class GameScreenIntent {
     private func readyToNextStage() {
         model.makeNewPuzzleBox()
         model.refreshPuzzleBoxArray()
+    }
+    
+    func didTapResetButton() {
+        if !canHandleEvent { return }
+        
+        model.reset()
+        model.makeNewPuzzleBox()
+        model.refreshPuzzleBoxArray()
+        
+        model.saveGame()
+        
+        model.updateGameState()
     }
 }
 
@@ -138,18 +150,6 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         
         model.undoLastChange()
         
-        model.refreshPuzzleBoxArray()
-        
-        model.saveGame()
-        
-        model.updateGameState()
-    }
-    
-    func didTapResetButton() {
-        if !canHandleEvent { return }
-        
-        model.reset()
-        model.makeNewPuzzleBox()
         model.refreshPuzzleBoxArray()
         
         model.saveGame()

@@ -52,6 +52,17 @@ class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiabl
         let position2 = try container.decode(Int.self, forKey: .position2)
         self.position = (position1, position2)
     }
+    
+    
+    func getScore() -> Int {
+        return score
+    }
+    
+    func increase() {
+        self.score *= 2
+        self.color = ViewConst.boxColors[self.score]!
+        self.textColor = ViewConst.textColors[self.score]!
+    }
 }
 
 extension PuzzleBoxModel: PuzzleBoxModelActionProtocol {
@@ -66,16 +77,6 @@ extension PuzzleBoxModel: PuzzleBoxModelActionProtocol {
     
     func getColor() -> Color {
         return color
-    }
-    
-    func getScore() -> Int {
-        return score
-    }
-    
-    func increase() {
-        self.score *= 2
-        self.color = ViewConst.boxColors[self.score]!
-        self.textColor = ViewConst.textColors[self.score]!
     }
     
     func move(to location: CGRect) {

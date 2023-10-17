@@ -20,7 +20,9 @@ protocol MainScreenIntentProtocol{
     
     func didTapRigthModeChangeButton()
     
-    func didTapGameStartButton()
+    func didTapClassicModeStartButton()
+    
+    func didTapObstacleModeStartButton()
     
     func didTapSettingButton() 
 }

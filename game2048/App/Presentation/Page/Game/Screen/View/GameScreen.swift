@@ -12,6 +12,23 @@ import AppTrackingTransparency
 
 extension GameScreen {
 
+    
+    static func obstacleModeBuild() -> some View {
+        
+        let model = ObstacleModeGameScreenModel()
+        let intent = ObstacleModeGameScreenIntent(model: model)
+        let container = MVIContainer(
+            intent: intent as GameScreenIntentProtocol,
+            model: model as GameScreenModelStateProtocol,
+            modelChangePublisher: model.objectWillChange
+        )
+        
+        let view = GameScreen(container: container)
+        
+        return view
+    }
+    
+    
     static func build() -> some View {
         
         let model = GameScreenModel()
@@ -191,77 +208,14 @@ struct GameScreen: View {
                     height: geo.size.height * 0.2
                 )
                 .padding(.top, geo.size.height * 0.02)
-                
-//                HStack {
-//
-//
-//                    Spacer()
-//
-//
-//                    Button {
-//                        intent.didTapHomeButton()
-//                    } label: {
-//                        Image(systemName: "house.fill")
-//                            .resizable()
-//                            .foregroundColor(Color(hex: "F8F0E5"))
-//                            .multilineTextAlignment(.center)
-//                            .padding(geo.size.width * 0.025)
-//                            .frame(
-//                                width: geo.size.width * 0.13,
-//                                height: geo.size.width * 0.13
-//                            )
-//                            .background(
-//                                RoundedRectangle(cornerRadius: 10)
-//                                    .fill(ViewConst.highlightButtonColor)
-//                            )
-//                    }
-//
-//                    HStack {
-//                        Button {
-//                            intent.didTapUndoButton()
-//                        } label: {
-//                            Image(systemName: "arrow.uturn.left")
-//                                .resizable()
-//                                .foregroundColor(Color(hex: "F8F0E5"))
-//                                .multilineTextAlignment(.center)
-//                                .padding(geo.size.width * 0.025)
-//                                .frame(
-//                                    width: geo.size.width * 0.14,
-//                                    height: geo.size.width * 0.13
-//                                )
-//                                .background(
-//                                    RoundedRectangle(cornerRadius: 10)
-//                                        .fill(ViewConst.highlightButtonColor)
-//                                )
-//                        }
-//
-//                        Button {
-//                            intent.didTapResetButton()
-//                        } label: {
-//                            Image(systemName: "arrow.triangle.2.circlepath")
-//                                .resizable()
-//                                .foregroundColor(Color(hex: "F8F0E5"))
-//                                .multilineTextAlignment(.center)
-//                                .padding(geo.size.width * 0.025)
-//                                .frame(
-//                                    width: geo.size.width * 0.15,
-//                                    height: geo.size.width * 0.13
-//                                )
-//                                .background(
-//                                    RoundedRectangle(cornerRadius: 10)
-//                                        .fill(ViewConst.highlightButtonColor)
-//                                )
-//                        }
-//                    }
-//                }
-//                .frame(width: geo.size.width * 0.85)
+
                 
                 GeometryReader { geo in
                     ZStack {
                         ForEach(model.puzzleBoxes) { box in
                             
                             ZStack {
-                                Text("\(box.score)")
+                                Text("\(box.score == -2 ? "X" : "\(box.score)")")
                                     .foregroundColor(box.textColor)
                                     .font(Font.system(size: 50))
                                     .minimumScaleFactor(0.1)
@@ -277,7 +231,6 @@ struct GameScreen: View {
                                     .position(x: box.location.midX, y: box.location.midY)
                                     .frame(width: box.location.width, height: box.location.height)
                                     .animation(Animation.linear(duration: 0.1), value: box.location)
-//                                    .animation(.default, value: box.location)
                             )
                         }
                     }

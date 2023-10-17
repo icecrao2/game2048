@@ -19,7 +19,8 @@ class NavigationManager: ObservableObject {
     enum ViewCode: Int {
         
         case MainView = 1
-        case GameView = 2
+        case ClassicModeView = 2
+        case ObstacleModeView = 3
         
         case EmptyView = 200
     }

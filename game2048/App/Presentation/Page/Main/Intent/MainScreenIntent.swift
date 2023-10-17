@@ -43,9 +43,14 @@ extension MainScreenIntent: MainScreenIntentProtocol {
         model.changeModeTo(next: true)
     }
     
-    func didTapGameStartButton() {
+    func didTapClassicModeStartButton() {
         model.applyCurrentMode()
-        navigationManager?.go(.GameView)
+        navigationManager?.go(.ClassicModeView)
+    }
+    
+    func didTapObstacleModeStartButton() {
+        model.applyCurrentMode()
+        navigationManager?.go(.ObstacleModeView)
     }
     
     func didTapSettingButton() {
