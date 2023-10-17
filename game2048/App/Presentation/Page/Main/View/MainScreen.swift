@@ -142,9 +142,25 @@ extension MainScreen: View {
                 VStack(spacing: geo.size.height * 0.03) {
                     
                     Button {
-                        intent.didTapGameStartButton()
+                        intent.didTapClassicModeStartButton()
                     } label: {
-                        Text("게임 시작".localize)
+                        Text("클래식 모드 시작".localize)
+                            .font(Font.system(size: 30))
+                            .minimumScaleFactor(0.1)
+                            .fontWeight(.medium)
+                            .foregroundColor(.white)
+                            .frame(
+                                width: verticalSizeClass == .compact ? geo.size.width * 0.45 : geo.size.height * 0.45, height: verticalSizeClass == .compact ? geo.size.width * 0.08 : geo.size.height * 0.08)
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(ViewConst.highlightButtonColor)
+                            )
+                    }
+                    
+                    Button {
+                        intent.didTapObstacleModeStartButton()
+                    } label: {
+                        Text("장애물 모드 시작".localize)
                             .font(Font.system(size: 30))
                             .minimumScaleFactor(0.1)
                             .fontWeight(.medium)

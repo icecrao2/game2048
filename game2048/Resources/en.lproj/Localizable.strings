@@ -7,7 +7,9 @@
 */
 
 
-"게임 시작" = "Game Start";
+
+"클래식 모드 시작" = "Classic Mode Start";
+"장애물 모드 시작" = "Obstacle Mode Start";
 "게임 설정" = "Setting";
 "점수" = "Score";
 "최고점수" = "High Score";

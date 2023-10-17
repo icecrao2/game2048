@@ -21,8 +21,9 @@ struct ContentView: View {
                     switch numb {
                     case NavigationManager.ViewCode.MainView.rawValue:
                         MainScreen.build()
-                    case NavigationManager.ViewCode.GameView.rawValue:
-//                        GameScreen.build()
+                    case NavigationManager.ViewCode.ClassicModeView.rawValue:
+                        GameScreen.build()
+                    case NavigationManager.ViewCode.ObstacleModeView.rawValue:
                         GameScreen.obstacleModeBuild()
                     default:
                         EmptyView()
