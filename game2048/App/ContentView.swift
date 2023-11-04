@@ -50,7 +50,7 @@ extension ContentView {
                 MainScreen.build()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(ViewConst.palette1)
+            .background(ViewResources.palette1)
         }
         
     }

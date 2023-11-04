@@ -27,7 +27,7 @@
 		D0AFF74F2AA4389E00F800AE /* GameModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */; };
 		D0AFF7522AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7512AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift */; };
 		D0AFF7572AA4422800F800AE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7562AA4422800F800AE /* ColorExtension.swift */; };
-		D0AFF75B2AA442CD00F800AE /* ViewConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF75A2AA442CD00F800AE /* ViewConst.swift */; };
+		D0AFF75B2AA442CD00F800AE /* ViewResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF75A2AA442CD00F800AE /* ViewResources.swift */; };
 		D0AFF7652AA4578E00F800AE /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7642AA4578E00F800AE /* NavigationManager.swift */; };
 		D0AFF76E2AA4590B00F800AE /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF76D2AA4590B00F800AE /* GameScreen.swift */; };
 		D0AFF7712AA45FAA00F800AE /* GameScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7702AA45FAA00F800AE /* GameScreenModel.swift */; };
@@ -95,7 +95,7 @@
 		D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeEnum.swift; sourceTree = "<group>"; };
 		D0AFF7512AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameModeEnum_정상작동테스트.swift"; sourceTree = "<group>"; };
 		D0AFF7562AA4422800F800AE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		D0AFF75A2AA442CD00F800AE /* ViewConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConst.swift; sourceTree = "<group>"; };
+		D0AFF75A2AA442CD00F800AE /* ViewResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewResources.swift; sourceTree = "<group>"; };
 		D0AFF7642AA4578E00F800AE /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		D0AFF76D2AA4590B00F800AE /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
 		D0AFF7702AA45FAA00F800AE /* GameScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenModel.swift; sourceTree = "<group>"; };
@@ -232,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				D0AFF7632AA4578800F800AE /* Global */,
-				D0AFF7582AA442C400F800AE /* Const */,
 				D0AFF7422AA4373F00F800AE /* Utils */,
 				D0AFF73B2AA433D900F800AE /* Page */,
 			);
@@ -314,14 +313,6 @@
 				D00898252AF6447100B1642E /* AdMobResources.swift */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		D0AFF7582AA442C400F800AE /* Const */ = {
-			isa = PBXGroup;
-			children = (
-				D0AFF75A2AA442CD00F800AE /* ViewConst.swift */,
-			);
-			path = Const;
 			sourceTree = "<group>";
 		};
 		D0AFF75C2AA445B100F800AE /* Main */ = {
@@ -448,6 +439,7 @@
 		D0F3AE092ABED36900CA76B2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D0AFF75A2AA442CD00F800AE /* ViewResources.swift */,
 				D0F3AE0A2ABED37200CA76B2 /* StringExtensions.swift */,
 			);
 			path = Utils;
@@ -626,7 +618,7 @@
 				D0AFF74D2AA4385A00F800AE /* MainScreenModelProtocols.swift in Sources */,
 				D05564E72AAD8327006A6F72 /* Direction.swift in Sources */,
 				D0AFF7112AA432D300F800AE /* ContentView.swift in Sources */,
-				D0AFF75B2AA442CD00F800AE /* ViewConst.swift in Sources */,
+				D0AFF75B2AA442CD00F800AE /* ViewResources.swift in Sources */,
 				D0AFF7412AA433EA00F800AE /* MainScreen.swift in Sources */,
 				D00898262AF6447100B1642E /* AdMobResources.swift in Sources */,
 				D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */,

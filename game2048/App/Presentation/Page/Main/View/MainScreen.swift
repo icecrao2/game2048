@@ -83,7 +83,7 @@ extension MainScreen: View {
                                         width: geo.size.width * 0.16,
                                         height: geo.size.width * 0.16
                                     )
-                                    .foregroundColor(ViewConst.highlightButtonColor)
+                                    .foregroundColor(ViewResources.highlightButtonColor)
                             }
                             .frame(
                                 width: geo.size.width * 0.16,
@@ -116,7 +116,7 @@ extension MainScreen: View {
                                         width: geo.size.width * 0.16,
                                         height: geo.size.width * 0.16
                                     )
-                                    .foregroundColor(ViewConst.highlightButtonColor)
+                                    .foregroundColor(ViewResources.highlightButtonColor)
                             }
                             .frame(
                                 width: geo.size.width * 0.16,
@@ -153,7 +153,7 @@ extension MainScreen: View {
                                 width: verticalSizeClass == .compact ? geo.size.width * 0.45 : geo.size.height * 0.45, height: verticalSizeClass == .compact ? geo.size.width * 0.08 : geo.size.height * 0.08)
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
-                                    .fill(ViewConst.highlightButtonColor)
+                                    .fill(ViewResources.highlightButtonColor)
                             )
                     }
                     
@@ -169,7 +169,7 @@ extension MainScreen: View {
                                 width: verticalSizeClass == .compact ? geo.size.width * 0.45 : geo.size.height * 0.45, height: verticalSizeClass == .compact ? geo.size.width * 0.08 : geo.size.height * 0.08)
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
-                                    .fill(ViewConst.highlightButtonColor)
+                                    .fill(ViewResources.highlightButtonColor)
                             )
                     }
                 }

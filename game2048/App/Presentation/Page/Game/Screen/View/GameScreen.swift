@@ -122,7 +122,7 @@ struct GameScreen: View {
                                 )
                                 .background(
                                     RoundedRectangle(cornerRadius: 5)
-                                        .fill(ViewConst.palette3)
+                                        .fill(ViewResources.palette3)
                                 )
                             
                             Text("\("최고점수".localize)\n\(model.topScore)")
@@ -136,7 +136,7 @@ struct GameScreen: View {
                                 )
                                 .background(
                                     RoundedRectangle(cornerRadius: 5)
-                                        .fill(ViewConst.palette3)
+                                        .fill(ViewResources.palette3)
                                 )
                         }
                         
@@ -158,7 +158,7 @@ struct GameScreen: View {
                                     )
                                     .background(
                                         RoundedRectangle(cornerRadius: 10)
-                                            .fill(ViewConst.highlightButtonColor)
+                                            .fill(ViewResources.highlightButtonColor)
                                     )
                             }
                             
@@ -178,7 +178,7 @@ struct GameScreen: View {
                                     )
                                     .background(
                                         RoundedRectangle(cornerRadius: 10)
-                                            .fill(ViewConst.highlightButtonColor)
+                                            .fill(ViewResources.highlightButtonColor)
                                     )
                             }
                             
@@ -196,7 +196,7 @@ struct GameScreen: View {
                                     )
                                     .background(
                                         RoundedRectangle(cornerRadius: 10)
-                                            .fill(ViewConst.highlightButtonColor)
+                                            .fill(ViewResources.highlightButtonColor)
                                     )
                             }
                         }
@@ -254,7 +254,7 @@ struct GameScreen: View {
                 )
                 .background(
                     RoundedRectangle(cornerRadius: 5)
-                        .stroke(ViewConst.palette4, lineWidth: 10)
+                        .stroke(ViewResources.palette4, lineWidth: 10)
                         .background(.white)
                         .gesture(
                             DragGesture()
@@ -275,7 +275,7 @@ struct GameScreen: View {
                     .frame(height: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.width).size.height)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(ViewConst.palette1)
+            .background(ViewResources.palette1)
         }
     }
 }
@@ -322,7 +322,7 @@ extension GameScreen {
                         .frame(width: geo.size.width * 0.6, height: geo.size.width * 0.1)
                         .background(
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(ViewConst.highlightButtonColor)
+                                .fill(ViewResources.highlightButtonColor)
                         )
                     }
                     
@@ -350,7 +350,7 @@ extension GameScreen {
                         .frame(width: geo.size.width * 0.6, height: geo.size.width * 0.1)
                         .background(
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(ViewConst.highlightButtonColor)
+                                .fill(ViewResources.highlightButtonColor)
                         )
                     }
                     
@@ -379,7 +379,7 @@ extension GameScreen {
                         .frame(width: geo.size.width * 0.6, height: geo.size.width * 0.1)
                         .background(
                             RoundedRectangle(cornerRadius: 10)
-                                .fill(ViewConst.highlightButtonColor)
+                                .fill(ViewResources.highlightButtonColor)
                         )
                         
                     }

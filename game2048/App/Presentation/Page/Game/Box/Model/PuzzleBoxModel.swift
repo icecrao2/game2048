@@ -44,8 +44,8 @@ class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiabl
         
         let score = try container.decode(Int.self, forKey: .score)
  
-        self.color = ViewConst.boxColors[score]!
-        self.textColor = ViewConst.textColors[score]!
+        self.color = ViewResources.boxColors[score]!
+        self.textColor = ViewResources.textColors[score]!
         self.score = score
         
         let position1 = try container.decode(Int.self, forKey: .position1)
@@ -60,8 +60,8 @@ class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiabl
     
     func increase() {
         self.score *= 2
-        self.color = ViewConst.boxColors[self.score]!
-        self.textColor = ViewConst.textColors[self.score]!
+        self.color = ViewResources.boxColors[self.score]!
+        self.textColor = ViewResources.textColors[self.score]!
     }
 }
 

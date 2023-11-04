@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct ViewConst {
+struct ViewResources {
     
     static let palette1 = Color(hex: "F1DEC9")
     static let palette2 = Color(hex: "C8B6A6")
