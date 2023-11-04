@@ -72,13 +72,6 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
     }
     
     
-/* x = [1][0]
-   0 1 2 3
- 0
- 1 x
- 2
- 3
-*/
     func checkGameCompletion() -> Bool {
         
         if puzzleBoxes.count == 0 { return true }
@@ -360,8 +353,6 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                     
                     if approacher.getScore() == base.getScore() {
                         
-//                        puzzleBoxArray[outIndex][j]?.move(to: base.getLocation())
-                        
                         self.puzzleBoxArray[outIndex][index] = self.puzzleBoxArray[outIndex][j]
                         self.puzzleBoxArray[outIndex][j] = nil
                         self.puzzleBoxArray[outIndex][index]?.increase()
@@ -422,8 +413,6 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                     
                     if approacher.getScore() == base.getScore() {
                         
-//                        puzzleBoxArray[outIndex][j]?.move(to: base.getLocation())
-                        
                         self.puzzleBoxArray[outIndex][index] = self.puzzleBoxArray[outIndex][j]
                         self.puzzleBoxArray[outIndex][j] = nil
                         self.puzzleBoxArray[outIndex][index]?.increase()
@@ -481,8 +470,6 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                     }
                     
                     if approacher.getScore() == base.getScore() {
-                        
-//                        puzzleBoxArray[j][outIndex]?.move(to: base.getLocation())
                         
                         self.puzzleBoxArray[index][outIndex] = self.puzzleBoxArray[j][outIndex]
                         self.puzzleBoxArray[j][outIndex] = nil
@@ -542,8 +529,6 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                     }
                     
                     if approacher.getScore() == base.getScore() {
-                        
-//                        puzzleBoxArray[j][outIndex]?.move(to: base.getLocation())
                         
                         self.puzzleBoxArray[index][outIndex] = self.puzzleBoxArray[j][outIndex]
                         self.puzzleBoxArray[j][outIndex] = nil

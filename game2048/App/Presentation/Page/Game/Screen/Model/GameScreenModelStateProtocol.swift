@@ -14,7 +14,6 @@ protocol GameScreenModelStateProtocol {
     var topScore: Int { get }
     
     var gameStatus: GameStatus { get }
-//    var puzzleBoxArray: [[PuzzleBoxModel?]] { get }
     
     var puzzleBoxes: [PuzzleBoxModel] { get }
 }
