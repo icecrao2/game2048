@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D0020BEF2ADBC04B004AD98B /* ObstacleBoxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0020BEE2ADBC04B004AD98B /* ObstacleBoxModel.swift */; };
+		D00898262AF6447100B1642E /* AdMobResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00898252AF6447100B1642E /* AdMobResources.swift */; };
 		D05564E72AAD8327006A6F72 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05564E62AAD8327006A6F72 /* Direction.swift */; };
 		D05564EA2AAD9B65006A6F72 /* GameSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05564E92AAD9B65006A6F72 /* GameSaver.swift */; };
 		D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF70E2AA432D300F800AE /* game2048App.swift */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		D0020BEE2ADBC04B004AD98B /* ObstacleBoxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleBoxModel.swift; sourceTree = "<group>"; };
+		D00898252AF6447100B1642E /* AdMobResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobResources.swift; sourceTree = "<group>"; };
 		D05564E62AAD8327006A6F72 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		D05564E92AAD9B65006A6F72 /* GameSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSaver.swift; sourceTree = "<group>"; };
 		D0AFF70B2AA432D300F800AE /* game2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,6 +311,7 @@
 			children = (
 				D0F3ADEC2ABECFCF00CA76B2 /* Images */,
 				D0F3AE052ABED24B00CA76B2 /* Localizable.strings */,
+				D00898252AF6447100B1642E /* AdMobResources.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				D0AFF7112AA432D300F800AE /* ContentView.swift in Sources */,
 				D0AFF75B2AA442CD00F800AE /* ViewConst.swift in Sources */,
 				D0AFF7412AA433EA00F800AE /* MainScreen.swift in Sources */,
+				D00898262AF6447100B1642E /* AdMobResources.swift in Sources */,
 				D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */,
 				D05564EA2AAD9B65006A6F72 /* GameSaver.swift in Sources */,
 				D0AFF76E2AA4590B00F800AE /* GameScreen.swift in Sources */,
