@@ -69,22 +69,17 @@ extension GameScreenIntent: GameScreenIntentProtocol {
     func didDragChange(_ gesture: CGPoint) {
         
         if dragDirection == .none {
-            // 초기 드래그 시작 위치를 설정
             startDragPosition = gesture
         }
         
-        // 현재 위치 업데이트
         currentPosition = gesture
         
-        // 드래그 방향 결정
         let horizontalDistance = currentPosition.x - startDragPosition.x
         let verticalDistance = currentPosition.y - startDragPosition.y
         
         if abs(horizontalDistance) > abs(verticalDistance) {
-            // 수평 이동
             dragDirection = horizontalDistance > 0 ? .right : .left
         } else {
-            // 수직 이동
             dragDirection = verticalDistance > 0 ? .down : .up
         }
     }

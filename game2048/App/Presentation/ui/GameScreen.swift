@@ -54,7 +54,6 @@ extension GameScreen {
             
             build
                 .onAppear {
-//                    intent.settingNavigationManager(navigationManager)
                     intent.viewOnAppear()
                 }
                 .onDisappear {

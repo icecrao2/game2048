@@ -159,6 +159,7 @@
 		D07222052AF7898B00684B26 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D07222162AF78B8200684B26 /* state */,
 				D07222082AF789EA00684B26 /* model */,
 			);
 			path = Domain;
@@ -182,7 +183,6 @@
 				D0AFF77C2AA464B200F800AE /* PuzzleBoxModel.swift */,
 				D0020BEE2ADBC04B004AD98B /* ObstacleBoxModel.swift */,
 				D0F088792ADD76090066C3D2 /* ObstacleModeGameScreenModel.swift */,
-				D07222162AF78B8200684B26 /* state */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -325,8 +325,8 @@
 		D0AFF7392AA433CE00F800AE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D072220B2AF78A4800684B26 /* model_protocol */,
 				D07222062AF789BA00684B26 /* ui */,
+				D072220B2AF78A4800684B26 /* model_protocol */,
 				D072220A2AF78A2400684B26 /* intent_protocol */,
 			);
 			path = Presentation;
