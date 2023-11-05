@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftUI
+
 
 protocol GameScreenIntentProtocol {
     
@@ -15,7 +15,7 @@ protocol GameScreenIntentProtocol {
     
     func viewOnDisappear()
     
-    func didDragChange(_ value: DragGesture.Value)
+    func didDragChange(_ value: CGPoint)
     func didDragEnd()
     
     func didTapHomeButton()

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 class GameScreenIntent {
     
@@ -67,15 +66,15 @@ extension GameScreenIntent: GameScreenIntentProtocol {
     
     
     
-    func didDragChange(_ gesture: DragGesture.Value) {
+    func didDragChange(_ gesture: CGPoint) {
         
         if dragDirection == .none {
             // 초기 드래그 시작 위치를 설정
-            startDragPosition = gesture.location
+            startDragPosition = gesture
         }
         
         // 현재 위치 업데이트
-        currentPosition = gesture.location
+        currentPosition = gesture
         
         // 드래그 방향 결정
         let horizontalDistance = currentPosition.x - startDragPosition.x

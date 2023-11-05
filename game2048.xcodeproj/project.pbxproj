@@ -159,7 +159,6 @@
 		D07222052AF7898B00684B26 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				D07222092AF789EC00684B26 /* intent */,
 				D07222082AF789EA00684B26 /* model */,
 			);
 			path = Domain;
@@ -186,18 +185,6 @@
 				D07222162AF78B8200684B26 /* state */,
 			);
 			path = model;
-			sourceTree = "<group>";
-		};
-		D07222092AF789EC00684B26 /* intent */ = {
-			isa = PBXGroup;
-			children = (
-				D0AFF7452AA437A700F800AE /* MainScreenIntent.swift */,
-				D0AFF7722AA45FB800F800AE /* GameScreenIntent.swift */,
-				D0F0887B2ADD77CB0066C3D2 /* ObstacleModeGameScreenIntent.swift */,
-				D07222152AF78B6E00684B26 /* state */,
-				D07222132AF78AEA00684B26 /* model_action_protocol */,
-			);
-			path = intent;
 			sourceTree = "<group>";
 		};
 		D072220A2AF78A2400684B26 /* intent_protocol */ = {
@@ -260,6 +247,18 @@
 				D05564E92AAD9B65006A6F72 /* GameSaverUserDefaultDTO.swift */,
 			);
 			path = userdefaults;
+			sourceTree = "<group>";
+		};
+		D07222182AF78C0C00684B26 /* Intent */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF7452AA437A700F800AE /* MainScreenIntent.swift */,
+				D0AFF7722AA45FB800F800AE /* GameScreenIntent.swift */,
+				D0F0887B2ADD77CB0066C3D2 /* ObstacleModeGameScreenIntent.swift */,
+				D07222152AF78B6E00684B26 /* state */,
+				D07222132AF78AEA00684B26 /* model_action_protocol */,
+			);
+			path = Intent;
 			sourceTree = "<group>";
 		};
 		D0AFF7022AA432D300F800AE = {
@@ -352,6 +351,7 @@
 				D0AFF7422AA4373F00F800AE /* Utils */,
 				D07222142AF78B0E00684B26 /* Data */,
 				D07222052AF7898B00684B26 /* Domain */,
+				D07222182AF78C0C00684B26 /* Intent */,
 				D0AFF7392AA433CE00F800AE /* Presentation */,
 				D0AFF70E2AA432D300F800AE /* game2048App.swift */,
 				D0AFF7102AA432D300F800AE /* ContentView.swift */,

@@ -241,7 +241,7 @@ struct GameScreen: View {
                     .gesture(
                         DragGesture()
                             .onChanged { gesture in
-                                intent.didDragChange(gesture)
+                                intent.didDragChange(gesture.location)
                             }
                             .onEnded { gesture in
                                 intent.didDragEnd()
@@ -259,7 +259,7 @@ struct GameScreen: View {
                         .gesture(
                             DragGesture()
                                 .onChanged { gesture in
-                                    intent.didDragChange(gesture)
+                                    intent.didDragChange(gesture.location)
                                 }
                                 .onEnded { gesture in
                                     intent.didDragEnd()
