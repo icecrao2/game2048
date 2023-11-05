@@ -80,143 +80,6 @@ class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
     }
     
     
-    private func canSwipeToRight() -> Bool{
-        
-        for outIndex in 0..<puzzleBoxArray.count {
-            
-            outLoop: for index in (0..<puzzleBoxArray[outIndex].count).reversed() {
-                
-                if let base = puzzleBoxArray[outIndex][index] {
-                    
-                    for j in (0..<index).reversed() {
-                        
-                        guard let approacher = puzzleBoxArray[outIndex][j] else {
-                            continue
-                        }
-                        
-                        if approacher.getScore() == base.getScore() {
-                            
-                            return true
-                        }
-                        continue outLoop
-                    }
-                } else {
-                    for j in (0..<index).reversed() {
-                           
-                        guard let _ = puzzleBoxArray[outIndex][j] else {
-                            continue
-                        }
-                        
-                        return true
-                    }
-                }
-            }
-        }
-        return false
-    }
-    
-    private func canSwipeToLeft() -> Bool{
-        
-        for outIndex in 0..<puzzleBoxArray.count {
-            
-            outLoop: for index in 0..<(puzzleBoxArray[outIndex].count - 1) {
-                
-                if let base = puzzleBoxArray[outIndex][index] {
-                    
-                    
-                    for j in (index + 1)..<puzzleBoxArray[outIndex].count {
-                        
-                        guard let approacher = puzzleBoxArray[outIndex][j] else {
-                            continue
-                        }
-                        
-                        if approacher.getScore() == base.getScore() {
-                            return true
-                        }
-                        continue outLoop
-                    }
-                } else {
-                    for j in index..<puzzleBoxArray[outIndex].count {
-                           
-                        guard let _ = puzzleBoxArray[outIndex][j] else {
-                            continue
-                        }
-                        return true
-                    }
-                }
-            }
-        }
-        return false
-    }
-
-    
-    private func canSwipeToDown() -> Bool{
-        
-        for outIndex in 0..<puzzleBoxArray[0].count {
-            
-            outLoop: for index in (1..<puzzleBoxArray.count).reversed() {
-                
-                if let base = puzzleBoxArray[index][outIndex]{
-                    
-                    for j in (0..<index).reversed() {
-                        
-                        guard let approacher = puzzleBoxArray[j][outIndex] else {
-                            continue
-                        }
-                        
-                        if approacher.getScore() == base.getScore() {
-                            return true
-                        }
-                        
-                        continue outLoop
-                    }
-                } else {
-                    for j in (0..<index).reversed() {
-                           
-                        guard let _ = puzzleBoxArray[j][outIndex] else {
-                            continue
-                        }
-                        return true
-                    }
-                }
-            }
-        }
-        return false
-    }
-    
-    private func canSwipeToUp() -> Bool{
-        
-        for outIndex in 0..<puzzleBoxArray[0].count {
-            
-            outLoop: for index in 0..<(puzzleBoxArray.count - 1) {
-                
-                if let base = puzzleBoxArray[index][outIndex] {
-                    
-                    for j in (index + 1)..<puzzleBoxArray.count {
-                        
-                        guard let approacher = puzzleBoxArray[j][outIndex] else {
-                            continue
-                        }
-                        
-                        if approacher.getScore() == base.getScore() {
-                            
-                            return true
-                        }
-                        continue outLoop
-                    }
-                } else {
-                    for j in index..<puzzleBoxArray.count {
-                           
-                        guard let _ = puzzleBoxArray[j][outIndex] else {
-                            continue
-                        }
-                        return true
-                    }
-                }
-            }
-        }
-        return false
-    }
     
     func loadGame() {
         let mapSize = PuzzleBoxModel.map.0
@@ -284,10 +147,6 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         }
     }
     
-    
-    
-    
-    
     func undoLastChange() {
         if currentScore == 0 { return }
         
@@ -321,18 +180,10 @@ extension GameScreenModel: GameScreenModelActionProtocol {
     
     func canSwipe(to direction: Direction) -> Bool {
         
-        switch direction {
-        case .none:
-            return false
-        case .up:
-            return canSwipeToUp()
-        case .down:
-            return canSwipeToDown()
-        case .left:
-            return canSwipeToLeft()
-        case .right:
-            return canSwipeToRight()
-        }
+        let boxSwipeChecker: BoxSwipeAvailableChecker = BoxSwipeAvailableChecker()
+        
+        return boxSwipeChecker.canSwipe(to: direction, in: puzzleBoxArray)
+        
     }
     
     

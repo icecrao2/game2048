@@ -14,6 +14,7 @@
 		D072220E2AF78AAC00684B26 /* PuzzleBoxModelActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072220D2AF78AAC00684B26 /* PuzzleBoxModelActionProtocol.swift */; };
 		D07222102AF78ABE00684B26 /* GameScreenModelActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072220F2AF78ABE00684B26 /* GameScreenModelActionProtocol.swift */; };
 		D07222122AF78ACD00684B26 /* MainScreenModelActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07222112AF78ACD00684B26 /* MainScreenModelActionProtocol.swift */; };
+		D072221B2AF7934400684B26 /* BoxSwipeAvailableChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072221A2AF7934400684B26 /* BoxSwipeAvailableChecker.swift */; };
 		D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF70E2AA432D300F800AE /* game2048App.swift */; };
 		D0AFF7112AA432D300F800AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7102AA432D300F800AE /* ContentView.swift */; };
 		D0AFF7132AA432D400F800AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AFF7122AA432D400F800AE /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		D072220D2AF78AAC00684B26 /* PuzzleBoxModelActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxModelActionProtocol.swift; sourceTree = "<group>"; };
 		D072220F2AF78ABE00684B26 /* GameScreenModelActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenModelActionProtocol.swift; sourceTree = "<group>"; };
 		D07222112AF78ACD00684B26 /* MainScreenModelActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModelActionProtocol.swift; sourceTree = "<group>"; };
+		D072221A2AF7934400684B26 /* BoxSwipeAvailableChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxSwipeAvailableChecker.swift; sourceTree = "<group>"; };
 		D0AFF70B2AA432D300F800AE /* game2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AFF70E2AA432D300F800AE /* game2048App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game2048App.swift; sourceTree = "<group>"; };
 		D0AFF7102AA432D300F800AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		D07222052AF7898B00684B26 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D07222192AF792E600684B26 /* UseCase */,
 				D07222162AF78B8200684B26 /* state */,
 				D07222082AF789EA00684B26 /* model */,
 			);
@@ -259,6 +262,14 @@
 				D07222132AF78AEA00684B26 /* model_action_protocol */,
 			);
 			path = Intent;
+			sourceTree = "<group>";
+		};
+		D07222192AF792E600684B26 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				D072221A2AF7934400684B26 /* BoxSwipeAvailableChecker.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		D0AFF7022AA432D300F800AE = {
@@ -569,6 +580,7 @@
 			files = (
 				D0F3AE0B2ABED37200CA76B2 /* StringExtensions.swift in Sources */,
 				D072220E2AF78AAC00684B26 /* PuzzleBoxModelActionProtocol.swift in Sources */,
+				D072221B2AF7934400684B26 /* BoxSwipeAvailableChecker.swift in Sources */,
 				D0AFF77F2AA4652300F800AE /* PuzzleBoxModelStateProtocol.swift in Sources */,
 				D0AFF7732AA45FB800F800AE /* GameScreenIntent.swift in Sources */,
 				D07222122AF78ACD00684B26 /* MainScreenModelActionProtocol.swift in Sources */,
