@@ -31,8 +31,6 @@ struct MainScreen {
     
     @Environment(\.verticalSizeClass) var verticalSizeClass
     
-//    @EnvironmentObject var navigationManager: NavigationManager
-    
     @StateObject private var container: MVIContainer<MainScreenIntentProtocol, MainScreenModelStateProtocol>
     
     private var intent: MainScreenIntentProtocol { container.intent }
@@ -42,10 +40,11 @@ struct MainScreen {
        
         build
             .onAppear {
-//                intent.settingNavigationManager(navigationManager)
                 intent.viewOnAppear()
             }
-            .onDisappear { intent.viewOnDisappear() }
+            .onDisappear {
+                intent.viewOnDisappear()
+            }
         
     }
 }

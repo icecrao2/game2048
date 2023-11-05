@@ -33,4 +33,19 @@ extension GameModeEnum: CaseIterable, Equatable {
        let previous = all.index(before: idx)
        return all[previous < all.startIndex ? all.index(before: all.endIndex) : previous]
    }
+    
+    func getMapSizeByTupleType() -> (Int, Int) {
+        switch self {
+        case .ThreeOnThree:
+            return (3, 3)
+        case .FourOnFour:
+            return (4, 4)
+        case .FiveOnFive:
+            return (5, 5)
+        case .SixOnSix:
+            return (6, 6)
+        case .EightOnEight:
+            return (8, 8)
+        }
+    }
 }
