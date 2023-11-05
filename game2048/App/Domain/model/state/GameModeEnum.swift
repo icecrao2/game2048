@@ -9,7 +9,7 @@ import Foundation
 
 
 enum GameModeEnum: String {
-    
+
     case ThreeOnThree = "3X3"
     case FourOnFour = "4X4"
     case FiveOnFive = "5X5"
@@ -19,21 +19,21 @@ enum GameModeEnum: String {
 
 
 extension GameModeEnum: CaseIterable, Equatable {
-    
+
     func next() -> Self {
         let all = Self.allCases
         let idx = all.firstIndex(of: self)!
         let next = all.index(after: idx)
         return all[next == all.endIndex ? all.startIndex : next]
     }
-    
+
     func previous() -> Self {
        let all = Self.allCases
        let idx = all.firstIndex(of: self)!
        let previous = all.index(before: idx)
        return all[previous < all.startIndex ? all.index(before: all.endIndex) : previous]
    }
-    
+
     func getMapSizeByTupleType() -> (Int, Int) {
         switch self {
         case .ThreeOnThree:

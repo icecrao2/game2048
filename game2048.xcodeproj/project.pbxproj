@@ -10,7 +10,10 @@
 		D0020BEF2ADBC04B004AD98B /* ObstacleBoxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0020BEE2ADBC04B004AD98B /* ObstacleBoxModel.swift */; };
 		D00898262AF6447100B1642E /* AdMobResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00898252AF6447100B1642E /* AdMobResources.swift */; };
 		D05564E72AAD8327006A6F72 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05564E62AAD8327006A6F72 /* Direction.swift */; };
-		D05564EA2AAD9B65006A6F72 /* GameSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05564E92AAD9B65006A6F72 /* GameSaver.swift */; };
+		D05564EA2AAD9B65006A6F72 /* GameSaverUserDefaultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05564E92AAD9B65006A6F72 /* GameSaverUserDefaultDTO.swift */; };
+		D072220E2AF78AAC00684B26 /* PuzzleBoxModelActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072220D2AF78AAC00684B26 /* PuzzleBoxModelActionProtocol.swift */; };
+		D07222102AF78ABE00684B26 /* GameScreenModelActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D072220F2AF78ABE00684B26 /* GameScreenModelActionProtocol.swift */; };
+		D07222122AF78ACD00684B26 /* MainScreenModelActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07222112AF78ACD00684B26 /* MainScreenModelActionProtocol.swift */; };
 		D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF70E2AA432D300F800AE /* game2048App.swift */; };
 		D0AFF7112AA432D300F800AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7102AA432D300F800AE /* ContentView.swift */; };
 		D0AFF7132AA432D400F800AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AFF7122AA432D400F800AE /* Assets.xcassets */; };
@@ -23,7 +26,7 @@
 		D0AFF7462AA437A700F800AE /* MainScreenIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7452AA437A700F800AE /* MainScreenIntent.swift */; };
 		D0AFF7482AA437BD00F800AE /* MainScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7472AA437BD00F800AE /* MainScreenModel.swift */; };
 		D0AFF74A2AA4382D00F800AE /* MainScreenIntentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7492AA4382D00F800AE /* MainScreenIntentProtocol.swift */; };
-		D0AFF74D2AA4385A00F800AE /* MainScreenModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF74C2AA4385A00F800AE /* MainScreenModelProtocols.swift */; };
+		D0AFF74D2AA4385A00F800AE /* MainScreenModelStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF74C2AA4385A00F800AE /* MainScreenModelStateProtocol.swift */; };
 		D0AFF74F2AA4389E00F800AE /* GameModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */; };
 		D0AFF7522AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7512AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift */; };
 		D0AFF7572AA4422800F800AE /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7562AA4422800F800AE /* ColorExtension.swift */; };
@@ -35,7 +38,7 @@
 		D0AFF7752AA45FEE00F800AE /* GameScreenIntentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7742AA45FEE00F800AE /* GameScreenIntentProtocol.swift */; };
 		D0AFF7772AA45FFE00F800AE /* GameScreenModelStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7762AA45FFE00F800AE /* GameScreenModelStateProtocol.swift */; };
 		D0AFF77D2AA464B200F800AE /* PuzzleBoxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF77C2AA464B200F800AE /* PuzzleBoxModel.swift */; };
-		D0AFF77F2AA4652300F800AE /* PuzzleBoxModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF77E2AA4652300F800AE /* PuzzleBoxModelProtocols.swift */; };
+		D0AFF77F2AA4652300F800AE /* PuzzleBoxModelStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF77E2AA4652300F800AE /* PuzzleBoxModelStateProtocol.swift */; };
 		D0AFF7822AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7812AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift */; };
 		D0AFF7842AA46D8100F800AE /* PuzzleBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */; };
 		D0AFF7862AA4799300F800AE /* GameScreenModel_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */; };
@@ -74,7 +77,10 @@
 		D0020BEE2ADBC04B004AD98B /* ObstacleBoxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleBoxModel.swift; sourceTree = "<group>"; };
 		D00898252AF6447100B1642E /* AdMobResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobResources.swift; sourceTree = "<group>"; };
 		D05564E62AAD8327006A6F72 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
-		D05564E92AAD9B65006A6F72 /* GameSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSaver.swift; sourceTree = "<group>"; };
+		D05564E92AAD9B65006A6F72 /* GameSaverUserDefaultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSaverUserDefaultDTO.swift; sourceTree = "<group>"; };
+		D072220D2AF78AAC00684B26 /* PuzzleBoxModelActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxModelActionProtocol.swift; sourceTree = "<group>"; };
+		D072220F2AF78ABE00684B26 /* GameScreenModelActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenModelActionProtocol.swift; sourceTree = "<group>"; };
+		D07222112AF78ACD00684B26 /* MainScreenModelActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModelActionProtocol.swift; sourceTree = "<group>"; };
 		D0AFF70B2AA432D300F800AE /* game2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0AFF70E2AA432D300F800AE /* game2048App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game2048App.swift; sourceTree = "<group>"; };
 		D0AFF7102AA432D300F800AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,7 +97,7 @@
 		D0AFF7452AA437A700F800AE /* MainScreenIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenIntent.swift; sourceTree = "<group>"; };
 		D0AFF7472AA437BD00F800AE /* MainScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModel.swift; sourceTree = "<group>"; };
 		D0AFF7492AA4382D00F800AE /* MainScreenIntentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenIntentProtocol.swift; sourceTree = "<group>"; };
-		D0AFF74C2AA4385A00F800AE /* MainScreenModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModelProtocols.swift; sourceTree = "<group>"; };
+		D0AFF74C2AA4385A00F800AE /* MainScreenModelStateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenModelStateProtocol.swift; sourceTree = "<group>"; };
 		D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeEnum.swift; sourceTree = "<group>"; };
 		D0AFF7512AA43B5C00F800AE /* GameModeEnum_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameModeEnum_정상작동테스트.swift"; sourceTree = "<group>"; };
 		D0AFF7562AA4422800F800AE /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -103,7 +109,7 @@
 		D0AFF7742AA45FEE00F800AE /* GameScreenIntentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenIntentProtocol.swift; sourceTree = "<group>"; };
 		D0AFF7762AA45FFE00F800AE /* GameScreenModelStateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenModelStateProtocol.swift; sourceTree = "<group>"; };
 		D0AFF77C2AA464B200F800AE /* PuzzleBoxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxModel.swift; sourceTree = "<group>"; };
-		D0AFF77E2AA4652300F800AE /* PuzzleBoxModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxModelProtocols.swift; sourceTree = "<group>"; };
+		D0AFF77E2AA4652300F800AE /* PuzzleBoxModelStateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxModelStateProtocol.swift; sourceTree = "<group>"; };
 		D0AFF7812AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PuzzleBoxModel_정상작동테스트.swift"; sourceTree = "<group>"; };
 		D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxView.swift; sourceTree = "<group>"; };
 		D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScreenModel_정상작동테스트.swift"; sourceTree = "<group>"; };
@@ -150,21 +156,110 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D05564E52AAD8315006A6F72 /* cases */ = {
+		D07222052AF7898B00684B26 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D07222092AF789EC00684B26 /* intent */,
+				D07222082AF789EA00684B26 /* model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D07222062AF789BA00684B26 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF7402AA433EA00F800AE /* MainScreen.swift */,
+				D0AFF76D2AA4590B00F800AE /* GameScreen.swift */,
+				D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		D07222082AF789EA00684B26 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF7472AA437BD00F800AE /* MainScreenModel.swift */,
+				D0AFF7702AA45FAA00F800AE /* GameScreenModel.swift */,
+				D0AFF77C2AA464B200F800AE /* PuzzleBoxModel.swift */,
+				D0020BEE2ADBC04B004AD98B /* ObstacleBoxModel.swift */,
+				D0F088792ADD76090066C3D2 /* ObstacleModeGameScreenModel.swift */,
+				D07222162AF78B8200684B26 /* state */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		D07222092AF789EC00684B26 /* intent */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF7452AA437A700F800AE /* MainScreenIntent.swift */,
+				D0AFF7722AA45FB800F800AE /* GameScreenIntent.swift */,
+				D0F0887B2ADD77CB0066C3D2 /* ObstacleModeGameScreenIntent.swift */,
+				D07222152AF78B6E00684B26 /* state */,
+				D07222132AF78AEA00684B26 /* model_action_protocol */,
+			);
+			path = intent;
+			sourceTree = "<group>";
+		};
+		D072220A2AF78A2400684B26 /* intent_protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF7742AA45FEE00F800AE /* GameScreenIntentProtocol.swift */,
+				D0AFF7492AA4382D00F800AE /* MainScreenIntentProtocol.swift */,
+			);
+			path = intent_protocol;
+			sourceTree = "<group>";
+		};
+		D072220B2AF78A4800684B26 /* model_protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D0AFF77E2AA4652300F800AE /* PuzzleBoxModelStateProtocol.swift */,
+				D0AFF7762AA45FFE00F800AE /* GameScreenModelStateProtocol.swift */,
+				D0AFF74C2AA4385A00F800AE /* MainScreenModelStateProtocol.swift */,
+			);
+			path = model_protocol;
+			sourceTree = "<group>";
+		};
+		D07222132AF78AEA00684B26 /* model_action_protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D072220D2AF78AAC00684B26 /* PuzzleBoxModelActionProtocol.swift */,
+				D072220F2AF78ABE00684B26 /* GameScreenModelActionProtocol.swift */,
+				D07222112AF78ACD00684B26 /* MainScreenModelActionProtocol.swift */,
+			);
+			path = model_action_protocol;
+			sourceTree = "<group>";
+		};
+		D07222142AF78B0E00684B26 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D07222172AF78B9800684B26 /* userdefaults */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D07222152AF78B6E00684B26 /* state */ = {
 			isa = PBXGroup;
 			children = (
 				D05564E62AAD8327006A6F72 /* Direction.swift */,
-				D0B384982AB6D81A00CC1DA0 /* GameStatus.swift */,
 			);
-			path = cases;
+			path = state;
 			sourceTree = "<group>";
 		};
-		D05564E82AAD9B5D006A6F72 /* Saver */ = {
+		D07222162AF78B8200684B26 /* state */ = {
 			isa = PBXGroup;
 			children = (
-				D05564E92AAD9B65006A6F72 /* GameSaver.swift */,
+				D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */,
+				D0B384982AB6D81A00CC1DA0 /* GameStatus.swift */,
 			);
-			path = Saver;
+			path = state;
+			sourceTree = "<group>";
+		};
+		D07222172AF78B9800684B26 /* userdefaults */ = {
+			isa = PBXGroup;
+			children = (
+				D05564E92AAD9B65006A6F72 /* GameSaverUserDefaultDTO.swift */,
+			);
+			path = userdefaults;
 			sourceTree = "<group>";
 		};
 		D0AFF7022AA432D300F800AE = {
@@ -231,57 +326,11 @@
 		D0AFF7392AA433CE00F800AE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D0AFF7632AA4578800F800AE /* Global */,
-				D0AFF7422AA4373F00F800AE /* Utils */,
-				D0AFF73B2AA433D900F800AE /* Page */,
+				D072220B2AF78A4800684B26 /* model_protocol */,
+				D07222062AF789BA00684B26 /* ui */,
+				D072220A2AF78A2400684B26 /* intent_protocol */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		D0AFF73B2AA433D900F800AE /* Page */ = {
-			isa = PBXGroup;
-			children = (
-				D0AFF7662AA458CD00F800AE /* Game */,
-				D0AFF73C2AA433DB00F800AE /* Main */,
-			);
-			path = Page;
-			sourceTree = "<group>";
-		};
-		D0AFF73C2AA433DB00F800AE /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				D0B3849A2AB6E87200CC1DA0 /* cases */,
-				D0AFF73F2AA433E400F800AE /* Model */,
-				D0AFF73E2AA433E200F800AE /* Intent */,
-				D0AFF73D2AA433DE00F800AE /* View */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		D0AFF73D2AA433DE00F800AE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D0AFF7402AA433EA00F800AE /* MainScreen.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D0AFF73E2AA433E200F800AE /* Intent */ = {
-			isa = PBXGroup;
-			children = (
-				D0AFF7452AA437A700F800AE /* MainScreenIntent.swift */,
-				D0AFF7492AA4382D00F800AE /* MainScreenIntentProtocol.swift */,
-			);
-			path = Intent;
-			sourceTree = "<group>";
-		};
-		D0AFF73F2AA433E400F800AE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D0AFF7472AA437BD00F800AE /* MainScreenModel.swift */,
-				D0AFF74C2AA4385A00F800AE /* MainScreenModelProtocols.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		D0AFF7422AA4373F00F800AE /* Utils */ = {
@@ -291,13 +340,18 @@
 				D0AFF7562AA4422800F800AE /* ColorExtension.swift */,
 				D0B829222AC958E700588EDF /* AppStoreReviewManager.swift */,
 			);
-			path = Utils;
+			name = Utils;
+			path = Presentation/Utils;
 			sourceTree = "<group>";
 		};
 		D0AFF7532AA4420800F800AE /* App */ = {
 			isa = PBXGroup;
 			children = (
+				D0AFF7632AA4578800F800AE /* Global */,
 				D0F3AE092ABED36900CA76B2 /* Utils */,
+				D0AFF7422AA4373F00F800AE /* Utils */,
+				D07222142AF78B0E00684B26 /* Data */,
+				D07222052AF7898B00684B26 /* Domain */,
 				D0AFF7392AA433CE00F800AE /* Presentation */,
 				D0AFF70E2AA432D300F800AE /* game2048App.swift */,
 				D0AFF7102AA432D300F800AE /* ContentView.swift */,
@@ -331,82 +385,6 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
-		D0AFF7662AA458CD00F800AE /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				D05564E82AAD9B5D006A6F72 /* Saver */,
-				D0AFF7782AA4633000F800AE /* Box */,
-				D0AFF76F2AA45F6E00F800AE /* Screen */,
-			);
-			path = Game;
-			sourceTree = "<group>";
-		};
-		D0AFF7672AA458CF00F800AE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D0AFF76D2AA4590B00F800AE /* GameScreen.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D0AFF7682AA458D100F800AE /* Intent */ = {
-			isa = PBXGroup;
-			children = (
-				D0F0887B2ADD77CB0066C3D2 /* ObstacleModeGameScreenIntent.swift */,
-				D0AFF7722AA45FB800F800AE /* GameScreenIntent.swift */,
-				D0AFF7742AA45FEE00F800AE /* GameScreenIntentProtocol.swift */,
-			);
-			path = Intent;
-			sourceTree = "<group>";
-		};
-		D0AFF7692AA458D500F800AE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D0F088792ADD76090066C3D2 /* ObstacleModeGameScreenModel.swift */,
-				D0AFF7702AA45FAA00F800AE /* GameScreenModel.swift */,
-				D0AFF7762AA45FFE00F800AE /* GameScreenModelStateProtocol.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		D0AFF76F2AA45F6E00F800AE /* Screen */ = {
-			isa = PBXGroup;
-			children = (
-				D05564E52AAD8315006A6F72 /* cases */,
-				D0AFF7692AA458D500F800AE /* Model */,
-				D0AFF7682AA458D100F800AE /* Intent */,
-				D0AFF7672AA458CF00F800AE /* View */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		D0AFF7782AA4633000F800AE /* Box */ = {
-			isa = PBXGroup;
-			children = (
-				D0AFF77B2AA4633600F800AE /* Model */,
-				D0AFF7792AA4633300F800AE /* View */,
-			);
-			path = Box;
-			sourceTree = "<group>";
-		};
-		D0AFF7792AA4633300F800AE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		D0AFF77B2AA4633600F800AE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D0AFF77C2AA464B200F800AE /* PuzzleBoxModel.swift */,
-				D0AFF77E2AA4652300F800AE /* PuzzleBoxModelProtocols.swift */,
-				D0020BEE2ADBC04B004AD98B /* ObstacleBoxModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		D0AFF7802AA4699700F800AE /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,14 +392,6 @@
 				D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */,
 			);
 			path = Game;
-			sourceTree = "<group>";
-		};
-		D0B3849A2AB6E87200CC1DA0 /* cases */ = {
-			isa = PBXGroup;
-			children = (
-				D0AFF74E2AA4389E00F800AE /* GameModeEnum.swift */,
-			);
-			path = cases;
 			sourceTree = "<group>";
 		};
 		D0F3ADEC2ABECFCF00CA76B2 /* Images */ = {
@@ -598,8 +568,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0F3AE0B2ABED37200CA76B2 /* StringExtensions.swift in Sources */,
-				D0AFF77F2AA4652300F800AE /* PuzzleBoxModelProtocols.swift in Sources */,
+				D072220E2AF78AAC00684B26 /* PuzzleBoxModelActionProtocol.swift in Sources */,
+				D0AFF77F2AA4652300F800AE /* PuzzleBoxModelStateProtocol.swift in Sources */,
 				D0AFF7732AA45FB800F800AE /* GameScreenIntent.swift in Sources */,
+				D07222122AF78ACD00684B26 /* MainScreenModelActionProtocol.swift in Sources */,
+				D07222102AF78ABE00684B26 /* GameScreenModelActionProtocol.swift in Sources */,
 				D0AFF7442AA4374800F800AE /* MVIContainer.swift in Sources */,
 				D0020BEF2ADBC04B004AD98B /* ObstacleBoxModel.swift in Sources */,
 				D0B384992AB6D81A00CC1DA0 /* GameStatus.swift in Sources */,
@@ -615,14 +588,14 @@
 				D0F0887C2ADD77CB0066C3D2 /* ObstacleModeGameScreenIntent.swift in Sources */,
 				D0AFF77D2AA464B200F800AE /* PuzzleBoxModel.swift in Sources */,
 				D0AFF7652AA4578E00F800AE /* NavigationManager.swift in Sources */,
-				D0AFF74D2AA4385A00F800AE /* MainScreenModelProtocols.swift in Sources */,
+				D0AFF74D2AA4385A00F800AE /* MainScreenModelStateProtocol.swift in Sources */,
 				D05564E72AAD8327006A6F72 /* Direction.swift in Sources */,
 				D0AFF7112AA432D300F800AE /* ContentView.swift in Sources */,
 				D0AFF75B2AA442CD00F800AE /* ViewResources.swift in Sources */,
 				D0AFF7412AA433EA00F800AE /* MainScreen.swift in Sources */,
 				D00898262AF6447100B1642E /* AdMobResources.swift in Sources */,
 				D0AFF70F2AA432D300F800AE /* game2048App.swift in Sources */,
-				D05564EA2AAD9B65006A6F72 /* GameSaver.swift in Sources */,
+				D05564EA2AAD9B65006A6F72 /* GameSaverUserDefaultDTO.swift in Sources */,
 				D0AFF76E2AA4590B00F800AE /* GameScreen.swift in Sources */,
 				D0AFF7572AA4422800F800AE /* ColorExtension.swift in Sources */,
 				D0B829232AC958E700588EDF /* AppStoreReviewManager.swift in Sources */,

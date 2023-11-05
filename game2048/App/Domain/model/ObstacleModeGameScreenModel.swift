@@ -31,7 +31,7 @@ class ObstacleModeGameScreenModel: GameScreenModel {
         
         let decoder = JSONDecoder()
                
-        guard let decodedGameSaver = try? decoder.decode(GameSaver.self, from: data) else {
+        guard let decodedGameSaver = try? decoder.decode(GameSaverUserDefaultDTO.self, from: data) else {
             
             reset()
             makeNewPuzzleBox()
@@ -54,7 +54,7 @@ class ObstacleModeGameScreenModel: GameScreenModel {
         
         let mapSize = PuzzleBoxModel.map.0
         
-        let gameSaver = GameSaver(topScore: topScore, currentScore: currentScore, puzzleBoxArray: puzzleBoxArray)
+        let gameSaver = GameSaverUserDefaultDTO(topScore: topScore, currentScore: currentScore, puzzleBoxArray: puzzleBoxArray)
         
         if let encoded = try? encoder.encode(gameSaver) {
             let plist = UserDefaults.standard

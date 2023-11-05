@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct GameSaver: Codable {
+struct GameSaverUserDefaultDTO: Codable {
     
     let topScore: Int
     let currentScore: Int

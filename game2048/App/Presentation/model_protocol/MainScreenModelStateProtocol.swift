@@ -12,11 +12,3 @@ protocol MainScreenModelStateProtocol {
  
     var currentMode: GameModeEnum { get }
 }
-
-
-protocol MainScreenModelActionProtocol {
-    
-    func changeModeTo(next: Bool)
-    
-    func applyCurrentMode()
-}

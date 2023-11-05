@@ -1,18 +1,11 @@
 //
-//  PuzzleBoxModelProtocols.swift
+//  PuzzleBoxModelActionProtocol.swift
 //  game2048
 //
-//  Created by sw on 2023/09/03.
+//  Created by sw on 2023/11/05.
 //
 
 import Foundation
-
-protocol PuzzleBoxModelStateProtocol {
- 
-    var id: UUID { get }
-    var location: CGRect { get }
-    var score: Int { get }
-}
 
 protocol PuzzleBoxModelActionProtocol {
     
