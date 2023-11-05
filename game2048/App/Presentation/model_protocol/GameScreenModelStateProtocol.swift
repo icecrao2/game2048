@@ -12,6 +12,6 @@ protocol GameScreenModelStateProtocol {
     
     var currentScore: Int { get }
     var topScore: Int { get }
-    var gameStatus: GameStatus { get }
+    var gameStatus: GamePhaseEnum { get }
     var puzzleBoxes: [PuzzleBoxModel] { get }
 }

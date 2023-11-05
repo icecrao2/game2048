@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum GameStatus {
+enum GamePhaseEnum {
     
     case playing
     case gameOver

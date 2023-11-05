@@ -8,7 +8,7 @@
 import Foundation
 
 
-class BoxSwipeAvailableChecker {
+class BoxSwipeAvailableCheckUseCase {
     
     func canSwipe(to direction: Direction, in puzzleBoxArray: [[PuzzleBoxModel?]]) -> Bool {
         
