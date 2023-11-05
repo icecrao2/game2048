@@ -54,7 +54,7 @@ extension GameScreen {
             
             build
                 .onAppear {
-                    intent.settingNavigationManager(navigationManager)
+//                    intent.settingNavigationManager(navigationManager)
                     intent.viewOnAppear()
                 }
                 .onDisappear {
@@ -74,7 +74,7 @@ struct GameScreen: View {
     
     @Environment(\.verticalSizeClass) var verticalSizeClass
     
-    @EnvironmentObject var navigationManager: NavigationManager
+//    @EnvironmentObject var navigationManager: NavigationManager
     
     @StateObject var container: MVIContainer<GameScreenIntentProtocol, GameScreenModelStateProtocol>
     
@@ -398,10 +398,7 @@ extension GameScreen {
 
 struct GameScreen_Previews: PreviewProvider {
     
-    static var navigationManager = NavigationManager()
-    
     static var previews: some View {
         GameScreen.build()
-            .environmentObject(navigationManager)
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 
 class GameScreenIntent {
     
-    private weak var navigationManager: NavigationManager?
+    private weak var navigationManager: NavigationManager? = NavigationManager.shared
     
     var model: GameScreenModelActionProtocol
     
@@ -60,12 +60,9 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         model.refreshPuzzleBoxArray()
     }
     
-    func settingNavigationManager(_ settings: NavigationManager?) {
-        self.navigationManager = settings
-    }
     
     func viewOnDisappear() {
-        navigationManager = nil
+       
     }
     
     

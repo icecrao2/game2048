@@ -31,7 +31,7 @@ struct MainScreen {
     
     @Environment(\.verticalSizeClass) var verticalSizeClass
     
-    @EnvironmentObject var navigationManager: NavigationManager
+//    @EnvironmentObject var navigationManager: NavigationManager
     
     @StateObject private var container: MVIContainer<MainScreenIntentProtocol, MainScreenModelStateProtocol>
     
@@ -42,7 +42,7 @@ struct MainScreen {
        
         build
             .onAppear {
-                intent.settingNavigationManager(navigationManager)
+//                intent.settingNavigationManager(navigationManager)
                 intent.viewOnAppear()
             }
             .onDisappear { intent.viewOnDisappear() }
@@ -189,10 +189,7 @@ extension MainScreen: View {
 
 struct MainScreen_Previews: PreviewProvider {
     
-    private static var navigationManager = NavigationManager()
-    
     static var previews: some View {
         MainScreen.build()
-            .environmentObject(navigationManager)
     }
 }

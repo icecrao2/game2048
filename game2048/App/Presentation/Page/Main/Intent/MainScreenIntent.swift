@@ -10,7 +10,7 @@ import Foundation
 
 class MainScreenIntent {
     
-    private weak var navigationManager: NavigationManager?
+    private weak var navigationManager: NavigationManager? = NavigationManager.shared
     
     private var model: MainScreenModelActionProtocol
     
@@ -27,12 +27,8 @@ extension MainScreenIntent: MainScreenIntentProtocol {
         
     }
     
-    func settingNavigationManager(_ settings: NavigationManager) {
-        self.navigationManager = settings
-    }
-    
     func viewOnDisappear() {
-        self.navigationManager = nil
+        
     }
     
     func didTapLeftModeChangeButton() {

@@ -9,12 +9,32 @@
 import Foundation
 import SwiftUI
 
+
 class NavigationManager: ObservableObject {
+    
+    static var shared = NavigationManager()
     
     @Published var path: NavigationPath
     
     let goSemaphore = DispatchSemaphore(value: 1)
     let backSemaphore = DispatchSemaphore(value: 1)
+    
+    private init() {
+        
+        if let data = Self.readSerializedData() {
+            do {
+                let representation = try JSONDecoder().decode(
+                    NavigationPath.CodableRepresentation.self,
+                    from: data)
+                self.path = NavigationPath(representation)
+            } catch {
+                self.path = NavigationPath()
+            }
+        } else {
+            self.path = NavigationPath()
+        }
+    }
+    
     
     enum ViewCode: Int {
         
@@ -24,6 +44,7 @@ class NavigationManager: ObservableObject {
         
         case EmptyView = 200
     }
+    
     
     static func readSerializedData() -> Data? {
         // Read data representing the path from app's persistent storage.
@@ -64,20 +85,7 @@ class NavigationManager: ObservableObject {
         backSemaphore.signal()
     }
     
-    init() {
-        if let data = Self.readSerializedData() {
-            do {
-                let representation = try JSONDecoder().decode(
-                    NavigationPath.CodableRepresentation.self,
-                    from: data)
-                self.path = NavigationPath(representation)
-            } catch {
-                self.path = NavigationPath()
-            }
-        } else {
-            self.path = NavigationPath()
-        }
-    }
+   
 
     func save() {
         

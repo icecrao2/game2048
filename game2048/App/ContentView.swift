@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var navigationManager: NavigationManager = NavigationManager()
+    @StateObject var navigationManager: NavigationManager = NavigationManager.shared
     
     
     var body: some View {
@@ -34,7 +34,7 @@ struct ContentView: View {
                 }
             
         }
-        .environmentObject(navigationManager)
+//        .environmentObject(navigationManager)
     }
     
 }
