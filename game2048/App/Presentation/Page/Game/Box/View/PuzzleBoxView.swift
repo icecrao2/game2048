@@ -18,12 +18,12 @@ struct PuzzleBoxView: View {
                 .font(Font.system(size: 100))
                 .padding(10)
                 .minimumScaleFactor(0.1)
-                .foregroundColor(model.textColor)
+                .foregroundColor(ViewResources.textColors[model.score]!)
         }
         .frame(width: model.location.width, height: model.location.height)
         .background(
             RoundedRectangle(cornerRadius: 5)
-                .fill(model.color)
+                .fill(ViewResources.boxColors[model.score]!)
         )
     }
 }
@@ -33,9 +33,7 @@ struct PuzzleBoxView_Previews: PreviewProvider {
         PuzzleBoxView(
             model: PuzzleBoxModel(
                 location: CGRect(x: 0, y: 0, width: 50, height: 50),
-                color: .red,
                 score: 2,
-                textColor: .white,
                 position: (0,0)
             )
             

@@ -216,7 +216,7 @@ struct GameScreen: View {
                             
                             ZStack {
                                 Text("\(box.score == -2 ? "X" : "\(box.score)")")
-                                    .foregroundColor(box.textColor)
+                                    .foregroundColor(ViewResources.textColors[box.score]!)
                                     .font(Font.system(size: 50))
                                     .minimumScaleFactor(0.1)
                                     .fontWeight(.bold)
@@ -226,7 +226,7 @@ struct GameScreen: View {
                             .animation(Animation.linear(duration: 0.1), value: box.location)
                             .background(
                                 RoundedRectangle(cornerRadius: 5)
-                                    .fill(box.color)
+                                    .fill(ViewResources.boxColors[box.score]!)
                                     .id(box.id)
                                     .position(x: box.location.midX, y: box.location.midY)
                                     .frame(width: box.location.width, height: box.location.height)

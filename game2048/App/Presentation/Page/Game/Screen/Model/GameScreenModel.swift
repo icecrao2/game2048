@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftUI
+
 
 class GameScreenModel: ObservableObject, GameScreenModelStateProtocol {
     
@@ -596,7 +596,7 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         
         let result = emptySpace[randomInt]
         
-        puzzleBoxArray[result.0][result.1] = PuzzleBoxModel(location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewResources.boxColors[2]!, score: 2, textColor: ViewResources.textColors[2]!, position: (result.0, result.1))
+        puzzleBoxArray[result.0][result.1] = PuzzleBoxModel(location: CGRect(x: 0, y: 0, width: 0, height: 0), score: 2, position: (result.0, result.1))
     }
     
     func makeNewObstacleBox() {
@@ -615,7 +615,7 @@ extension GameScreenModel: GameScreenModelActionProtocol {
         
         let result = emptySpace[randomInt]
         
-        puzzleBoxArray[result.0][result.1] = ObstacleBoxModel(location: CGRect(x: 0, y: 0, width: 0, height: 0), color: ViewResources.boxColors[-2]!, score: -2, textColor: ViewResources.textColors[-2]!, position: (result.0, result.1))
+        puzzleBoxArray[result.0][result.1] = ObstacleBoxModel(location: CGRect(x: 0, y: 0, width: 0, height: 0), score: -2, position: (result.0, result.1))
     }
     
     
@@ -641,9 +641,7 @@ extension GameScreenModel: GameScreenModelActionProtocol {
                 }
                 coppiedPuzzleBoxArray[i][j] = PuzzleBoxModel(
                     location: box.location,
-                    color: box.color,
                     score: box.score,
-                    textColor: box.textColor,
                     position: box.position
                 )
             }

@@ -13,25 +13,19 @@ class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiabl
     
     private(set) var id = UUID()
     @Published private(set) var location: CGRect
-    @Published private(set) var color: Color
-    @Published private(set) var textColor: Color
     @Published private(set) var score: Int
     @Published private(set) var position: (Int, Int)
     
-    init(id: UUID, location: CGRect, color: Color, score: Int, textColor: Color, position: (Int, Int)) {
+    init(id: UUID, location: CGRect, score: Int, position: (Int, Int)) {
         self.id = id
         self.location = location
-        self.color = color
         self.score = score
-        self.textColor = textColor
         self.position = position
     }
     
-    init(location: CGRect, color: Color, score: Int, textColor: Color, position: (Int, Int)) {
+    init(location: CGRect, score: Int, position: (Int, Int)) {
         self.location = location
-        self.color = color
         self.score = score
-        self.textColor = textColor
         self.position = position
     }
     
@@ -44,8 +38,6 @@ class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiabl
         
         let score = try container.decode(Int.self, forKey: .score)
  
-        self.color = ViewResources.boxColors[score]!
-        self.textColor = ViewResources.textColors[score]!
         self.score = score
         
         let position1 = try container.decode(Int.self, forKey: .position1)
@@ -60,8 +52,6 @@ class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiabl
     
     func increase() {
         self.score *= 2
-        self.color = ViewResources.boxColors[self.score]!
-        self.textColor = ViewResources.textColors[self.score]!
     }
 }
 
@@ -75,10 +65,6 @@ extension PuzzleBoxModel: PuzzleBoxModelActionProtocol {
         return location
     }
     
-    func getColor() -> Color {
-        return color
-    }
-    
     func move(to location: CGRect) {
         
         self.location = location
@@ -87,6 +73,11 @@ extension PuzzleBoxModel: PuzzleBoxModelActionProtocol {
     func setPosition(position: (Int, Int)) {
         
         self.position = position
+        
+        updateLocation()
+    }
+
+    private func updateLocation() {
         
         let width = GameScreenModel.gameScreenRect.width / Double(PuzzleBoxModel.map.1)
         let height = GameScreenModel.gameScreenRect.height / Double(PuzzleBoxModel.map.0)
@@ -119,8 +110,6 @@ extension PuzzleBoxModel: Codable {
     private enum CodingKeys: String, CodingKey {
         case id
         case location
-        case color
-        case textColor
         case score
         case position1
         case position2

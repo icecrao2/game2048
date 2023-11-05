@@ -6,13 +6,11 @@
 //
 
 import Foundation
-import SwiftUI
 
 protocol PuzzleBoxModelStateProtocol {
  
     var id: UUID { get }
     var location: CGRect { get }
-    var color: Color { get }
     var score: Int { get }
 }
 
@@ -23,7 +21,6 @@ protocol PuzzleBoxModelActionProtocol {
     
     func getID() -> UUID
     func getLocation() -> CGRect
-    func getColor() -> Color
     func getScore() -> Int
     func setPosition(position: (Int, Int))
 }
