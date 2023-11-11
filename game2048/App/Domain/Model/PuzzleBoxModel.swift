@@ -8,7 +8,7 @@
 import Foundation
 
 
-class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiable {
+class PuzzleBoxModel: Identifiable {
     
     private(set) var id = UUID()
     @Published private(set) var location: CGRect
@@ -54,7 +54,7 @@ class PuzzleBoxModel: ObservableObject, PuzzleBoxModelStateProtocol, Identifiabl
     }
 }
 
-extension PuzzleBoxModel: PuzzleBoxModelActionProtocol {
+extension PuzzleBoxModel {
     
     func getID() -> UUID {
         return id
