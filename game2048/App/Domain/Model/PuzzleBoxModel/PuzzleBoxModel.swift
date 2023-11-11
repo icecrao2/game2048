@@ -11,9 +11,9 @@ import Foundation
 class PuzzleBoxModel: Identifiable {
     
     private(set) var id = UUID()
-    @Published private(set) var location: CGRect
-    @Published private(set) var score: Int
-    @Published private(set) var position: (Int, Int)
+    private(set) var location: CGRect
+    private(set) var score: Int
+    private(set) var position: (Int, Int)
     
     init(id: UUID, location: CGRect, score: Int, position: (Int, Int)) {
         self.id = id
