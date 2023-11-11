@@ -16,6 +16,13 @@ struct ScoreModel: PuzzleBoxGameScoreObserverProtocol {
     private var coppiedCurrentScore: Int
     private var coppiedTopScore: Int
     
+    init(currentScore: Int, topScore: Int) {
+        self.currentScore = currentScore
+        self.topScore = topScore
+        self.coppiedCurrentScore = currentScore
+        self.coppiedTopScore = topScore
+    }
+    
     mutating func plus(score: Int) {
         
         self.coppiedCurrentScore = self.currentScore

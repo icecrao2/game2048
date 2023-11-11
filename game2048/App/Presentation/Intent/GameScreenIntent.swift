@@ -9,6 +9,8 @@ import Foundation
 
 class GameScreenIntent {
     
+    
+    
     private weak var navigationManager: NavigationManager? = NavigationManager.shared
     
     var model: GameScreenModelActionProtocol

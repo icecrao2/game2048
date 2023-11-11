@@ -14,3 +14,4 @@ struct GameSaverUserDefaultDTO: Codable {
     let currentScore: Int
     let puzzleBoxArray: [[PuzzleBoxModel?]]
 }
+

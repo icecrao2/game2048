@@ -35,8 +35,6 @@ struct PuzzleBoxMapModel {
         }
     }
     
-    
-
     func checkGameCompletion() -> Bool {
 
         if checkPuzzleBoxIsEmpty() { return true }
@@ -76,7 +74,7 @@ extension PuzzleBoxMapModel {
     private mutating func undoLastChange() {
         self.puzzleBoxArray = self.coppiedPuzzleBoxArray
     }
-
+    
     
     mutating func reset() {
         resetStage()
@@ -103,14 +101,6 @@ extension PuzzleBoxMapModel {
             }
         }
     }
-    
-    
-    mutating func makeNewGame() {
-        
-        makeNewPuzzleBox()
-        refreshPuzzleBoxArray()
-    }
-    
     
     
     mutating func swipeToRight() {
@@ -338,7 +328,9 @@ extension PuzzleBoxMapModel {
         puzzleBoxArray[result.0][result.1] = PuzzleBoxModel(location: CGRect(x: 0, y: 0, width: 0, height: 0), score: 2, position: (result.0, result.1))
     }
 
-    
+    func refresh() {
+        refreshPuzzleBoxArray()
+    }
 
     private func refreshPuzzleBoxArray() {
 
