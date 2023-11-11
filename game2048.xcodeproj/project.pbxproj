@@ -45,7 +45,6 @@
 		D0AFF77D2AA464B200F800AE /* PuzzleBoxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF77C2AA464B200F800AE /* PuzzleBoxModel.swift */; };
 		D0AFF77F2AA4652300F800AE /* PuzzleBoxModelStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF77E2AA4652300F800AE /* PuzzleBoxModelStateProtocol.swift */; };
 		D0AFF7822AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7812AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift */; };
-		D0AFF7842AA46D8100F800AE /* PuzzleBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */; };
 		D0AFF7862AA4799300F800AE /* GameScreenModel_정상작동테스트.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */; };
 		D0B384992AB6D81A00CC1DA0 /* GamePhaseEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B384982AB6D81A00CC1DA0 /* GamePhaseEnum.swift */; };
 		D0B829232AC958E700588EDF /* AppStoreReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B829222AC958E700588EDF /* AppStoreReviewManager.swift */; };
@@ -121,7 +120,6 @@
 		D0AFF77C2AA464B200F800AE /* PuzzleBoxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxModel.swift; sourceTree = "<group>"; };
 		D0AFF77E2AA4652300F800AE /* PuzzleBoxModelStateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxModelStateProtocol.swift; sourceTree = "<group>"; };
 		D0AFF7812AA469AD00F800AE /* PuzzleBoxModel_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PuzzleBoxModel_정상작동테스트.swift"; sourceTree = "<group>"; };
-		D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleBoxView.swift; sourceTree = "<group>"; };
 		D0AFF7852AA4799300F800AE /* GameScreenModel_정상작동테스트.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScreenModel_정상작동테스트.swift"; sourceTree = "<group>"; };
 		D0B384982AB6D81A00CC1DA0 /* GamePhaseEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhaseEnum.swift; sourceTree = "<group>"; };
 		D0B829222AC958E700588EDF /* AppStoreReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReviewManager.swift; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 			children = (
 				D0AFF7402AA433EA00F800AE /* MainScreen.swift */,
 				D0AFF76D2AA4590B00F800AE /* GameScreen.swift */,
-				D0AFF7832AA46D8100F800AE /* PuzzleBoxView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -355,6 +352,8 @@
 		D0AFF7392AA433CE00F800AE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D07222082AF789EA00684B26 /* State */,
+				D07222182AF78C0C00684B26 /* Intent */,
 				D07222062AF789BA00684B26 /* ui */,
 				D072220B2AF78A4800684B26 /* model_protocol */,
 				D072220A2AF78A2400684B26 /* intent_protocol */,
@@ -365,6 +364,8 @@
 		D0AFF7422AA4373F00F800AE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D0AFF75A2AA442CD00F800AE /* ViewResources.swift */,
+				D0F3AE0A2ABED37200CA76B2 /* StringExtensions.swift */,
 				D0AFF7432AA4374800F800AE /* MVIContainer.swift */,
 				D0AFF7562AA4422800F800AE /* ColorExtension.swift */,
 				D0B829222AC958E700588EDF /* AppStoreReviewManager.swift */,
@@ -377,12 +378,9 @@
 			isa = PBXGroup;
 			children = (
 				D0AFF7632AA4578800F800AE /* Global */,
-				D0F3AE092ABED36900CA76B2 /* Utils */,
 				D0AFF7422AA4373F00F800AE /* Utils */,
 				D07222142AF78B0E00684B26 /* Data */,
-				D07222082AF789EA00684B26 /* State */,
 				D07222052AF7898B00684B26 /* Domain */,
-				D07222182AF78C0C00684B26 /* Intent */,
 				D0AFF7392AA433CE00F800AE /* Presentation */,
 				D0AFF70E2AA432D300F800AE /* game2048App.swift */,
 				D0AFF7102AA432D300F800AE /* ContentView.swift */,
@@ -435,15 +433,6 @@
 				D0F3ADFB2ABED09E00CA76B2 /* 8X8.png */,
 			);
 			path = Images;
-			sourceTree = "<group>";
-		};
-		D0F3AE092ABED36900CA76B2 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				D0AFF75A2AA442CD00F800AE /* ViewResources.swift */,
-				D0F3AE0A2ABED37200CA76B2 /* StringExtensions.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		D0F3AE102ABEE44000CA76B2 /* Frameworks */ = {
@@ -617,7 +606,6 @@
 				D0AFF7712AA45FAA00F800AE /* GameScreenModel.swift in Sources */,
 				D0AFF7772AA45FFE00F800AE /* GameScreenModelStateProtocol.swift in Sources */,
 				D0AFF74F2AA4389E00F800AE /* GameModeEnum.swift in Sources */,
-				D0AFF7842AA46D8100F800AE /* PuzzleBoxView.swift in Sources */,
 				D0AFF7482AA437BD00F800AE /* MainScreenModel.swift in Sources */,
 				D0AFF7752AA45FEE00F800AE /* GameScreenIntentProtocol.swift in Sources */,
 				D0F0887C2ADD77CB0066C3D2 /* ObstacleModeGameScreenIntent.swift in Sources */,

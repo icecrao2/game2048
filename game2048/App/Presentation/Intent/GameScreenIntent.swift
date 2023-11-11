@@ -46,7 +46,6 @@ class GameScreenIntent {
 
 extension GameScreenIntent: GameScreenIntentProtocol {
     
-    
     func viewOnAppear() {
         model.loadGame()
         
@@ -140,11 +139,8 @@ extension GameScreenIntent: GameScreenIntentProtocol {
         if !canHandleEvent { return }
         
         model.undoLastChange()
-        
         model.refreshPuzzleBoxArray()
-        
         model.saveGame()
-        
         model.updateGameState()
     }
 }

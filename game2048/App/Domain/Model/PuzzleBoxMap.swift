@@ -8,7 +8,7 @@
 import Foundation
 
 
-class PuzzleBoxMap {
+struct PuzzleBoxMap {
     
     private var puzzleBoxArray: [[PuzzleBoxModel?]]
     
@@ -36,11 +36,11 @@ class PuzzleBoxMap {
         return puzzleBoxArray[row].count
     }
     
-    func clear() {
+    mutating func clear() {
         puzzleBoxArray = []
     }
     
-    func append(_ element: [PuzzleBoxModel?]) {
+    mutating func append(_ element: [PuzzleBoxModel?]) {
         puzzleBoxArray.append(element)
     }
     
